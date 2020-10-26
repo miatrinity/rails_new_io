@@ -11,6 +11,8 @@
 </head>
 
   <body>
+    <%= render Main::Navbar::Desktop::Component.new(items: ['🏠️ Home', '🤔 Why?', '📽️ Live Demo', '📨 About / Contact']) %>
+    <%= render Main::Navbar::Mobile::Component.new(items: ['🏠️ Home', '🤔 Why?', '📽️ Live Demo', '📨 About / Contact']) %>    
     <%= yield %>
   </body>
 </html>

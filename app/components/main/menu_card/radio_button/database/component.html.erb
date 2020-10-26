@@ -1,0 +1,22 @@
+      <%= render Main::MenuCard::RadioButton::Component.new(
+           title: 'Our Database Menu 🗄️',
+           subtitle: 'More than a toy app? Pick a heavy-duty tool!',
+           items: [
+            {
+              title: 'SQLite',
+              description: 'The current default. Recommended by @librarycongress for archival!',
+              command_output: ''
+            },
+            {
+              title: 'Postgres',
+              description: 'The real default. No-brainer if you ever plan to leave development.',
+              command_output: '-d postgresql'              
+            },
+            {
+              title: 'MySQL',
+              description: "The original default. It's fine, but Postgres is finer!",
+              command_output: '-d mysql'
+            }              
+           ]
+          ) 
+      %>  

@@ -1,0 +1,25 @@
+<div>
+  <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50" style="display:none">
+    <div class="rounded-lg shadow-md">
+      <div class="rounded-lg bg-white shadow-xs overflow-hidden">
+        <div class="px-5 pt-4">
+          <div class="-mr-2">
+            <button type="button"
+              class="absolute top-0 right-0 m-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+              <svg
+                stroke="currentColor" fill="none" viewBox="0 0 24 24" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="px-2 pt-2 pb-3">
+          <% @items.each do |item| %>
+          <a href="/"
+            class="mt-1 first:mt-0 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out"><%= item %></a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
