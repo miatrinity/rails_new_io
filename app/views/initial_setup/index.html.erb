@@ -1,8 +1,6 @@
   <div>
     <%= render Main::Hero::Component.new %>
     <br>
-    
-    <!-- div data-controller="database-choice" -->
       
     <div data-controller="app-name">
       <%= render Main::AppNameInput::Component.new %>
@@ -14,7 +12,7 @@
     
     <%= render Main::MenuCard::Title::Component.new(title: "Customize A'la Carte") %>
     <%= render Main::MenuCard::RadioButton::Database::Component.new %>
-    <!-- /div> end of database-choice -->
+    <%= render Main::MenuCard::Checkbox::GuestFavorites::Component.new %>
     
     <div class="animate-notice">Copied to Clipboard!</div>
   </div>

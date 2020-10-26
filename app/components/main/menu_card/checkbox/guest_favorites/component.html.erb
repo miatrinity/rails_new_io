@@ -1,0 +1,22 @@
+      <%= render Main::MenuCard::Checkbox::Component.new(
+           title: 'Guest Favorites 🌶️',
+           subtitle: "The raison d'être of our humble establishment.",
+           items: [
+            {
+              title: 'Add spring?',
+              description: 'Rails application preloader',
+              command_output: '--skip-spring'
+            },
+            {
+              title: 'Add listen?',
+              description: 'Listens to file modifications and notifies you about the changes',
+              command_output: '--skip-listen'              
+            },
+            {
+              title: 'Add bootsnap?',
+              description: "Boot large Ruby/Rails apps faster",
+              command_output: '--skip-bootsnap'
+            }              
+           ]
+          ) 
+      %>  
