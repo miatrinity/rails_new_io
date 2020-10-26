@@ -1,5 +1,6 @@
-<li class="hover:bg-yellow-100" data-controller="row-selection database-choice" data-action="click->row-selection#update click->database-choice#update">
-  <div class="flex items-center px-4 py-2 sm:px-6">
+<li class="hover:bg-yellow-100" data-controller="database-choice"
+  data-action="click->database-choice#update">
+  <label class="flex items-center px-4 py-2 sm:px-6">
     <div class="min-w-0 flex-1 flex items-center">
       <div class="flex-shrink-0">
         <%= image_tag src="#{@title}.svg" %>
@@ -15,7 +16,11 @@
         <div class="hidden md:block"></div>
       </div>
     </div>
-    <div><input id="<%= @title %>" type="radio" name="database" value="<%= @title %>" data-target="row-selection.checked database-choice.name" data-command-output="<%= @command_output %>" checked=""
-        class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"></div>
-  </div>
+
+    <div>
+      <input id="<%= @title %>" type="radio" name="database" value="<%= @title %>"
+        data-target="database-choice.name" data-command-output="<%= @command_output %>" checked=""
+        class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+    </div>
+  </label>
 </li>
