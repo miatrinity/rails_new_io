@@ -19,7 +19,8 @@
 
     <div>
       <input id="<%= @title %>" type="radio" name="database" value="<%= @title %>"
-        data-target="database-choice.name" data-command-output="<%= @command_output %>" checked=""
+        data-target="database-choice.name" data-command-output="<%= @command_output %>" autocomplete="off"
+        <%= @checked ? 'checked' : '' %>        
         class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
     </div>
   </label>

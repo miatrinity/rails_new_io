@@ -19,9 +19,12 @@ class InitialSetupController < ApplicationController
     }
 
     @omakase_state = {
-      app_name: 'hurka_app',
+      app_name: 'my_app',
       database_choice: {
-        Postgres: true
+        SQLite: true,
+        Postgres: false,
+        MySQL: false
+        
       },
       rails_flags: {
         guest_favorites: {
