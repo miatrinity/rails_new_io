@@ -1,15 +1,14 @@
-  <div>
+  <div data-controller="app-name">
     <%= render Main::Hero::Component.new %>
+    
     <br>
       
-    <div data-controller="app-name">
-      <%= render Main::AppNameInput::Component.new %>
-      <div id="rails-new-command-generator-holder" data-controller="clipboard" class="flex-col bg-gray-700 pt-3 z-50">
-        <%= render Main::CommandLine::Output::Component.new %>
-        <%= render Main::CommandLine::Buttons::Component.new %>
-      </div>
-    </div>    
-    
+    <%= render Main::AppNameInput::Component.new %>
+    <div id="rails-new-command-generator-holder" data-controller="clipboard" class="flex-col bg-gray-700 pt-3 z-50">
+      <%= render Main::CommandLine::Output::Component.new %>
+      <%= render Main::CommandLine::Buttons::Component.new %>
+    </div>
+        
     <%= render Main::MenuCard::Title::Component.new(title: "Customize A'la Carte") %>
     <%= render Main::MenuCard::RadioButton::Database::Component.new %>
     <%= render Main::MenuCard::Checkbox::GuestFavorites::Component.new %>

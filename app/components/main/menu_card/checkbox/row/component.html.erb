@@ -1,4 +1,5 @@
-<li class="hover:bg-yellow-100" style="background-color: rgb(247, 250, 252);">
+<li data-controller="guest-favorites-choice" data-action="click->guest-favorites-choice#update" 
+    class="hover:bg-yellow-100" style="background-color: rgb(247, 250, 252);">
   <label class="flex items-center px-4 py-4 sm:px-6">
     <div class="min-w-0 flex-1 flex items-center">
       <div class="min-w-0 flex-1 px-4 md:grid md:gap-4">
@@ -13,7 +14,9 @@
     </div>
     <span class="text-yellow-500 mr-4" style="display:none">⚠️ Set and locked by a railsbyte!</span>
     <div>
-      <input id="<%= @title %>" type="checkbox" checked=""
+      <input id="<%= @title %>" 
+             data-target="guest-favorites-choice.name" data-command-output="<%= @command_output %>"
+             type="checkbox" checked=""             
              class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
     </div>
   </label>
