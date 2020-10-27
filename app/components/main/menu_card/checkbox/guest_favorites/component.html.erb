@@ -5,18 +5,20 @@
             {
               title: 'Add spring?',
               description: 'Rails application preloader',
-              command_output: '--skip-spring'
+              #command_output: '--skip-spring'
             },
             {
               title: 'Add listen?',
               description: 'Listens to file modifications and notifies you about the changes',
-              command_output: '--skip-listen'              
+              #command_output: '--skip-listen'              
             },
             {
               title: 'Add bootsnap?',
               description: "Boot large Ruby/Rails apps faster",
-              command_output: '--skip-bootsnap'
+              #command_output: '--skip-bootsnap'
             }              
-           ]
+           ],
+           initial_state: @initial_state,
+           state_translation: @state_translation
           ) 
       %>  

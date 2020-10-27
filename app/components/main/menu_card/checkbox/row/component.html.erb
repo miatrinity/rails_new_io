@@ -16,7 +16,7 @@
     <div>
       <input id="<%= @title %>" 
              data-target="guest-favorites-choice.name" data-command-output="<%= @command_output %>"
-             type="checkbox"
+             type="checkbox" <%= @checked ? 'checked' : '' %> autocomplete="off"
              class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
     </div>
   </label>

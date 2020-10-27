@@ -24,11 +24,11 @@ class InitialSetupController < ApplicationController
         SQLite: true,
         Postgres: false,
         MySQL: false
-        
+
       },
       rails_flags: {
         guest_favorites: {
-          spring: false,
+          spring: true,
           listen: false,
           bootsnap: true
         }
