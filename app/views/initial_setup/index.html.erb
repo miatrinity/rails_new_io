@@ -3,9 +3,10 @@
     
     <br>
       
-    <%= render Main::AppNameInput::Component.new %>
+    <%= render Main::AppNameInput::Component.new(app_name: @initial_state[:app_name]) %>
+    
     <div id="rails-new-command-generator-holder" data-controller="clipboard" class="flex-col bg-gray-700 pt-3 z-50">
-      <%= render Main::CommandLine::Output::Component.new %>
+      <%= render Main::CommandLine::Output::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
       <%= render Main::CommandLine::Buttons::Component.new %>
     </div>
         
