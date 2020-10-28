@@ -1,5 +1,4 @@
-<li class="hover:bg-yellow-100" data-controller="database-choice"
-  data-action="click->database-choice#update">
+<li class="hover:bg-yellow-100" data-controller="database-choice">
   <label class="flex items-center px-4 py-2 sm:px-6">
     <div class="min-w-0 flex-1 flex items-center">
       <div class="flex-shrink-0">
@@ -18,10 +17,16 @@
     </div>
 
     <div>
-      <input id="<%= @title %>" type="radio" name="database" value="<%= @title %>"
-        data-target="database-choice.name" data-command-output="<%= @command_output %>" autocomplete="off"
-        <%= @checked ? 'checked' : '' %>        
-        class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
+      <input type="radio"
+             data-action="change->database-choice#update" 
+             data-target="database-choice.name"
+             data-command-output="<%= @command_output %>"
+             <%= @checked ? 'checked' : '' %>                     
+             id="<%= @title %>"
+             name="database"
+             value="<%= @title %>"             
+             autocomplete="off"             
+             class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
     </div>
   </label>
 </li>
