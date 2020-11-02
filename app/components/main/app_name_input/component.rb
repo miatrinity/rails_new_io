@@ -1,9 +1,7 @@
 module Main
   module AppNameInput
     class Component < ViewComponent::Base
-      def initialize(app_name:)
-        @app_name = app_name
-      end
+      def initialize; end
     end
   end
 end

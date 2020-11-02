@@ -19,7 +19,6 @@ class InitialSetupController < ApplicationController
     }
 
     @omakase_state = {
-      app_name: 'my_app',
       database_choice: {
         SQLite: true,
         Postgres: false,

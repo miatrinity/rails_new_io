@@ -5,8 +5,7 @@ module Main
         def initialize(initial_state:, state_translation:)
           @initial_state = initial_state
           @state_translation = state_translation
-
-          @app_name = @initial_state[:app_name]
+          
           @database_choice = database_choice
           @rails_flags = rails_flags
         end
