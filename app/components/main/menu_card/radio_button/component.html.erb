@@ -16,7 +16,7 @@
         </div>
         <ul id="rails-menu-card-data-rows" aria-disabled="true">
           <% @items.each do |item| %>
-            <%= render Main::MenuCard::RadioButton::Row::Component.new(
+            <%= render Main::MenuCard::RadioButton::Row::Component.new(              
               title: item[:title], 
               description: item[:description],
               command_output: item[:command_output],
