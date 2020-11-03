@@ -27,9 +27,9 @@ class InitialSetupController < ApplicationController
       },
       rails_flags: {
         guest_favorites: {
-          spring: false,
-          listen: false,
-          bootsnap: false
+          spring: true,
+          listen: true,
+          bootsnap: true
         }
       }
     }
