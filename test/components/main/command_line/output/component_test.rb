@@ -32,7 +32,7 @@ module Main
             initial_state: @initial_state
           ))
 
-          assert_selector(:xpath, "//pre[@id='rails-new-output-text']", text: 'rails new my_app')
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app')
         end
 
         def test_command_line_output_for_db1_and_checkbox1_selected
@@ -48,7 +48,7 @@ module Main
             initial_state: @initial_state
           ))
 
-          assert_selector(:xpath, "//pre[@id='rails-new-output-text']", text: 'rails new my_app --skip-checkbox-option2')
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --skip-checkbox-option2')
         end
         
         def test_command_line_output_for_db2_and_checkbox2_selected
@@ -64,7 +64,7 @@ module Main
             initial_state: @initial_state
           ))
 
-          assert_selector(:xpath, "//pre[@id='rails-new-output-text']", text: 'rails new my_app -d db-option2 --skip-checkbox-option1')
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app -d db-option2 --skip-checkbox-option1')
         end
         
         def test_command_line_output_for_db2_and_all_checkboxes_selected
@@ -80,7 +80,7 @@ module Main
             initial_state: @initial_state
           ))
 
-          assert_selector(:xpath, "//pre[@id='rails-new-output-text']", text: 'rails new my_app -d db-option2')
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app -d db-option2')
         end
       end
     end

@@ -1,0 +1,30 @@
+      <%= render Main::MenuCard::Checkbox::Component.new(
+           menu_card_id: :starters,
+           title: 'Starters 🥗 ',
+           subtitle: 'Stuff to create/skip during initial setup',
+           items: [
+            {
+              title: 'Create Gemfile?',
+              description: 'Create/skip Gemfile',
+            },
+            {
+              title: 'Create .gitignore?',
+              description: 'Create/skip .gitignore file',             
+            },
+            {
+              title: 'Create .keep files?',
+              description: "Create/skip git .keep files in empty directories",
+            },              
+            {
+              title: 'Run `bundle install`?',
+              description: "Run (or don't) `bundle install` after generating Gemfile",
+            },             
+            {
+              title: 'Create Puma config files (skip if using a different app server)?',
+              description: 'Create/skip Puma-related files',
+            }              
+           ],
+           initial_state: @initial_state,
+           state_translation: @state_translation
+          ) 
+      %>  

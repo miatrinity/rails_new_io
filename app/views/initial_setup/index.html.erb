@@ -13,6 +13,9 @@
     <%= render Main::MenuCard::Title::Component.new(title: "Customize A'la Carte") %>
     <%= render Main::MenuCard::RadioButton::Database::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
     <%= render Main::MenuCard::Checkbox::GuestFavorites::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
+    <%= render Main::MenuCard::Checkbox::Starters::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
+    <%= render Main::MenuCard::Checkbox::Mains::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
+    
     
     <div class="animate-notice">Copied to Clipboard!</div>
   </div>

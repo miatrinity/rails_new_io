@@ -1,0 +1,26 @@
+      <%= render Main::MenuCard::Checkbox::Component.new(
+           menu_card_id: :mains,
+           title: 'Mains 🍗',
+           subtitle: 'The meat of your setup. Some of us are on a fancy diet, though - or vegans 🥑, even!',
+           items: [
+            {
+              title: 'Use ActionText?',
+              description: 'ActionText: Rich text content and editing',
+            },
+            {
+              title: 'Use ActiveRecord?',
+              description: 'ActiveRecord: The default ORM',             
+            },
+            {
+              title: 'Use ActiveStorage?',
+              description: 'ActiveStorage: attach files to your ActiveRecord models',
+            },              
+            {
+              title: 'Use ActionCable?',
+              description: 'ActionCable: The power of WebSockets, here and now!',
+            }             
+           ],
+           initial_state: @initial_state,
+           state_translation: @state_translation
+          ) 
+      %>  

@@ -17,15 +17,21 @@ module Main
 
         def update_items
           @initial_state[:rails_flags][@menu_card_id].each do |item_name, checked|            
-            command_output = @state_translation[:rails_flags][@menu_card_id][item_name][false]
-
-            item_to_update = @items.find{ |item| item[:title].include?(item_name.to_s) }
-
-            item_to_update.merge!({
-              command_output: command_output,
-              checked: checked
-            })
+            item_to_update_for(item_name).merge!(
+              {
+                command_output: command_output_for(item_name),
+                checked: checked
+              }
+            )
           end
+        end
+
+        def item_to_update_for(item_name)
+          @items.find { |item| item[:title] =~ /#{item_name}/i }
+        end
+
+        def command_output_for(item_name)
+          @state_translation[:rails_flags][@menu_card_id][item_name][false]
         end
       end
     end

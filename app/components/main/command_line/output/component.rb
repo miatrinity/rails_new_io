@@ -30,23 +30,23 @@ module Main
         end
 
         def command_line_output
-          "rails new #{app_name_output}#{database_choice_output}#{rails_flags_output}".html_safe
+          "<code>rails new </code>#{app_name_output}#{database_choice_output}#{rails_flags_output}".html_safe
         end
 
         def app_name_output
-          content_tag :span, 'data-target' => 'app-name.output' do
+          content_tag :code, 'data-target' => 'app-name.output' do
             @app_name
           end
         end
 
         def database_choice_output
-          content_tag :span, id: 'database-choice' do
+          content_tag :code, id: 'database-choice' do
             with_spacer @database_choice
           end
         end
 
         def rails_flags_output
-          content_tag :span, id: 'rails-flags' do
+          content_tag :code, id: 'rails-flags' do
             with_spacer @rails_flags
           end
         end
