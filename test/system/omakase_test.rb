@@ -15,16 +15,18 @@ class HomepageTest < ApplicationSystemTestCase
     assert_selector(:xpath, "//p[@id='rails-new-output-text']",text: /rails new\s+edited_app_name/)
   end
 
-  test 'Changing database, Guest Favorites and Starters is reflected in command line output' do
+  test 'Changing an item on every menu card is reflected in the command line output' do
     visit root_path
 
     choose_card_item 'Postgres'
     choose_card_item 'Add spring?'
     choose_card_item 'Create .keep files?'
+    choose_card_item 'Use ActiveStorage?'
+    
 
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 
-    assert_equal command_line_output.squish, 'rails new my_app -d postgresql --skip-keeps --skip-spring'
+    assert_equal command_line_output.squish, 'rails new my_app -d postgresql --skip-active-storage --skip-keeps --skip-spring'
   end
 
   test '"Copy to Clipboard" button works correctly' do
