@@ -31,6 +31,13 @@ class InitialSetupController < ApplicationController
         email: {
           actionMailer: { true => '', false => '--skip-action-mailer' },
           actionMailbox: { true => '', false => '--skip-action-mailbox' }
+        },
+        frontend: {
+          sprockets: { true => '', false => '--skip-sprockets' },
+          javascript: { true => '', false => '--skip-javascript' },
+          turbolinks: { true => '', false => '--skip-turbolinks' },
+          webpacker: { true => '', false => '--skip-webpack-install' },
+          yarn: { true => '', false => '--skip-yarn' }
         }
       }
     }
@@ -64,6 +71,13 @@ class InitialSetupController < ApplicationController
         email: {
           actionMailer: true,
           actionMailbox: true
+        },
+        frontend: {
+          sprockets: true,
+          javascript: true,
+          turbolinks: true,
+          webpacker: true,
+          yarn: true
         }
       }
     }

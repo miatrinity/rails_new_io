@@ -1,0 +1,30 @@
+      <%= render Main::MenuCard::Checkbox::Component.new(
+           menu_card_id: :frontend,
+           title: 'Le Frontend 🖼️',
+           subtitle: 'Tasty bits from the Front of the House',
+           items: [
+            {
+              title: 'Use Sprockets?',
+              description: 'Sprockets: Rack-based asset packaging system',
+            },
+            {
+              title: 'Use Javascript?',
+              description: 'Add/Skip JavaScript files and config (Webpacker/Turbolinks)',
+            },
+            {
+              title: 'Use Turbolinks?',
+              description: 'Turbolinks makes navigating your web application faster',
+            },
+            {
+              title: 'Use Webpacker?',
+              description: 'Sensible defaults for great OTB Webpack experience',
+            },
+            {
+              title: 'Use Yarn?',
+              description: 'Yarn: Fast, reliable, and secure dependency management',
+            },
+           ],           
+           initial_state: @initial_state,
+           state_translation: @state_translation
+          ) 
+      %>  
