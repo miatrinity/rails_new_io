@@ -1,0 +1,18 @@
+      <%= render Main::MenuCard::Checkbox::Component.new(
+           menu_card_id: :email,
+           title: 'Email me Maybe (#not) 📨',
+           subtitle: 'The best way to inbox zero: not sending or receiving any email!',
+           items: [
+            {
+              title: 'Use ActionMailer?',
+              description: 'ActionMailer: Send emails from your application using mailer classes and views',
+            },
+            {
+              title: 'Use ActionMailbox? ',
+              description: 'ActionMailbox: Routes incoming emails to controller-like mailboxes',
+            }          
+           ],
+           initial_state: @initial_state,
+           state_translation: @state_translation
+          ) 
+      %>  

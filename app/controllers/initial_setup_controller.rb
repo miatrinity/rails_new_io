@@ -27,6 +27,10 @@ class InitialSetupController < ApplicationController
           activeRecord: { true => '', false => '--skip-active-record' },
           activeStorage: { true => '', false => '--skip-active-storage' },
           actionCable: { true => '', false => '--skip-action-cable' }
+        },
+        email: {
+          actionMailer: { true => '', false => '--skip-action-mailer' },
+          actionMailbox: { true => '', false => '--skip-action-mailbox' }
         }
       }
     }
@@ -56,6 +60,10 @@ class InitialSetupController < ApplicationController
           activeRecord: true,
           activeStorage: true,
           actionCable: true
+        },
+        email: {
+          actionMailer: true,
+          actionMailbox: true
         }
       }
     }
