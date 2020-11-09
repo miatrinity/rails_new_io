@@ -24,10 +24,11 @@ class HomepageTest < ApplicationSystemTestCase
     choose_card_item 'Use ActiveStorage?'
     choose_card_item 'Use ActionMailer?'
     choose_card_item 'Use Webpacker?'
+    choose_card_item 'Use Minitest?'
 
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 
-    assert_equal command_line_output.squish, 'rails new my_app -d postgresql --skip-action-mailer --skip-active-storage --skip-keeps --skip-spring --skip-webpack-install'
+    assert_equal command_line_output.squish, 'rails new my_app -d postgresql --skip-action-mailer --skip-active-storage --skip-keeps --skip-spring --skip-test --skip-webpack-install'
   end
 
   test '"Copy to Clipboard" button works correctly' do

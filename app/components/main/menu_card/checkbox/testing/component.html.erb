@@ -1,0 +1,18 @@
+      <%= render Main::MenuCard::Checkbox::Component.new(
+           menu_card_id: :testing,
+           title: 'Testing 🔬',
+           subtitle: 'MiniSpec or RSpec, that is the real question!',           
+           items: [
+            {
+              title: 'Use Minitest?',
+              description: 'Add/Skip test files',
+            },
+            {
+              title: 'Use System Tests?',
+              description: 'Add/Skip system test files',
+            }          
+           ],
+           initial_state: @initial_state,
+           state_translation: @state_translation
+          ) 
+      %>  

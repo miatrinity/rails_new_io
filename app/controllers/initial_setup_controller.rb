@@ -38,7 +38,11 @@ class InitialSetupController < ApplicationController
           turbolinks: { true => '', false => '--skip-turbolinks' },
           webpacker: { true => '', false => '--skip-webpack-install' },
           yarn: { true => '', false => '--skip-yarn' }
-        }
+        },
+        testing: {
+          minitest: { true => '', false => '--skip-test' },
+          system: { true => '', false => '--skip-system-test' }
+        },
       }
     }
 
@@ -78,6 +82,10 @@ class InitialSetupController < ApplicationController
           turbolinks: true,
           webpacker: true,
           yarn: true
+        },
+        testing: {
+          minitest: true,
+          system: true
         }
       }
     }
