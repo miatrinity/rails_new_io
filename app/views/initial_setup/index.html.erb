@@ -9,19 +9,8 @@
       <%= render Main::CommandLine::Output::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
       <%= render Main::CommandLine::Buttons::Component.new %>
     </div>
+    
+    <%= render Main::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>        
         
-    <%= render Main::MenuCard::Title::Component.new(title: 'Choose Your Base') %>
-    <%= render Main::MenuCard::RadioButton::BaseSetup::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    
-    <%= render Main::MenuCard::Title::Component.new(title: "Customize A'la Carte") %>
-    <%= render Main::MenuCard::RadioButton::Database::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::GuestFavorites::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::Starters::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::Mains::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::Email::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::Frontend::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::Testing::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    
-    
     <div class="animate-notice">Copied to Clipboard!</div>
   </div>
