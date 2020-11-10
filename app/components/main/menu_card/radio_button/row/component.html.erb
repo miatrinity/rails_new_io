@@ -2,7 +2,9 @@
   <label class="flex items-center px-4 py-2 sm:px-6">
     <div class="min-w-0 flex-1 flex items-center">
       <div class="flex-shrink-0">
-        <%= image_tag src="#{@title}.svg" %>
+        <% if @has_image %>
+          <%= image_tag src="#{@title}.svg" %>
+        <% end %>
       </div>
       <div class="min-w-0 flex-1 px-4 md:grid md:gap-4 ">
         <div>
@@ -16,14 +18,14 @@
       </div>
     </div>
 
-    <div>
+    <div>      
       <input type="radio"
              data-action="change->database-choice#update" 
              data-target="database-choice.name"
              data-command-output="<%= @command_output %>"
              <%= @checked ? 'checked' : '' %>                     
              id="<%= @title %>"
-             name="database"
+             name="<%= @menu_card_id %>"
              value="<%= @title %>"             
              autocomplete="off"             
              class="form-radio h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
