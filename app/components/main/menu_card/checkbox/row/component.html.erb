@@ -1,6 +1,6 @@
-<li data-controller="guest-favorites-choice" 
+<li data-controller="rails-flag" 
     class="hover:bg-yellow-100" style="background-color: rgb(247, 250, 252);">
-  <label class="flex items-center px-4 py-4 sm:px-6" data-target="guest-favorites-choice.name" data-command-output="<%= @command_output %>">
+  <label class="flex items-center px-4 py-4 sm:px-6" data-target="rails-flag.name" data-command-output="<%= @command_output %>">
     <div class="min-w-0 flex-1 flex items-center">
       <div class="min-w-0 flex-1 px-4 md:grid md:gap-4">
         <div>
@@ -16,7 +16,7 @@
     <div>
       <input id="<%= @title %>"              
              type="checkbox" <%= @checked ? 'checked' : '' %> autocomplete="off"
-             data-action="change->guest-favorites-choice#update"
+             data-action="change->rails-flag#update"
              class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
     </div>
   </label>
