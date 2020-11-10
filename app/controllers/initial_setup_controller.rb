@@ -4,6 +4,12 @@
 class InitialSetupController < ApplicationController
   def index
     @state_translation = {
+      base_setup: {
+        omakase: { true => '', false => '' },
+        api: { true => '', false => '' },
+        early: { true => '', false => '' },
+        minimalist: { true => '', false => '' }
+      },
       database_choice: {
         SQLite: { true => '', false => '' },
         Postgres: { true => '-d postgresql', false => '' },
@@ -47,11 +53,16 @@ class InitialSetupController < ApplicationController
     }
 
     @omakase_state = {
+      base_setup: {
+        omakase: true,
+        api: false,
+        early: false,
+        minimalist: false
+      },
       database_choice: {
         SQLite: true,
         Postgres: false,
         MySQL: false
-
       },
       rails_flags: {
         guest_favorites: {
