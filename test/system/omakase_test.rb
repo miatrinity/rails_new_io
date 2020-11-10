@@ -18,13 +18,13 @@ class HomepageTest < ApplicationSystemTestCase
   test 'Changing an item on every menu card is reflected in the command line output' do
     visit root_path
 
-    choose_card_item 'Postgres'
-    choose_card_item 'Add spring?'
-    choose_card_item 'Create .keep files?'
-    choose_card_item 'Use ActiveStorage?'
-    choose_card_item 'Use ActionMailer?'
-    choose_card_item 'Use Webpacker?'
-    choose_card_item 'Use Minitest?'
+    choose_card_item html_id: 'postgres'
+    choose_card_item html_id: 'add-spring'
+    choose_card_item html_id: 'create-keep-files'
+    choose_card_item html_id: 'use-activestorage'
+    choose_card_item html_id: 'use-actionmailer'
+    choose_card_item html_id: 'use-webpacker'
+    choose_card_item html_id: 'use-minitest'
 
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 
@@ -34,10 +34,6 @@ class HomepageTest < ApplicationSystemTestCase
   test '"Copy to Clipboard" button works correctly' do
     visit root_path
 
-    choose_card_item 'Postgres'
-    choose_card_item 'Add spring?'
-    choose_card_item 'Add listen?'
-
     click_on 'Copy to Clipboard'
 
     # paste clipboard content into the app-name input field
@@ -46,12 +42,12 @@ class HomepageTest < ApplicationSystemTestCase
 
     input_field_value = find(:xpath, "//input[@name='app-name']").value
 
-    assert_equal input_field_value, 'rails new my_app -d postgresql --skip-listen --skip-spring'
+    assert_equal input_field_value, 'rails new my_app'
   end
 
   private
 
-  def choose_card_item(item)
-    find(:xpath, "//input[@id='#{item}']").click
+  def choose_card_item(html_id:)
+    find("##{html_id}").click
   end
 end

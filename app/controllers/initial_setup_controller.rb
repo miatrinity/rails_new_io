@@ -101,6 +101,55 @@ class InitialSetupController < ApplicationController
       }
     }
 
+    @early_days_state = {
+      base_setup: {
+        omakase: false,
+        api: false,
+        early: true,
+        minimalist: false
+      },
+      database_choice: {
+        SQLite: true,
+        Postgres: false,
+        MySQL: false
+      },
+      rails_flags: {
+        guest_favorites: {
+          spring: false,
+          listen: false,
+          bootsnap: false
+        },
+        starters: {
+          gemfile: true,
+          gitignore: true,
+          keep: false,
+          bundle: true,
+          puma: true
+        },
+        mains: {
+          actionText: false,
+          activeRecord: true,
+          activeStorage: false,
+          actionCable: false
+        },
+        email: {
+          actionMailer: true,
+          actionMailbox: false
+        },
+        frontend: {
+          sprockets: true,
+          javascript: false,
+          turbolinks: false,
+          webpacker: false,
+          yarn: false
+        },
+        testing: {
+          minitest: true,
+          system: false
+        }
+      }
+    }
+
     @initial_state = @omakase_state
   end
 end
