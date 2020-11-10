@@ -66,8 +66,8 @@ module Main
 
           render_inline(Main::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='Option1' and @checked]")
-          assert_selector(:xpath, "//input[@id='Option2' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='option1' and @checked]")
+          assert_selector(:xpath, "//input[@id='option2' and not(@checked)]")
         end
         
         
@@ -83,8 +83,8 @@ module Main
 
           render_inline(Main::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='Option1' and not(@checked)]")
-          assert_selector(:xpath, "//input[@id='Option2' and @checked]")
+          assert_selector(:xpath, "//input[@id='option1' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='option2' and @checked]")
         end
         
         def test_both_items_checked_for_checkbox_card_component
@@ -99,8 +99,8 @@ module Main
 
           render_inline(Main::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='Option1' and @checked]")
-          assert_selector(:xpath, "//input[@id='Option2' and @checked]")
+          assert_selector(:xpath, "//input[@id='option1' and @checked]")
+          assert_selector(:xpath, "//input[@id='option2' and @checked]")
         end
         
         def test_none_of_the_items_checked_for_checkbox_card_component
@@ -115,8 +115,8 @@ module Main
 
           render_inline(Main::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='Option1' and not(@checked)]")
-          assert_selector(:xpath, "//input[@id='Option2' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='option1' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='option2' and not(@checked)]")
         end
       end
     end

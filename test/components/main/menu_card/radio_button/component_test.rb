@@ -60,7 +60,7 @@ module Main
 
           render_inline(Main::MenuCard::RadioButton::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='Option1' and @checked]")
+          assert_selector(:xpath, "//input[@id='option1' and @checked]")
         end
 
         def test_second_item_checked_for_radio_button_menu_card_component
@@ -73,7 +73,7 @@ module Main
 
           render_inline(Main::MenuCard::RadioButton::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='Option2' and @checked]")
+          assert_selector(:xpath, "//input[@id='option2' and @checked]")
         end
       end
     end

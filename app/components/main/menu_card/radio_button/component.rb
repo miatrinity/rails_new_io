@@ -33,7 +33,7 @@ module Main
 
         def command_output_for(item_name)
           @state_translation[@menu_card_id][item_name][true]
-        end
+        end              
       end
     end
   end

@@ -2,9 +2,7 @@
   <label class="flex items-center px-4 py-2 sm:px-6">
     <div class="min-w-0 flex-1 flex items-center">
       <div class="flex-shrink-0">
-        <% if @has_image %>
-          <%= image_tag src="#{@title}.svg" %>
-        <% end %>
+        <%= @icon %>
       </div>
       <div class="min-w-0 flex-1 px-4 md:grid md:gap-4 ">
         <div>
@@ -24,7 +22,7 @@
              data-target="database-choice.name"
              data-command-output="<%= @command_output %>"
              <%= @checked ? 'checked' : '' %>                     
-             id="<%= @title %>"
+             id="<%= @html_id %>"
              name="<%= @menu_card_id %>"
              value="<%= @title %>"             
              autocomplete="off"             
