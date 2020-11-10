@@ -16,7 +16,7 @@ module Main
         private
 
         def update_items
-          @initial_state[:rails_flags][@menu_card_id].each do |item_name, checked|            
+          @initial_state[:rails_flags][@menu_card_id].each do |item_name, checked|
             item_to_update_for(item_name).merge!(
               {
                 command_output: command_output_for(item_name),

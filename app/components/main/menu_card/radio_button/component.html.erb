@@ -18,7 +18,9 @@
           <% @items.each do |item| %>
             <%= render Main::MenuCard::RadioButton::Row::Component.new(              
               title: item[:title], 
+              has_image: item[:has_image],
               description: item[:description],
+              menu_card_id: item[:menu_card_id],
               command_output: item[:command_output],
               checked: item[:checked]
               ) 
