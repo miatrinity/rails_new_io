@@ -3,9 +3,9 @@
     
     <%= render Main::MenuCard::Title::Component.new(title: "Customize A'la Carte") %>
     <%= render Main::MenuCard::RadioButton::Database::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::GuestFavorites::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::Starters::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::Mains::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::Email::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::Frontend::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
-    <%= render Main::MenuCard::Checkbox::Testing::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
+    <%= render Main::MenuCard::Checkbox::GuestFavorites::Component.new(initial_states: @initial_states, initial_state: @initial_state, state_translation: @state_translation) %>
+    <%= render Main::MenuCard::Checkbox::Starters::Component.new(initial_states: @initial_states, initial_state: @initial_state, state_translation: @state_translation) %>
+    <%= render Main::MenuCard::Checkbox::Mains::Component.new(initial_states: @initial_states, initial_state: @initial_state, state_translation: @state_translation) %>
+    <%= render Main::MenuCard::Checkbox::Email::Component.new(initial_states: @initial_states, initial_state: @initial_state, state_translation: @state_translation) %>
+    <%= render Main::MenuCard::Checkbox::Frontend::Component.new(initial_states: @initial_states, initial_state: @initial_state, state_translation: @state_translation) %>
+    <%= render Main::MenuCard::Checkbox::Testing::Component.new(initial_states: @initial_states, initial_state: @initial_state, state_translation: @state_translation) %>

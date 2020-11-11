@@ -2,11 +2,12 @@ module Main
   module MenuCard
     module Checkbox
       class Component < ViewComponent::Base
-        def initialize(menu_card_id:, title:, subtitle:, items:, initial_state:, state_translation:)
+        def initialize(menu_card_id:, title:, subtitle:, items:, initial_states:, initial_state:, state_translation:)
           @menu_card_id      = menu_card_id
           @title             = title
           @subtitle          = subtitle
           @items             = items
+          @initial_states    = initial_states
           @initial_state     = initial_state
           @state_translation = state_translation
 
@@ -20,7 +21,9 @@ module Main
             item_to_update_for(item_name).merge!(
               {
                 command_output: command_output_for(item_name),
-                checked: checked
+                checked: checked,
+                initial_data_states: initial_data_states_for(item_name),
+                html_id: html_id_for(item_name)
               }
             )
           end
@@ -32,6 +35,20 @@ module Main
 
         def command_output_for(item_name)
           @state_translation[:rails_flags][@menu_card_id][item_name][false]
+        end
+
+        def initial_data_states_for(item_name)
+          initial_data_states = []
+          @initial_states.keys.each do |initial_state_name|
+            attribute_name = "data-base-setup-#{initial_state_name}".dasherize
+            attribute_value = @initial_states[initial_state_name][:rails_flags][@menu_card_id][item_name]
+            initial_data_states << "#{attribute_name}=\"#{attribute_value}\""
+          end 
+          initial_data_states.join(' ').html_safe
+        end
+
+        def html_id_for(item_name)
+          "rails-flags-#{@menu_card_id}-#{item_name}".dasherize
         end
       end
     end

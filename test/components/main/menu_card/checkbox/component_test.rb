@@ -27,6 +27,16 @@ module Main
                 }
               }
             },
+            initial_states: {
+              initial_state: {
+                rails_flags: {
+                  menu_card_id: {
+                    Option1: nil,
+                    Option2: nil
+                  }
+                }
+              }
+            },
             initial_state: {
               rails_flags: {
                 menu_card_id: {
@@ -66,8 +76,8 @@ module Main
 
           render_inline(Main::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='option1' and @checked]")
-          assert_selector(:xpath, "//input[@id='option2' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-Option1' and @checked]")
+          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-Option2' and not(@checked)]")
         end
         
         
@@ -83,10 +93,10 @@ module Main
 
           render_inline(Main::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='option1' and not(@checked)]")
-          assert_selector(:xpath, "//input[@id='option2' and @checked]")
+          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-Option1' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-Option2' and @checked]")
         end
-        
+
         def test_both_items_checked_for_checkbox_card_component
           @component_setup[:initial_state] = {
             rails_flags: {
@@ -99,10 +109,10 @@ module Main
 
           render_inline(Main::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='option1' and @checked]")
-          assert_selector(:xpath, "//input[@id='option2' and @checked]")
+          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-Option1' and @checked]")
+          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-Option2' and @checked]")
         end
-        
+
         def test_none_of_the_items_checked_for_checkbox_card_component
           @component_setup[:initial_state] = {
             rails_flags: {
@@ -115,8 +125,8 @@ module Main
 
           render_inline(Main::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='option1' and not(@checked)]")
-          assert_selector(:xpath, "//input[@id='option2' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-Option1' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-Option2' and not(@checked)]")
         end
       end
     end

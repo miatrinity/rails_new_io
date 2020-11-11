@@ -10,7 +10,7 @@
       <%= render Main::CommandLine::Buttons::Component.new %>
     </div>
     
-    <%= render Main::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>        
+    <%= render Main::Component.new(initial_states: @initial_states, initial_state: @initial_state, state_translation: @state_translation) %>        
         
     <div class="animate-notice">Copied to Clipboard!</div>
   </div>

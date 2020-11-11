@@ -52,104 +52,105 @@ class InitialSetupController < ApplicationController
       }
     }
 
-    @omakase_state = {
-      base_setup: {
-        omakase: true,
-        api: false,
-        early: false,
-        minimalist: false
+    @initial_states = {
+      omakase_state: {
+        base_setup: {
+          omakase: true,
+          api: false,
+          early: false,
+          minimalist: false
+        },
+        database_choice: {
+          SQLite: true,
+          Postgres: false,
+          MySQL: false
+        },
+        rails_flags: {
+          guest_favorites: {
+            spring: true,
+            listen: true,
+            bootsnap: true
+          },
+          starters: {
+            gemfile: true,
+            gitignore: true,
+            keep: true,
+            bundle: true,
+            puma: true
+          },
+          mains: {
+            actionText: true,
+            activeRecord: true,
+            activeStorage: true,
+            actionCable: true
+          },
+          email: {
+            actionMailer: true,
+            actionMailbox: true
+          },
+          frontend: {
+            sprockets: true,
+            javascript: true,
+            turbolinks: true,
+            webpacker: true,
+            yarn: true
+          },
+          testing: {
+            minitest: true,
+            system: true
+          }
+        }
       },
-      database_choice: {
-        SQLite: true,
-        Postgres: false,
-        MySQL: false
-      },
-      rails_flags: {
-        guest_favorites: {
-          spring: true,
-          listen: true,
-          bootsnap: true
+      early_state: {
+        base_setup: {
+          omakase: false,
+          api: false,
+          early: true,
+          minimalist: false
         },
-        starters: {
-          gemfile: true,
-          gitignore: true,
-          keep: true,
-          bundle: true,
-          puma: true
+        database_choice: {
+          SQLite: true,
+          Postgres: false,
+          MySQL: false
         },
-        mains: {
-          actionText: true,
-          activeRecord: true,
-          activeStorage: true,
-          actionCable: true
-        },
-        email: {
-          actionMailer: true,
-          actionMailbox: true
-        },
-        frontend: {
-          sprockets: true,
-          javascript: true,
-          turbolinks: true,
-          webpacker: true,
-          yarn: true
-        },
-        testing: {
-          minitest: true,
-          system: true
+        rails_flags: {
+          guest_favorites: {
+            spring: false,
+            listen: false,
+            bootsnap: false
+          },
+          starters: {
+            gemfile: true,
+            gitignore: true,
+            keep: false,
+            bundle: true,
+            puma: true
+          },
+          mains: {
+            actionText: false,
+            activeRecord: true,
+            activeStorage: false,
+            actionCable: false
+          },
+          email: {
+            actionMailer: true,
+            actionMailbox: false
+          },
+          frontend: {
+            sprockets: true,
+            javascript: false,
+            turbolinks: false,
+            webpacker: false,
+            yarn: false
+          },
+          testing: {
+            minitest: true,
+            system: false
+          }
         }
       }
     }
 
-    @early_days_state = {
-      base_setup: {
-        omakase: false,
-        api: false,
-        early: true,
-        minimalist: false
-      },
-      database_choice: {
-        SQLite: true,
-        Postgres: false,
-        MySQL: false
-      },
-      rails_flags: {
-        guest_favorites: {
-          spring: false,
-          listen: false,
-          bootsnap: false
-        },
-        starters: {
-          gemfile: true,
-          gitignore: true,
-          keep: false,
-          bundle: true,
-          puma: true
-        },
-        mains: {
-          actionText: false,
-          activeRecord: true,
-          activeStorage: false,
-          actionCable: false
-        },
-        email: {
-          actionMailer: true,
-          actionMailbox: false
-        },
-        frontend: {
-          sprockets: true,
-          javascript: false,
-          turbolinks: false,
-          webpacker: false,
-          yarn: false
-        },
-        testing: {
-          minitest: true,
-          system: false
-        }
-      }
-    }
-
-    @initial_state = @omakase_state
+    @initial_state = @initial_states[:omakase_state]
   end
 end

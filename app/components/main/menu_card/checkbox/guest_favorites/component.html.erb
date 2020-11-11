@@ -3,22 +3,20 @@
            title: 'Guest Favorites 🌶️',
            subtitle: "The raison d'être of our humble establishment.",
            items: [
-            {
+            {              
               title: 'Add spring?',
-              description: 'Rails application preloader',
-              #command_output: '--skip-spring'
+              description: 'Rails application preloader',              
             },
             {
               title: 'Add listen?',
-              description: 'Listens to file modifications and notifies you about the changes',
-              #command_output: '--skip-listen'              
+              description: 'Listens to file modifications and notifies you about the changes',              
             },
             {
               title: 'Add bootsnap?',
-              description: "Boot large Ruby/Rails apps faster",
-              #command_output: '--skip-bootsnap'
+              description: "Boot large Ruby/Rails apps faster",              
             }              
            ],
+           initial_states: @initial_states,
            initial_state: @initial_state,
            state_translation: @state_translation
           ) 

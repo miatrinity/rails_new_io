@@ -21,7 +21,8 @@ module Main
               {
                 menu_card_id: @menu_card_id,
                 command_output: command_output_for(item_name),
-                checked: checked
+                checked: checked,
+                html_id: html_id_for(item_name)
               }
             )
           end
@@ -33,7 +34,11 @@ module Main
 
         def command_output_for(item_name)
           @state_translation[@menu_card_id][item_name][true]
-        end              
+        end
+
+        def html_id_for(item_name)
+          "#{@menu_card_id}-#{item_name}".dasherize
+        end
       end
     end
   end

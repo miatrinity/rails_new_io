@@ -3,7 +3,7 @@ module Main
     module RadioButton
       module Row
         class Component < ViewComponent::Base
-          def initialize(title:, has_image:false, description:, menu_card_id:, command_output:, checked:)
+          def initialize(title:, has_image:false, description:, menu_card_id:, command_output:, checked:, html_id:)
             @title          = title
             @has_image      = has_image
             @description    = description
@@ -20,10 +20,6 @@ module Main
             return unless @has_image
 
             image_tag "#{@title}.svg"
-          end
-
-          def html_id
-            @title.downcase.tr('^a-z 0-9', '').tr(' ','-')
           end
         end
       end

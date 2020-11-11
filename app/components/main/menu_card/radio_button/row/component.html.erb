@@ -1,4 +1,4 @@
-<li class="hover:bg-yellow-100" data-controller="database-choice">
+<li class="hover:bg-yellow-100" data-controller="database-choice initial-state">
   <label class="flex items-center px-4 py-2 sm:px-6">
     <div class="min-w-0 flex-1 flex items-center">
       <div class="flex-shrink-0">
@@ -18,7 +18,7 @@
 
     <div>      
       <input type="radio"
-             data-action="change->database-choice#update" 
+             data-action="change->database-choice#update change->initial-state#update" 
              data-target="database-choice.name"
              data-command-output="<%= @command_output %>"
              <%= @checked ? 'checked' : '' %>                     

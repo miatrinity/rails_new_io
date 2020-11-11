@@ -51,105 +51,159 @@ module Main
           },
         }
       }
-      @omakase_state = {
-        base_setup: {
-          omakase: true,
-          api: false,
-          early: false,
-          minimalist: false
+  
+      @initial_states = {
+        omakase_state: {
+          base_setup: {
+            omakase: true,
+            api: false,
+            early: false,
+            minimalist: false
+          },
+          database_choice: {
+            SQLite: true,
+            Postgres: false,
+            MySQL: false
+          },
+          rails_flags: {
+            guest_favorites: {
+              spring: true,
+              listen: true,
+              bootsnap: true
+            },
+            starters: {
+              gemfile: true,
+              gitignore: true,
+              keep: true,
+              bundle: true,
+              puma: true
+            },
+            mains: {
+              actionText: true,
+              activeRecord: true,
+              activeStorage: true,
+              actionCable: true
+            },
+            email: {
+              actionMailer: true,
+              actionMailbox: true
+            },
+            frontend: {
+              sprockets: true,
+              javascript: true,
+              turbolinks: true,
+              webpacker: true,
+              yarn: true
+            },
+            testing: {
+              minitest: true,
+              system: true
+            }
+          }
         },
-        database_choice: {
-          SQLite: true,
-          Postgres: false,
-          MySQL: false
-        },
-        rails_flags: {
-          guest_favorites: {
-            spring: true,
-            listen: true,
-            bootsnap: true
+        early_days_state: {
+          base_setup: {
+            omakase: false,
+            api: false,
+            early: true,
+            minimalist: false
           },
-          starters: {
-            gemfile: true,
-            gitignore: true,
-            keep: true,
-            bundle: true,
-            puma: true
+          database_choice: {
+            SQLite: true,
+            Postgres: false,
+            MySQL: false
           },
-          mains: {
-            actionText: true,
-            activeRecord: true,
-            activeStorage: true,
-            actionCable: true
-          },
-          email: {
-            actionMailer: true,
-            actionMailbox: true
-          },
-          frontend: {
-            sprockets: true,
-            javascript: true,
-            turbolinks: true,
-            webpacker: true,
-            yarn: true
-          },
-          testing: {
-            minitest: true,
-            system: true
+          rails_flags: {
+            guest_favorites: {
+              spring: false,
+              listen: false,
+              bootsnap: false
+            },
+            starters: {
+              gemfile: true,
+              gitignore: true,
+              keep: false,
+              bundle: true,
+              puma: true
+            },
+            mains: {
+              actionText: false,
+              activeRecord: true,
+              activeStorage: false,
+              actionCable: false
+            },
+            email: {
+              actionMailer: true,
+              actionMailbox: false
+            },
+            frontend: {
+              sprockets: true,
+              javascript: false,
+              turbolinks: false,
+              webpacker: false,
+              yarn: false
+            },
+            testing: {
+              minitest: true,
+              system: false
+            }
           }
         }
       }
+  
+      @initial_state = @initial_states[:omakase_state]
     end
 
     def test_omakase_menu_card_setup
       render_inline(Main::Component.new(
+        initial_states: @initial_states,
         state_translation: @state_translation,
-        initial_state: @omakase_state
+        initial_state: @initial_state
       ))
 
       # Time to Start Cooking Menu card
-      assert page.find('#omakase').checked?
-      refute page.find('#api-mode').checked?
-      refute page.find('#the-early-days').checked?
-      refute page.find('#the-minimalist').checked?
+      assert page.find('#base-setup-omakase').checked?
+      refute page.find('#base-setup-api').checked?
+      refute page.find('#base-setup-early').checked?
+      refute page.find('#base-setup-minimalist').checked?
 
       # Our Database Menu Menu card
-      assert page.find('#sqlite').checked?
-      refute page.find('#postgres').checked?
-      refute page.find('#mysql').checked?
+      assert page.find('#database-choice-SQLite').checked?
+      refute page.find('#database-choice-Postgres').checked?
+      refute page.find('#database-choice-MySQL').checked?
 
       # Guest Favorites Menu card
-      assert page.find('#add-spring').checked?
-      assert page.find('#add-listen').checked?
-      assert page.find('#add-bootsnap').checked?
+      assert page.find('#rails-flags-guest-favorites-spring').checked?
+      assert page.find('#rails-flags-guest-favorites-listen').checked?
+      assert page.find('#rails-flags-guest-favorites-bootsnap').checked?
 
       # Starters Menu card
-      assert page.find('#create-gemfile').checked?
-      assert page.find('#create-gitignore').checked?
-      assert page.find('#create-keep-files').checked?
-      assert page.find('#run-bundle-install').checked?
-      assert page.find('#create-puma-config-files-skip-if-using-a-different-app-server').checked?
+      assert page.find('#rails-flags-starters-gemfile').checked?
+      assert page.find('#rails-flags-starters-gitignore').checked?
+      assert page.find('#rails-flags-starters-keep').checked?
+      assert page.find('#rails-flags-starters-bundle').checked?
+      assert page.find('#rails-flags-starters-puma').checked?
 
       # Mains Menu card
-      assert page.find('#use-actiontext').checked?
-      assert page.find('#use-activerecord').checked?
-      assert page.find('#use-activestorage').checked?
-      assert page.find('#use-actioncable').checked?
+      assert page.find('#rails-flags-mains-actionText').checked?
+      assert page.find('#rails-flags-mains-activeRecord').checked?
+      assert page.find('#rails-flags-mains-activeStorage').checked?
+      assert page.find('#rails-flags-mains-actionCable').checked?
 
       # Email me Maybe (#not) Menu card
-      assert page.find('#use-actionmailer').checked?
-      assert page.find('#use-actionmailbox').checked?
+      assert page.find('#rails-flags-email-actionMailer').checked?
+      assert page.find('#rails-flags-email-actionMailbox').checked?
 
       # Le Frontend Menu card
-      assert page.find('#use-sprockets').checked?
-      assert page.find('#use-javascript').checked?
-      assert page.find('#use-turbolinks').checked?
-      assert page.find('#use-webpacker').checked?
-      assert page.find('#use-yarn').checked?
+      assert page.find('#rails-flags-frontend-sprockets').checked?
+      assert page.find('#rails-flags-frontend-javascript').checked?
+      assert page.find('#rails-flags-frontend-turbolinks').checked?
+      assert page.find('#rails-flags-frontend-webpacker').checked?
+      assert page.find('#rails-flags-frontend-yarn').checked?
 
       # Testing Menu card
-      assert page.find('#use-minitest').checked?
-      assert page.find('#use-system-tests').checked?
+      assert page.find('#rails-flags-testing-minitest').checked?
+      assert page.find('#rails-flags-testing-system').checked?
     end
   end
 end
