@@ -2,13 +2,13 @@ module Main
   module MenuCard
     module RadioButton
       class Component < ViewComponent::Base
-        def initialize(menu_card_id:, title:, subtitle:, items:, initial_state:, state_translation:)
-          @menu_card_id      = menu_card_id
-          @title             = title
-          @subtitle          = subtitle
-          @items             = items
-          @initial_state     = initial_state
-          @state_translation = state_translation
+        def initialize(menu_card_id:, title:, subtitle:, items:, initial_card_state:, state_translation:)
+          @menu_card_id       = menu_card_id
+          @title              = title
+          @subtitle           = subtitle
+          @items              = items
+          @initial_card_state = initial_card_state
+          @state_translation  = state_translation
 
           update_items
         end
@@ -16,7 +16,7 @@ module Main
         private
 
         def update_items
-          @initial_state[@menu_card_id].each do |item_name, checked|
+          @initial_card_state.each do |item_name, checked|
             item_to_update_for(item_name).merge!(
               {
                 menu_card_id: @menu_card_id,

@@ -3,8 +3,8 @@ module Main
     module RadioButton
       module BaseSetup
         class Component < ViewComponent::Base
-          def initialize(initial_state:, state_translation:)
-            @initial_state = initial_state
+          def initialize(initial_card_state:, state_translation:)
+            @initial_card_state = initial_card_state
             @state_translation = state_translation
           end
         end
