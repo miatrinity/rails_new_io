@@ -5,6 +5,9 @@ module Main
     module Output
       class ComponentTest < ViewComponent::TestCase
         def setup
+          @global_state_translation = YAML::load(File.open("#{Rails.root}/config/app/state_translation.yaml"))
+          @global_initial_states = YAML::load(File.open("#{Rails.root}/config/app/initial_states.yaml"))
+          
           @state_translation = {
             database_choice: {
               DB1: { true => '', false => '' },
@@ -81,6 +84,29 @@ module Main
           ))
 
           assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app -d db-option2')
+        end
+
+        # Testing real-life initial state command line outputs
+        def test_omakase_command_line_output
+          omakase_state = @global_initial_states[:omakase_state]
+
+          render_inline(Main::CommandLine::Output::Component.new(
+            state_translation: @global_state_translation,
+            initial_state: omakase_state
+          ))
+
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app')
+        end
+
+        def test_early_command_line_output
+          early_state = @global_initial_states[:early_state]
+
+          render_inline(Main::CommandLine::Output::Component.new(
+            state_translation: @global_state_translation,
+            initial_state: early_state
+          ))
+
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn')
         end
       end
     end

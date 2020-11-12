@@ -26,7 +26,7 @@ module Main
             result << items.map do |item_name, checked|
               @state_translation[:rails_flags][menu_card][item_name][checked]
             end
-          end.flatten.reject{|s| s.blank?}.join(' ')
+          end.flatten.reject(&:blank?).sort.join(' ')
         end
 
         def command_line_output
