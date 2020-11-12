@@ -19,11 +19,9 @@ module Main
                 description: 'Desc 2',
               },
             ],
-            state_translation: {
-              menu_card_id: {
-                Option1: { true => '', false => '' },
-                Option2: { true => '-d option1', false => '' },
-              }
+            card_state_translation: {
+              Option1: { true => '', false => '' },
+              Option2: { true => '-d option1', false => '' },
             },
             initial_card_state: {
               Option1: nil,

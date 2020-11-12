@@ -2,13 +2,13 @@ module Main
   module MenuCard
     module RadioButton
       class Component < ViewComponent::Base
-        def initialize(menu_card_id:, title:, subtitle:, items:, initial_card_state:, state_translation:)
-          @menu_card_id       = menu_card_id
-          @title              = title
-          @subtitle           = subtitle
-          @items              = items
-          @initial_card_state = initial_card_state
-          @state_translation  = state_translation
+        def initialize(menu_card_id:, title:, subtitle:, items:, initial_card_state:, card_state_translation:)
+          @menu_card_id           = menu_card_id
+          @title                  = title
+          @subtitle               = subtitle
+          @items                  = items
+          @initial_card_state     = initial_card_state
+          @card_state_translation = card_state_translation
 
           update_items
         end
@@ -32,8 +32,8 @@ module Main
           @items.find { |item| item[:title] =~ /#{item_name}/i }
         end
 
-        def command_output_for(item_name)
-          @state_translation[@menu_card_id][item_name][true]
+        def command_output_for(item_name)        
+          @card_state_translation[item_name][true]
         end
 
         def html_id_for(item_name)
