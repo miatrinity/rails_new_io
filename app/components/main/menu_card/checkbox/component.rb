@@ -2,14 +2,14 @@ module Main
   module MenuCard
     module Checkbox
       class Component < ViewComponent::Base
-        def initialize(menu_card_id:, title:, subtitle:, items:, initial_states:, initial_state:, state_translation:)
-          @menu_card_id      = menu_card_id
-          @title             = title
-          @subtitle          = subtitle
-          @items             = items
-          @initial_states    = initial_states
-          @initial_state     = initial_state
-          @state_translation = state_translation
+        def initialize(menu_card_id:, title:, subtitle:, items:, initial_states:, initial_card_state:, card_state_translation:)
+          @menu_card_id           = menu_card_id
+          @title                  = title
+          @subtitle               = subtitle
+          @items                  = items
+          @initial_states         = initial_states
+          @initial_card_state     = initial_card_state
+          @card_state_translation = card_state_translation
 
           update_items
         end
@@ -17,7 +17,7 @@ module Main
         private
 
         def update_items
-          @initial_state[:rails_flags][@menu_card_id].each do |item_name, checked|
+          @initial_card_state.each do |item_name, checked|
             item_to_update_for(item_name).merge!(
               {
                 command_output: command_output_for(item_name),
@@ -34,7 +34,7 @@ module Main
         end
 
         def command_output_for(item_name)
-          @state_translation[:rails_flags][@menu_card_id][item_name][false]
+          @card_state_translation[item_name][false]
         end
 
         def initial_data_states_for(item_name)
