@@ -21,9 +21,9 @@ module Main
       refute page.find('#base-setup-minimalist').checked?
 
       # Our Database Menu Menu card
-      assert page.find('#database-choice-SQLite').checked?
-      refute page.find('#database-choice-Postgres').checked?
-      refute page.find('#database-choice-MySQL').checked?
+      assert page.find('#database-choice-sqlite').checked?
+      refute page.find('#database-choice-postgres').checked?
+      refute page.find('#database-choice-mysql').checked?
 
       # Guest Favorites Menu card
       refute page.find('#rails-flags-guest-favorites-spring').checked?
@@ -38,14 +38,14 @@ module Main
       assert page.find('#rails-flags-starters-puma').checked?
 
       # Mains Menu card
-      refute page.find('#rails-flags-mains-actionText').checked?
-      assert page.find('#rails-flags-mains-activeRecord').checked?
-      refute page.find('#rails-flags-mains-activeStorage').checked?
-      refute page.find('#rails-flags-mains-actionCable').checked?
+      refute page.find('#rails-flags-mains-actiontext').checked?
+      assert page.find('#rails-flags-mains-activerecord').checked?
+      refute page.find('#rails-flags-mains-activestorage').checked?
+      refute page.find('#rails-flags-mains-actioncable').checked?
 
       # Email me Maybe (#not) Menu card
-      assert page.find('#rails-flags-email-actionMailer').checked?
-      refute page.find('#rails-flags-email-actionMailbox').checked?
+      assert page.find('#rails-flags-email-actionmailer').checked?
+      refute page.find('#rails-flags-email-actionmailbox').checked?
 
       # Le Frontend Menu card
       assert page.find('#rails-flags-frontend-sprockets').checked?

@@ -37,7 +37,7 @@ module Main
         end
 
         def html_id_for(item_name)
-          "#{@menu_card_id}-#{item_name}".dasherize
+          "#{@menu_card_id}-#{item_name}".downcase.dasherize          
         end
       end
     end
