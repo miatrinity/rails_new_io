@@ -22,7 +22,7 @@ module Main
               {
                 command_output: command_output_for(item_name),
                 checked: checked,
-                initial_data_states: initial_data_states_for(item_name),
+                html_data_attributes: html_data_attributes_for(item_name),
                 html_id: html_id_for(item_name)
               }
             )
@@ -37,18 +37,44 @@ module Main
           @card_state_translation[item_name][false]
         end
 
-        def initial_data_states_for(item_name)
-          initial_data_states = []
-          @initial_states.keys.each do |initial_state_name|
-            attribute_name = "data-base-setup-#{initial_state_name}".dasherize
-            attribute_value = @initial_states[initial_state_name][:rails_flags][@menu_card_id][item_name]
-            initial_data_states << "#{attribute_name}=\"#{attribute_value}\""
-          end 
-          initial_data_states.join(' ').html_safe
+        def html_data_attributes_for(item_name)
+          HTMLDataAttributeGenerator.new(item_name, @initial_states, @menu_card_id).html_attributes
         end
 
         def html_id_for(item_name)
           "rails-flags-#{@menu_card_id}-#{item_name}".dasherize
+        end
+      end
+
+      class HTMLDataAttributeGenerator
+        def initialize(item_name, initial_states, menu_card_id)
+          @item_name = item_name
+          @initial_states = initial_states
+          @menu_card_id = menu_card_id
+        end
+
+        def html_attributes
+          @initial_states.keys.each_with_object([]) do |initial_state_name, html_data_attributes|
+            html_data_attributes << html_data_attribute(initial_state_name)
+          end.join(' ').html_safe
+        end
+
+        private
+
+        def html_data_attribute(initial_state_name)
+          attribute_code = <<-CODE
+            #{attribute_name(initial_state_name)}="#{attribute_value(initial_state_name)}"
+          CODE
+
+          attribute_code.squish.tr(' ', '')
+        end
+
+        def attribute_name(initial_state_name)
+          "data-#{initial_state_name}".dasherize
+        end
+
+        def attribute_value(initial_state_name)
+          @initial_states[initial_state_name][:rails_flags][@menu_card_id][@item_name]
         end
       end
     end

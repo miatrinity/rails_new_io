@@ -16,7 +16,7 @@
     <div>
       <input id="<%= @html_id %>"              
              data-action="change->rails-flag#update"
-             <%= @initial_data_states %>
+             <%= @html_data_attributes %>
              type="checkbox" <%= @checked ? 'checked' : '' %>
              autocomplete="off"
              class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">

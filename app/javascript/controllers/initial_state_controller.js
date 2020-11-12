@@ -3,7 +3,8 @@ import { Controller } from "stimulus"
 export default class extends Controller {
     
   update(event) {
-    const initialStateValue = `data-${event.target.id}-state`
+    const sanitizedId = event.target.id.replace('base-setup-','')
+    const initialStateValue = `data-${sanitizedId}-state`
     
     const menuItems = [...document.querySelectorAll(`input[${initialStateValue}]`)];
           
