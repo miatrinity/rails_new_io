@@ -15,10 +15,10 @@ module Main
         private
 
         def database_choice
-          database_choice = @initial_state[:database_choice].find { |_, checked| checked }
+          database_choice = @initial_state[:database_config][:database_choice].find { |_, checked| checked }
           database_name, database_checked = *database_choice
 
-          @state_translation[:database_choice][database_name][database_checked]
+          @state_translation[:database_config][:database_choice][database_name][database_checked]
         end
 
         def rails_flags

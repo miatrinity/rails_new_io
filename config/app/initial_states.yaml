@@ -1,14 +1,16 @@
 ---
 :omakase_state:
-  :base_setup:
-    :omakase: true
-    :api: false
-    :early: false
-    :minimalist: false
-  :database_choice:
-    :SQLite: true
-    :Postgres: false
-    :MySQL: false
+  :ui_config:
+    :base_setup:
+      :omakase: true
+      :api: false
+      :early: false
+      :minimalist: false
+  :database_config:
+    :database_choice:
+      :SQLite: true
+      :Postgres: false
+      :MySQL: false
   :rails_flags:
     :guest_favorites:
       :spring: true
@@ -38,15 +40,17 @@
       :minitest: true
       :system: true
 :early_state:
-  :base_setup:
-    :omakase: false
-    :api: false
-    :early: true
-    :minimalist: false
-  :database_choice:
-    :SQLite: true
-    :Postgres: false
-    :MySQL: false
+  :ui_config:
+    :base_setup:
+      :omakase: false
+      :api: false
+      :early: true
+      :minimalist: false
+  :database_config:
+    :database_choice:
+      :SQLite: true
+      :Postgres: false
+      :MySQL: false
   :rails_flags:
     :guest_favorites:
       :spring: false

@@ -1,19 +1,19 @@
     <%= render Main::MenuCard::Title::Component.new(title: 'Choose Your Base') %>
     
     <%= render Main::MenuCard::RadioButton::BaseSetup::Component.new(
-        initial_card_state: @initial_state[:base_setup],
-        card_state_translation: @state_translation[:base_setup])
+        initial_card_state: @initial_state[:ui_config][:base_setup],
+        card_state_translation: @state_translation[:ui_config][:base_setup])
     %>
     
     <%= render Main::MenuCard::Title::Component.new(title: "Customize A'la Carte") %>
     
     <%= render Main::MenuCard::RadioButton::Database::Component.new(
-        initial_card_state: @initial_state[:database_choice],
-        card_state_translation: @state_translation[:database_choice])
+        initial_card_state: @initial_state[:database_config][:database_choice],
+        card_state_translation: @state_translation[:database_config][:database_choice])
     %>
     <%= render Main::MenuCard::Checkbox::GuestFavorites::Component.new(
         initial_states: @initial_states,
-        initial_card_state: @initial_state[:rails_flags][:guest_favorites],
+        initial_card_state: @initial_state[:rails_flags][:guest_favorites],        
         card_state_translation: @state_translation[:rails_flags][:guest_favorites])
     %>
     <%= render Main::MenuCard::Checkbox::Starters::Component.new(

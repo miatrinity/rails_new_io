@@ -9,9 +9,11 @@ module Main
           @global_initial_states = YAML::load(File.open("#{Rails.root}/config/app/initial_states.yaml"))
           
           @state_translation = {
-            database_choice: {
-              DB1: { true => '', false => '' },
-              DB2: { true => '-d db-option2', false => '' },
+            database_config: {
+              database_choice: {
+                DB1: { true => '', false => '' },
+                DB2: { true => '-d db-option2', false => '' },
+              }
             },
             rails_flags: {
               checkbox_items: {
@@ -22,7 +24,9 @@ module Main
           }
 
           @initial_state = {
-            database_choice: { DB1: true, DB2: nil },
+            database_config: {
+              database_choice: { DB1: true, DB2: nil }
+            },
             rails_flags: {
               checkbox_items: { Checkbox1: nil, Checkbox2: nil }
             }
@@ -40,7 +44,9 @@ module Main
 
         def test_command_line_output_for_db1_and_checkbox1_selected
           @initial_state = {
-            database_choice: { DB1: true, DB2: false },
+            database_config: {
+              database_choice: { DB1: true, DB2: false }
+            },
             rails_flags: {
               checkbox_items: { Checkbox1: true, Checkbox2: false }
             }
@@ -56,7 +62,9 @@ module Main
         
         def test_command_line_output_for_db2_and_checkbox2_selected
           @initial_state = {
-            database_choice: { DB1: false, DB2: true },
+            database_config: {
+              database_choice: { DB1: false, DB2: true }
+            },
             rails_flags: {
               checkbox_items: { Checkbox1: false, Checkbox2: true }
             }
@@ -72,7 +80,9 @@ module Main
         
         def test_command_line_output_for_db2_and_all_checkboxes_selected
           @initial_state = {
-            database_choice: { DB1: false, DB2: true },
+            database_config: {
+              database_choice: { DB1: false, DB2: true }
+            },
             rails_flags: {
               checkbox_items: { Checkbox1: false, Checkbox2: false }
             }

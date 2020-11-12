@@ -1,27 +1,29 @@
 ---
-:base_setup:
-  :omakase:
-    true: ''
-    false: ''
-  :api:
-    true: ''
-    false: ''
-  :early:
-    true: ''
-    false: ''
-  :minimalist:
-    true: ''
-    false: ''
-:database_choice:
-  :SQLite:
-    true: ''
-    false: ''
-  :Postgres:
-    true: "-d postgresql"
-    false: ''
-  :MySQL:
-    true: "-d mysql"
-    false: ''
+:ui_config:
+  :base_setup:
+    :omakase:
+      true: ''
+      false: ''
+    :api:
+      true: ''
+      false: ''
+    :early:
+      true: ''
+      false: ''
+    :minimalist:
+      true: ''
+      false: ''
+:database_config:
+  :database_choice:
+    :SQLite:
+      true: ''
+      false: ''
+    :Postgres:
+      true: "-d postgresql"
+      false: ''
+    :MySQL:
+      true: "-d mysql"
+      false: ''
 :rails_flags:
   :guest_favorites:
     :spring:
