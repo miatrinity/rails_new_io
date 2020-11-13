@@ -3,15 +3,16 @@ module Main
     module RadioButton
       module Row
         class Component < ViewComponent::Base
-          def initialize(title:, has_image:false, description:, menu_card_id:, command_output:, checked:, html_id:)
-            @title          = title
-            @has_image      = has_image
-            @description    = description
-            @menu_card_id   = menu_card_id
-            @command_output = command_output
-            @checked        = checked
-            @html_id        = html_id
-            @icon           = icon
+          def initialize(title:, has_image:false, description:, menu_card_id:, command_output:, checked:, html_id:, html_data_attributes:)
+            @title                = title
+            @has_image            = has_image
+            @description          = description
+            @menu_card_id         = menu_card_id
+            @command_output       = command_output
+            @checked              = checked
+            @html_id              = html_id
+            @icon                 = icon
+            @html_data_attributes = html_data_attributes
           end
 
           private

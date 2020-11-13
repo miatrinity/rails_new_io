@@ -14,10 +14,11 @@
     </div>
     <span class="text-yellow-500 mr-4" style="display:none">⚠️ Set and locked by a railsbyte!</span>
     <div>
-      <input id="<%= @html_id %>"              
+      <input id="<%= @html_id %>"
+             type="checkbox"              
              data-action="change->rails-flag#update"
              <%= @html_data_attributes %>
-             type="checkbox" <%= @checked ? 'checked' : '' %>
+             <%= @checked ? 'checked' : '' %>
              autocomplete="off"
              class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
     </div>

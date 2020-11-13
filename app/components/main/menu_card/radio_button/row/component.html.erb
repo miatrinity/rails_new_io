@@ -17,12 +17,13 @@
     </div>
 
     <div>      
-      <input type="radio"
+      <input id="<%= @html_id %>"
+             type="radio"
              data-action="change->database-choice#update change->initial-state#update" 
              data-target="database-choice.name"
              data-command-output="<%= @command_output %>"
+             <%= @html_data_attributes %>
              <%= @checked ? 'checked' : '' %>                     
-             id="<%= @html_id %>"
              name="<%= @menu_card_id %>"
              value="<%= @title %>"             
              autocomplete="off"             

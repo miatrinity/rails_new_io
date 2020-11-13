@@ -24,8 +24,8 @@ module Main
               Option2: { true => '', false => '--skip-option2' }
             },
             menu_card_in_all_states: {
-              Option1: { initial_state: nil },
-              Option2: { initial_state: nil }
+              Option1: { base_state1: true, base_state2: false},
+              Option2: { base_state1: false, base_state2: true}
             },
             menu_card_in_a_specific_state: {
               Option1: nil,
@@ -96,6 +96,18 @@ module Main
 
           assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option1' and not(@checked)]")
           assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option2' and not(@checked)]")
+        end
+
+        def test_html_data_attributes_are_rendered_correctly
+          @component_setup[:menu_card_in_a_specific_state] = {
+            Option1: true,
+            Option2: false
+          }
+
+          render_inline(Main::MenuCard::Checkbox::Component.new(@component_setup))
+
+          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option1' and @data-base-state1='true' and @data-base-state2='false']")
+          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option2' and @data-base-state1='false' and @data-base-state2='true']")
         end
       end
     end

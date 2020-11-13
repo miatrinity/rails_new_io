@@ -23,6 +23,7 @@ module Main
                 menu_card_id: @menu_card_id,
                 command_output: command_output_for(item_name),
                 checked: checked,
+                html_data_attributes: html_data_attributes_for(item_name),
                 html_id: html_id_for(item_name)
               }
             )
@@ -35,6 +36,14 @@ module Main
 
         def command_output_for(item_name)
           @card_state_translation[item_name][true]
+        end
+
+        def html_data_attributes_for(item_name)
+          RailsNewIo::HtmlDataAttributeGenerator.new(
+            item_name,
+            @menu_card_in_all_states,
+            @menu_card_id
+          ).html_data_attributes
         end
 
         def html_id_for(item_name)
