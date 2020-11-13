@@ -38,39 +38,15 @@ module Main
         end
 
         def html_data_attributes_for(item_name)
-          HTMLDataAttributeGenerator.new(item_name, @menu_card_in_all_states, @menu_card_id).html_data_attributes
+          RailsNewIo::HtmlDataAttributeGenerator.new(
+            item_name,
+            @menu_card_in_all_states,
+            @menu_card_id
+          ).html_data_attributes
         end
 
         def html_id_for(item_name)
           "rails-flags-#{@menu_card_id}-#{item_name}".downcase.dasherize
-        end
-      end
-
-      class HTMLDataAttributeGenerator
-        def initialize(item_name, menu_card_in_all_states, menu_card_id)
-          @item_name = item_name
-          @menu_card_in_all_states = menu_card_in_all_states
-          @menu_card_id = menu_card_id
-        end
-
-        def html_data_attributes
-          @menu_card_in_all_states[@item_name].each_with_object([]) do |(base_state_name, base_state_value), html_data_attributes|
-            html_data_attributes << html_data_attribute(base_state_name, base_state_value)
-          end.join(' ').html_safe
-        end
-
-        private
-
-        def html_data_attribute(base_state_name, base_state_value)
-          attribute_code = <<-CODE
-            #{attribute_name(base_state_name)}="#{base_state_value}"
-          CODE
-
-          attribute_code.squish.tr(' ', '')
-        end
-
-        def attribute_name(base_state_name)
-          "data-#{base_state_name}".downcase.dasherize
         end
       end
     end
