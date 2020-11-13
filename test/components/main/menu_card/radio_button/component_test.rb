@@ -23,6 +23,10 @@ module Main
               Option1: { true => '', false => '' },
               Option2: { true => '-d option1', false => '' },
             },
+            menu_card_in_all_states: {
+              Option1: { initial_state: nil },
+              Option2: { initial_state: nil }
+            },
             menu_card_in_a_specific_state: {
               Option1: nil,
               Option2: nil
