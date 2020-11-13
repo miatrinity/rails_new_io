@@ -30,7 +30,10 @@ module Main
             menu_card_in_a_specific_state: {
               Option1: nil,
               Option2: nil
-            }
+            },
+            data_controller: nil,
+            data_action: nil,
+            data_target: nil
           }
         end
 
@@ -71,18 +74,18 @@ module Main
 
           assert_selector(:xpath, "//input[@id='menu-card-id-option2' and @checked]")
         end
-        
+
         def test_html_data_attributes_are_rendered_correctly
           @component_setup[:menu_card_in_a_specific_state] = {
             Option1: true,
             Option2: false
           }
 
-          render_inline(Main::MenuCard::Checkbox::Component.new(@component_setup))
+          render_inline(Main::MenuCard::RadioButton::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option1' and @data-base-state1='true' and @data-base-state2='false']")
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option2' and @data-base-state1='false' and @data-base-state2='true']")
-        end        
+          assert_selector(:xpath, "//input[@id='menu-card-id-option1' and @data-base-state1='true' and @data-base-state2='false']")
+          assert_selector(:xpath, "//input[@id='menu-card-id-option2' and @data-base-state1='false' and @data-base-state2='true']")
+        end
       end
     end
   end

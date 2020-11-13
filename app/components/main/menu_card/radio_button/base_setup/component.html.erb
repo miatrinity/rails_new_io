@@ -22,6 +22,9 @@
            ],
            menu_card_in_all_states: @menu_card_in_all_states,
            menu_card_in_a_specific_state: @menu_card_in_a_specific_state,
-           card_state_translation: @card_state_translation
+           card_state_translation: @card_state_translation,
+           data_controller: 'initial-state',
+           data_action: 'change->initial-state#update',
+           data_target: nil
           ) 
       %>  

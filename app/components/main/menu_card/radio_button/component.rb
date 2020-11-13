@@ -2,7 +2,18 @@ module Main
   module MenuCard
     module RadioButton
       class Component < ViewComponent::Base
-        def initialize(menu_card_id:, title:, subtitle:, items:, menu_card_in_a_specific_state:, card_state_translation:, menu_card_in_all_states:)
+        def initialize(
+          menu_card_id:,
+          title:,
+          subtitle:,
+          items:,
+          menu_card_in_a_specific_state:,
+          card_state_translation:,
+          menu_card_in_all_states:,
+          data_controller:,
+          data_action:,
+          data_target:
+        )
           @menu_card_id                  = menu_card_id
           @title                         = title
           @subtitle                      = subtitle
@@ -10,6 +21,9 @@ module Main
           @menu_card_in_all_states       = menu_card_in_all_states
           @menu_card_in_a_specific_state = menu_card_in_a_specific_state
           @card_state_translation        = card_state_translation
+          @data_controller               = data_controller
+          @data_action                   = data_action
+          @data_target                   = data_target
 
           update_items
         end
@@ -24,7 +38,11 @@ module Main
                 command_output: command_output_for(item_name),
                 checked: checked,
                 html_data_attributes: html_data_attributes_for(item_name),
-                html_id: html_id_for(item_name)
+                html_id: html_id_for(item_name),
+                data_controller: @data_controller,
+                data_action: @data_action,
+                data_target: @data_target
+  
               }
             )
           end
