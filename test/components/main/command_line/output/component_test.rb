@@ -5,8 +5,8 @@ module Main
     module Output
       class ComponentTest < ViewComponent::TestCase
         def setup
-          @global_state_translation = YAML::load(File.open("#{Rails.root}/config/app/state_translation.yaml"))
-          @global_initial_states = YAML::load(File.open("#{Rails.root}/config/app/initial_states.yaml"))
+          @global_state_translation = Rails.configuration.state_translation
+          @global_initial_states = Rails.configuration.base_states
           
           @state_translation = {
             database_config: {
@@ -15,7 +15,7 @@ module Main
                 DB2: { true => '-d db-option2', false => '' },
               }
             },
-            rails_flags: {
+            rails_flags_config: {
               checkbox_items: {
                 Checkbox1: { true => '', false => '--skip-checkbox-option1' },
                 Checkbox2: { true => '', false => '--skip-checkbox-option2' }
@@ -27,7 +27,7 @@ module Main
             database_config: {
               database_choice: { DB1: true, DB2: nil }
             },
-            rails_flags: {
+            rails_flags_config: {
               checkbox_items: { Checkbox1: nil, Checkbox2: nil }
             }
           }
@@ -47,7 +47,7 @@ module Main
             database_config: {
               database_choice: { DB1: true, DB2: false }
             },
-            rails_flags: {
+            rails_flags_config: {
               checkbox_items: { Checkbox1: true, Checkbox2: false }
             }
           }
@@ -65,7 +65,7 @@ module Main
             database_config: {
               database_choice: { DB1: false, DB2: true }
             },
-            rails_flags: {
+            rails_flags_config: {
               checkbox_items: { Checkbox1: false, Checkbox2: true }
             }
           }
@@ -83,7 +83,7 @@ module Main
             database_config: {
               database_choice: { DB1: false, DB2: true }
             },
-            rails_flags: {
+            rails_flags_config: {
               checkbox_items: { Checkbox1: false, Checkbox2: false }
             }
           }

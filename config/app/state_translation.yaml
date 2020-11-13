@@ -24,7 +24,7 @@
     :MySQL:
       true: "-d mysql"
       false: ''
-:rails_flags:
+:rails_flags_config:
   :guest_favorites:
     :spring:
       true: ''

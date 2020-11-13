@@ -3,15 +3,15 @@ require 'view_component/test_case'
 module Main
   class EarlyDaysComponentTest < ViewComponent::TestCase
     def setup
-      @state_translation = YAML::load(File.open("#{Rails.root}/config/app/state_translation.yaml"))
-      @initial_states = YAML::load(File.open("#{Rails.root}/config/app/initial_states.yaml"))
+      @state_translation = Rails.configuration.state_translation
+      @base_states = Rails.configuration.base_states
     end
 
     def test_early_days_menu_card_setup
       render_inline(Main::Component.new(
         state_translation: @state_translation,
-        initial_states: @initial_states,
-        initial_state: @initial_states[:early_state]
+        base_states: @base_states,
+        initial_state: @base_states[:early_state]
       ))
 
       # Time to Start Cooking Menu card

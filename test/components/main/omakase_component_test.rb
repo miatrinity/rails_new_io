@@ -3,15 +3,15 @@ require 'view_component/test_case'
 module Main
   class OmakaseComponentTest < ViewComponent::TestCase
     def setup
-      @state_translation = YAML::load(File.open("#{Rails.root}/config/app/state_translation.yaml"))
-      @initial_states = YAML::load(File.open("#{Rails.root}/config/app/initial_states.yaml"))      
+      @state_translation = Rails.configuration.state_translation
+      @base_states = Rails.configuration.base_states
     end
 
     def test_omakase_menu_card_setup
       render_inline(Main::Component.new(
-        initial_states: @initial_states,
+        base_states: @base_states,
         state_translation: @state_translation,
-        initial_state: @initial_states[:omakase_state]
+        initial_state: @base_states[:omakase_state]
       ))
 
       # Time to Start Cooking Menu card

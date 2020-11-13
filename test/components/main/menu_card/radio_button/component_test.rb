@@ -23,7 +23,7 @@ module Main
               Option1: { true => '', false => '' },
               Option2: { true => '-d option1', false => '' },
             },
-            initial_card_state: {
+            menu_card_in_a_specific_state: {
               Option1: nil,
               Option2: nil
             }
@@ -47,7 +47,7 @@ module Main
         end
 
         def test_first_item_checked_for_radio_button_menu_card_component
-          @component_setup[:initial_card_state] = {
+          @component_setup[:menu_card_in_a_specific_state] = {
             Option1: true,
             Option2: false
           }
@@ -58,7 +58,7 @@ module Main
         end
 
         def test_second_item_checked_for_radio_button_menu_card_component
-          @component_setup[:initial_card_state] = {
+          @component_setup[:menu_card_in_a_specific_state] = {
             Option1: false,
             Option2: true
           }

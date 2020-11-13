@@ -3,9 +3,9 @@ module Main
     module RadioButton
       module Database
         class Component < ViewComponent::Base
-          def initialize(initial_card_state:, card_state_translation:)
-            @initial_card_state = initial_card_state
-            @card_state_translation = card_state_translation
+          def initialize(menu_card_in_a_specific_state:, card_state_translation:)
+            @menu_card_in_a_specific_state = menu_card_in_a_specific_state
+            @card_state_translation        = card_state_translation
           end
         end
       end

@@ -1,0 +1,35 @@
+      # menu_card_in_all_states
+    # all_menu_cards_in_all_states
+    # menu_card_in_a_specific_state
+    # all_menu_cards_in_a_specific_state
+
+    # base state: all possible initial states
+    # initial state: base state we are initially loading from the server
+  
+  
+    # menu_card_in_all_states
+        # {
+        #       :spring => {
+        #         :omakase_state => true,
+        #           :early_state => false
+        #     },
+        #       :listen => {
+        #         :omakase_state => true,
+        #           :early_state => false
+        #     },
+        #     :bootsnap => {
+        #         :omakase_state => true,
+        #           :early_state => false
+        #     }
+        # }    
+    # all_menu_cards_in_all_states
+    
+    # menu_card_in_a_specific_state
+        #   :spring: true
+        #   :listen: true
+        #   :bootsnap: true
+    
+    # all_menu_cards_in_a_specific_state
+
+    # base state: all possible initial states
+    # initial state: base state we are initially loading from the server    

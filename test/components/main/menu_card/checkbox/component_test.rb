@@ -23,9 +23,9 @@ module Main
               Option1: { true => '', false => '--skip-option1' },
               Option2: { true => '', false => '--skip-option2' }
             },
-            initial_states: {
+            base_states: {
               initial_state: {
-                rails_flags: {
+                rails_flags_config: {
                   menu_card_id: {
                     Option1: nil,
                     Option2: nil
@@ -33,7 +33,7 @@ module Main
                 }
               }
             },
-            initial_card_state: {
+            menu_card_in_a_specific_state: {
               Option1: nil,
               Option2: nil
             }
@@ -57,7 +57,7 @@ module Main
         end
 
         def test_only_first_item_checked_for_checkbox_card_component
-          @component_setup[:initial_card_state] = {
+          @component_setup[:menu_card_in_a_specific_state] = {
             Option1: true,
             Option2: false
           }
@@ -69,7 +69,7 @@ module Main
         end
 
         def test_only_second_item_checked_for_checkbox_card_component
-          @component_setup[:initial_card_state] = {
+          @component_setup[:menu_card_in_a_specific_state] = {
             Option1: false,
             Option2: true
           }
@@ -81,7 +81,7 @@ module Main
         end
 
         def test_both_items_checked_for_checkbox_card_component
-          @component_setup[:initial_card_state] = {
+          @component_setup[:menu_card_in_a_specific_state] = {
             Option1: true,
             Option2: true
           }
@@ -93,7 +93,7 @@ module Main
         end
 
         def test_none_of_the_items_checked_for_checkbox_card_component
-          @component_setup[:initial_card_state] = {
+          @component_setup[:menu_card_in_a_specific_state] = {
             Option1: false,
             Option2: false
           }

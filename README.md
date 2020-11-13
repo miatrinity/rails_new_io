@@ -16,7 +16,7 @@
    means that SQLite is going to be the default database choice.
    If you'd like to add a new database option, you would do it here.
    
-   Do not change `rails_flags` (these are the 'standard' Rails flags, so they are always going to be here), but feel free to add further (sensible) menu cards as a child hash.
+   Do not change `rails_flags_config` (these are the 'standard' Rails flags, so they are always going to be here), but feel free to add further (sensible) menu cards as a child hash.
    
    * `@state_translation` - describes what happens when a checkbox/radio button is in a certain state. For example:
    ```

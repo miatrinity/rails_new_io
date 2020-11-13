@@ -22,9 +22,9 @@ module Main
         end
 
         def rails_flags
-          @initial_state[:rails_flags].each_with_object([]) do |(menu_card, items), result|
+          @initial_state[:rails_flags_config].each_with_object([]) do |(menu_card, items), result|
             result << items.map do |item_name, checked|
-              @state_translation[:rails_flags][menu_card][item_name][checked]
+              @state_translation[:rails_flags_config][menu_card][item_name][checked]
             end
           end.flatten.reject(&:blank?).sort.join(' ')
         end

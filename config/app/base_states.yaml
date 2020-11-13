@@ -11,7 +11,7 @@
       :SQLite: true
       :Postgres: false
       :MySQL: false
-  :rails_flags:
+  :rails_flags_config:
     :guest_favorites:
       :spring: true
       :listen: true
@@ -51,7 +51,7 @@
       :SQLite: true
       :Postgres: false
       :MySQL: false
-  :rails_flags:
+  :rails_flags_config:
     :guest_favorites:
       :spring: false
       :listen: false
