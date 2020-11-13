@@ -5,11 +5,12 @@ module Main
     def setup
       @state_translation = Rails.configuration.state_translation
       @base_states = Rails.configuration.base_states
+      @all_menu_cards_in_all_states = Rails.configuration.all_menu_cards_in_all_states
     end
 
     def test_omakase_menu_card_setup
       render_inline(Main::Component.new(
-        base_states: @base_states,
+        all_menu_cards_in_all_states: @all_menu_cards_in_all_states,
         state_translation: @state_translation,
         initial_state: @base_states[:omakase_state]
       ))

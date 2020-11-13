@@ -2,12 +2,12 @@ module Main
   module MenuCard
     module Checkbox
       class Component < ViewComponent::Base
-        def initialize(menu_card_id:, title:, subtitle:, items:, base_states:, menu_card_in_a_specific_state:, card_state_translation:)
+        def initialize(menu_card_id:, title:, subtitle:, items:, menu_card_in_all_states:, menu_card_in_a_specific_state:, card_state_translation:)
           @menu_card_id                  = menu_card_id
           @title                         = title
           @subtitle                      = subtitle
           @items                         = items
-          @base_states                   = base_states
+          @menu_card_in_all_states       = menu_card_in_all_states
           @menu_card_in_a_specific_state = menu_card_in_a_specific_state
           @card_state_translation        = card_state_translation
 
@@ -38,7 +38,7 @@ module Main
         end
 
         def html_data_attributes_for(item_name)
-          HTMLDataAttributeGenerator.new(item_name, @base_states, @menu_card_id).html_attributes
+          HTMLDataAttributeGenerator.new(item_name, @menu_card_in_all_states, @menu_card_id).html_data_attributes
         end
 
         def html_id_for(item_name)
@@ -47,34 +47,30 @@ module Main
       end
 
       class HTMLDataAttributeGenerator
-        def initialize(item_name, base_states, menu_card_id)
+        def initialize(item_name, menu_card_in_all_states, menu_card_id)
           @item_name = item_name
-          @base_states = base_states
+          @menu_card_in_all_states = menu_card_in_all_states
           @menu_card_id = menu_card_id
         end
 
-        def html_attributes
-          @base_states.keys.each_with_object([]) do |base_state_name, html_data_attributes|
-            html_data_attributes << html_data_attribute(base_state_name)
+        def html_data_attributes
+          @menu_card_in_all_states[@item_name].each_with_object([]) do |(base_state_name, base_state_value), html_data_attributes|
+            html_data_attributes << html_data_attribute(base_state_name, base_state_value)
           end.join(' ').html_safe
         end
 
         private
 
-        def html_data_attribute(base_state_name)
+        def html_data_attribute(base_state_name, base_state_value)
           attribute_code = <<-CODE
-            #{attribute_name(base_state_name)}="#{attribute_value(base_state_name)}"
+            #{attribute_name(base_state_name)}="#{base_state_value}"
           CODE
 
           attribute_code.squish.tr(' ', '')
         end
 
         def attribute_name(base_state_name)
-          "data-#{base_state_name}".dasherize
-        end
-
-        def attribute_value(base_state_name)
-          @base_states[base_state_name][:rails_flags_config][@menu_card_id][@item_name]
+          "data-#{base_state_name}".downcase.dasherize
         end
       end
     end

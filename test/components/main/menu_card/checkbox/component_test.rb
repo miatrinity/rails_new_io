@@ -23,15 +23,9 @@ module Main
               Option1: { true => '', false => '--skip-option1' },
               Option2: { true => '', false => '--skip-option2' }
             },
-            base_states: {
-              initial_state: {
-                rails_flags_config: {
-                  menu_card_id: {
-                    Option1: nil,
-                    Option2: nil
-                  }
-                }
-              }
+            menu_card_in_all_states: {
+              Option1: { initial_state: nil },
+              Option2: { initial_state: nil }
             },
             menu_card_in_a_specific_state: {
               Option1: nil,
