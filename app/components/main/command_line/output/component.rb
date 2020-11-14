@@ -30,7 +30,14 @@ module Main
         end
 
         def command_line_output
-          "<code>rails new </code>#{app_name_output}#{database_choice_output}#{rails_flags_output}".html_safe
+          "<code>rails new </code>#{app_name_output}#{api_flag_output}#{database_choice_output}#{rails_flags_output}".html_safe
+        end
+
+        def api_flag_output
+          content_tag :code, id: 'api-flag' do            
+            api_flag_value = @initial_state[:ui_config][:base_setup][:api] ? '--api' : ''
+            with_spacer api_flag_value
+          end
         end
 
         def app_name_output

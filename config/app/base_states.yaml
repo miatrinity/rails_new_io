@@ -39,6 +39,46 @@
     :testing:
       :minitest: true
       :system: true
+:api_state:
+  :ui_config:
+    :base_setup:
+      :omakase: false
+      :api: true
+      :early: false
+      :minimalist: false
+  :database_config:
+    :database_choice:
+      :SQLite: true
+      :Postgres: false
+      :MySQL: false
+  :rails_flags_config:
+    :guest_favorites:
+      :spring: true
+      :listen: true
+      :bootsnap: true
+    :starters:
+      :gemfile: true
+      :gitignore: true
+      :keep: true
+      :bundle: true
+      :puma: true
+    :mains:
+      :actionText: true
+      :activeRecord: true
+      :activeStorage: true
+      :actionCable: true
+    :email:
+      :actionMailer: true
+      :actionMailbox: true
+    :frontend:
+      :sprockets: true
+      :javascript: true
+      :turbolinks: true
+      :webpacker: true
+      :yarn: true
+    :testing:
+      :minitest: true
+      :system: true
 :early_state:
   :ui_config:
     :base_setup:

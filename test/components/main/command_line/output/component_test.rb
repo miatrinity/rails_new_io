@@ -27,6 +27,9 @@ module Main
             database_config: {
               database_choice: { DB1: true, DB2: nil }
             },
+            ui_config: {
+              base_setup: { state1: nil, state2: nil }
+            },
             rails_flags_config: {
               checkbox_items: { Checkbox1: nil, Checkbox2: nil }
             }
@@ -47,6 +50,9 @@ module Main
             database_config: {
               database_choice: { DB1: true, DB2: false }
             },
+            ui_config: {
+              base_setup: { state1: nil, state2: nil }
+            },            
             rails_flags_config: {
               checkbox_items: { Checkbox1: true, Checkbox2: false }
             }
@@ -64,6 +70,9 @@ module Main
           @initial_state = {
             database_config: {
               database_choice: { DB1: false, DB2: true }
+            },
+            ui_config: {
+              base_setup: { state1: nil, state2: nil }
             },
             rails_flags_config: {
               checkbox_items: { Checkbox1: false, Checkbox2: true }
@@ -83,6 +92,9 @@ module Main
             database_config: {
               database_choice: { DB1: false, DB2: true }
             },
+            ui_config: {
+              base_setup: { state1: nil, state2: nil }
+            },            
             rails_flags_config: {
               checkbox_items: { Checkbox1: false, Checkbox2: false }
             }
@@ -118,7 +130,7 @@ module Main
 
           assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn')
         end
-        
+
         def test_minimalist_base_setup_command_line_output
           minimalist_state = @global_initial_states[:minimalist_state]
 
@@ -128,6 +140,17 @@ module Main
           ))
 
           assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-bundle --skip-gemfile --skip-git --skip-javascript --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --skip-turbolinks --skip-webpack-install --skip-yarn')
+        end
+
+        def test_api_mode_base_setup_command_line_output
+          api_state = @global_initial_states[:api_state]
+
+          render_inline(Main::CommandLine::Output::Component.new(
+            state_translation: @global_state_translation,
+            initial_state: api_state
+          ))
+
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --api')
         end
       end
     end

@@ -14,5 +14,12 @@ export default class extends Controller {
       }      
     })
     
+    if(sanitizedId === 'api') {
+      document.getElementById('api-flag').textContent = ' --api'
+    } else {
+      document.getElementById('api-flag').textContent = ''
+    }
+    
+    
   }
 }
