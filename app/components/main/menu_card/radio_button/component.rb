@@ -42,7 +42,6 @@ module Main
                 data_controller: @data_controller,
                 data_action: @data_action,
                 data_target: @data_target
-  
               }
             )
           end
