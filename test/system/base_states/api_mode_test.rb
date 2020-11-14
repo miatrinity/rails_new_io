@@ -5,7 +5,7 @@ class APIModeTest < ApplicationSystemTestCase
   test 'Switching from "Omakase" to "API Mode" works correctly' do
     visit root_path
 
-    find('#base-setup-api').click
+    click_item_by html_id: 'base-setup-api'
 
     # Time to Start Cooking Menu card
     refute page.find('#base-setup-omakase').checked?
@@ -59,8 +59,8 @@ class APIModeTest < ApplicationSystemTestCase
   test 'Switching from "The Early Days" to "API Mode" works correctly' do
     visit root_path
 
-    find('#base-setup-early').click
-    find('#base-setup-api').click
+    click_item_by html_id: 'base-setup-early'
+    click_item_by html_id: 'base-setup-api'
 
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 
@@ -70,17 +70,11 @@ class APIModeTest < ApplicationSystemTestCase
   test 'Switching from "API Mode" to "The Minimalist" works correctly' do
     visit root_path
 
-    find('#base-setup-api').click
-    find('#base-setup-minimalist').click
+    click_item_by html_id: 'base-setup-api'
+    click_item_by html_id: 'base-setup-minimalist'
 
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 
     assert_equal command_line_output.squish, 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-bundle --skip-gemfile --skip-git --skip-javascript --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --skip-turbolinks --skip-webpack-install --skip-yarn'
-  end
-
-  private
-
-  def choose_card_item(html_id:)
-    find("##{html_id}").click
   end
 end

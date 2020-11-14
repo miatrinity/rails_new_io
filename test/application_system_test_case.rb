@@ -1,6 +1,8 @@
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+  include SystemTestHelpers
+  
   if ENV['SHOW_BROWSER']
     driven_by :selenium, using: :chrome, screen_size: [1400, 1400]
   else

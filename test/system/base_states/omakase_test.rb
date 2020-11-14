@@ -5,10 +5,9 @@ class OmakaseTest < ApplicationSystemTestCase
   test 'Starting with omakase initial state, tweaking setup then swithing initial state to early state works correctly' do
     visit root_path
 
-    # choose_card_item html_id: 'database-choice-Postgres'
-    choose_card_item html_id: 'rails-flags-starters-keep'
-    choose_card_item html_id: 'rails-flags-mains-activestorage'
-    choose_card_item html_id: 'rails-flags-email-actionmailer'
+    click_item_by html_id: 'rails-flags-starters-keep'
+    click_item_by html_id: 'rails-flags-mains-activestorage'
+    click_item_by html_id: 'rails-flags-email-actionmailer'
 
     find('#base-setup-early').click
 
@@ -59,11 +58,5 @@ class OmakaseTest < ApplicationSystemTestCase
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 
     assert_equal command_line_output.squish, 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn'
-  end
-
-  private
-
-  def choose_card_item(html_id:)
-    find("##{html_id}").click
   end
 end

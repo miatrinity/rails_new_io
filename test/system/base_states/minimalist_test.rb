@@ -55,10 +55,4 @@ class MinimalistTest < ApplicationSystemTestCase
 
     assert_equal command_line_output.squish, 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-bundle --skip-gemfile --skip-git --skip-javascript --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --skip-turbolinks --skip-webpack-install --skip-yarn'
   end
-
-  private
-
-  def choose_card_item(html_id:)
-    find("##{html_id}").click
-  end
 end
