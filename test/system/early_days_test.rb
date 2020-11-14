@@ -1,17 +1,11 @@
 require 'application_system_test_case'
 
-class OmakaseTest < ApplicationSystemTestCase
- 
-  test 'Starting with omakase initial state, tweaking setup then swithing initial state to early state works correctly' do
+class EarlyDaysTest < ApplicationSystemTestCase
+  test '"The Early Days" radio button works correctly' do
     visit root_path
 
-    # choose_card_item html_id: 'database-choice-Postgres'
-    choose_card_item html_id: 'rails-flags-starters-keep'
-    choose_card_item html_id: 'rails-flags-mains-activestorage'
-    choose_card_item html_id: 'rails-flags-email-actionmailer'
-
     find('#base-setup-early').click
-
+    
     # Time to Start Cooking Menu card
     refute page.find('#base-setup-omakase').checked?
     refute page.find('#base-setup-api').checked?
@@ -59,11 +53,5 @@ class OmakaseTest < ApplicationSystemTestCase
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 
     assert_equal command_line_output.squish, 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn'
-  end
-
-  private
-
-  def choose_card_item(html_id:)
-    find("##{html_id}").click
   end
 end
