@@ -56,7 +56,7 @@ class APIModeTest < ApplicationSystemTestCase
     assert_equal command_line_output.squish, 'rails new my_app --api'
   end
 
-  test 'Switching from "The Early Days" to "API Mode" works correctly' do
+  test 'Switching from "The Early Days" to "API Mode": --api flag should appear in the command line output' do
     visit root_path
 
     click_item_by html_id: 'base-setup-early'
@@ -67,7 +67,7 @@ class APIModeTest < ApplicationSystemTestCase
     assert_equal command_line_output.squish, 'rails new my_app --api'
   end
 
-  test 'Switching from "API Mode" to "The Minimalist" works correctly' do
+  test 'Switching from "API Mode" to "The Minimalist": --api flag should disappear from the command line output' do
     visit root_path
 
     click_item_by html_id: 'base-setup-api'
