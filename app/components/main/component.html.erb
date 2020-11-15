@@ -1,4 +1,4 @@
-    <%= render Main::MenuCard::Title::Component.new(title: 'Choose Your Base') %>
+    <%= render Shared::MenuCard::Title::Component.new(title: 'Choose Your Base') %>
     
     <%= render Main::MenuCard::RadioButton::BaseSetup::Component.new(
         menu_card_in_all_states: @all_menu_cards_in_all_states[:ui_config][:base_setup],
@@ -6,7 +6,7 @@
         card_state_translation: @state_translation[:ui_config][:base_setup]) 
     %>
     
-    <%= render Main::MenuCard::Title::Component.new(title: "Customize A'la Carte") %>
+    <%= render Shared::MenuCard::Title::Component.new(title: "Customize A'la Carte") %>
     
     <%= render Main::MenuCard::RadioButton::Database::Component.new(
         menu_card_in_all_states: @all_menu_cards_in_all_states[:database_config][:database_choice],

@@ -16,20 +16,15 @@
         </div>
         <ul id="rails-menu-card-data-rows" aria-disabled="true">
           <% @items.each do |item| %>
-            <%= render Main::MenuCard::RadioButton::Row::Component.new(              
+            <%= render Shared::MenuCard::Checkbox::Row::Component.new(
               title: item[:title], 
-              has_image: item[:has_image],
               description: item[:description],
-              menu_card_id: item[:menu_card_id],
               command_output: item[:command_output],
               checked: item[:checked],
-              html_id: item[:html_id],
               html_data_attributes: item[:html_data_attributes],
-              data_controller: item[:data_controller],
-              data_action: item[:data_action],
-              data_target: item[:data_target]             
+              html_id: item[:html_id]
               ) 
-            %>
+            %>  
           <% end %>
         </ul>
       </div>

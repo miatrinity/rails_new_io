@@ -1,5 +1,4 @@
-
-module Main
+module Shared
   module MenuCard
     module Title
       class Component < ViewComponent::Base
@@ -10,4 +9,3 @@ module Main
     end
   end
 end
-

@@ -1,8 +1,19 @@
-module Main
+module Shared
   module MenuCard
-    module Checkbox
+    module RadioButton
       class Component < ViewComponent::Base
-        def initialize(menu_card_id:, title:, subtitle:, items:, menu_card_in_all_states:, menu_card_in_a_specific_state:, card_state_translation:)
+        def initialize(
+          menu_card_id:,
+          title:,
+          subtitle:,
+          items:,
+          menu_card_in_a_specific_state:,
+          card_state_translation:,
+          menu_card_in_all_states:,
+          data_controller:,
+          data_action:,
+          data_target:
+        )
           @menu_card_id                  = menu_card_id
           @title                         = title
           @subtitle                      = subtitle
@@ -10,6 +21,9 @@ module Main
           @menu_card_in_all_states       = menu_card_in_all_states
           @menu_card_in_a_specific_state = menu_card_in_a_specific_state
           @card_state_translation        = card_state_translation
+          @data_controller               = data_controller
+          @data_action                   = data_action
+          @data_target                   = data_target
 
           update_items
         end
@@ -20,10 +34,14 @@ module Main
           @menu_card_in_a_specific_state.each do |item_name, checked|
             item_to_update_for(item_name).merge!(
               {
+                menu_card_id: @menu_card_id,
                 command_output: command_output_for(item_name),
                 checked: checked,
                 html_data_attributes: html_data_attributes_for(item_name),
-                html_id: html_id_for(item_name)
+                html_id: html_id_for(item_name),
+                data_controller: @data_controller,
+                data_action: @data_action,
+                data_target: @data_target
               }
             )
           end
@@ -34,7 +52,7 @@ module Main
         end
 
         def command_output_for(item_name)
-          @card_state_translation[item_name][false]
+          @card_state_translation[item_name][true]
         end
 
         def html_data_attributes_for(item_name)
@@ -46,7 +64,7 @@ module Main
         end
 
         def html_id_for(item_name)
-          "rails-flags-#{@menu_card_id}-#{item_name}".downcase.dasherize
+          "#{@menu_card_id}-#{item_name}".downcase.dasherize
         end
       end
     end

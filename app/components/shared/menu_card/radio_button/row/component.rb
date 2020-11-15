@@ -1,4 +1,4 @@
-module Main
+module Shared
   module MenuCard
     module RadioButton
       module Row
