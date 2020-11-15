@@ -38,14 +38,14 @@ module Main
         end
 
         def test_render_title_and_subtitle_for_radio_button_menu_card_component
-          render_inline(Main::MenuCard::RadioButton::Component.new(@component_setup))
+          render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
 
           assert_text('Title')
           assert_text('Subtitle')
         end
 
         def test_render_row_title_and_description_for_radio_button_menu_card_component
-          render_inline(Main::MenuCard::RadioButton::Component.new(@component_setup))
+          render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
 
           assert_text('Option1')
           assert_text('Desc 1')
@@ -59,7 +59,7 @@ module Main
             Option2: false
           }
 
-          render_inline(Main::MenuCard::RadioButton::Component.new(@component_setup))
+          render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
 
           assert_selector(:xpath, "//input[@id='menu-card-id-option1' and @checked]")
         end
@@ -70,7 +70,7 @@ module Main
             Option2: true
           }
 
-          render_inline(Main::MenuCard::RadioButton::Component.new(@component_setup))
+          render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
 
           assert_selector(:xpath, "//input[@id='menu-card-id-option2' and @checked]")
         end
@@ -81,7 +81,7 @@ module Main
             Option2: false
           }
 
-          render_inline(Main::MenuCard::RadioButton::Component.new(@component_setup))
+          render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
 
           assert_selector(:xpath, "//input[@id='menu-card-id-option1' and @data-base-state1='true' and @data-base-state2='false']")
           assert_selector(:xpath, "//input[@id='menu-card-id-option2' and @data-base-state1='false' and @data-base-state2='true']")
