@@ -1,14 +1,14 @@
   <div data-controller="app-name">
-    <%= render Main::Hero::Component.new %>
+    <%= render Shared::Hero::Component.new %>
     
     <br>
       
-    <%= render Main::AppNameInput::Component.new %>
+    <%= render Shared::AppNameInput::Component.new %>
     
     <div id="rails-new-command-generator-holder" data-controller="clipboard" class="flex-col bg-gray-700 pt-3 z-50">
       
-      <%= render Main::CommandLine::Output::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>      
-      <%= render Main::CommandLine::Buttons::Component.new %>
+      <%= render Shared::CommandLine::Output::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>      
+      <%= render Shared::CommandLine::Buttons::Component.new %>
       <div class="animate-notice">Copied to Clipboard!</div>                
     </div>
 

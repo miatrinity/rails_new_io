@@ -1,6 +1,6 @@
-module Main
+module Shared
   module Navbar
-    module Desktop
+    module Mobile
       class Component < ViewComponent::Base
         def initialize(items:)
           @items = items

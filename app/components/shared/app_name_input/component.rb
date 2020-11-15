@@ -1,4 +1,4 @@
-module Main
+module Shared
   module AppNameInput
     class Component < ViewComponent::Base
       def initialize; end

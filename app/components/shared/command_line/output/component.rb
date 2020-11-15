@@ -1,4 +1,4 @@
-module Main
+module Shared
   module CommandLine
     module Output
       class Component < ViewComponent::Base

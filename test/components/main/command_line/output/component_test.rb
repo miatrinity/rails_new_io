@@ -37,7 +37,7 @@ module Main
         end
 
         def test_initital_command_line_output
-          render_inline(Main::CommandLine::Output::Component.new(
+          render_inline(Shared::CommandLine::Output::Component.new(
             state_translation: @state_translation,
             initial_state: @initial_state
           ))
@@ -58,7 +58,7 @@ module Main
             }
           }
 
-          render_inline(Main::CommandLine::Output::Component.new(
+          render_inline(Shared::CommandLine::Output::Component.new(
             state_translation: @state_translation,
             initial_state: @initial_state
           ))
@@ -79,7 +79,7 @@ module Main
             }
           }
 
-          render_inline(Main::CommandLine::Output::Component.new(
+          render_inline(Shared::CommandLine::Output::Component.new(
             state_translation: @state_translation,
             initial_state: @initial_state
           ))
@@ -100,7 +100,7 @@ module Main
             }
           }
 
-          render_inline(Main::CommandLine::Output::Component.new(
+          render_inline(Shared::CommandLine::Output::Component.new(
             state_translation: @state_translation,
             initial_state: @initial_state
           ))
@@ -112,7 +112,7 @@ module Main
         def test_omakase_command_line_output
           omakase_state = @global_initial_states[:omakase_state]
 
-          render_inline(Main::CommandLine::Output::Component.new(
+          render_inline(Shared::CommandLine::Output::Component.new(
             state_translation: @global_state_translation,
             initial_state: omakase_state
           ))
@@ -123,7 +123,7 @@ module Main
         def test_early_base_setup_command_line_output
           early_state = @global_initial_states[:early_state]
 
-          render_inline(Main::CommandLine::Output::Component.new(
+          render_inline(Shared::CommandLine::Output::Component.new(
             state_translation: @global_state_translation,
             initial_state: early_state
           ))
@@ -134,7 +134,7 @@ module Main
         def test_minimalist_base_setup_command_line_output
           minimalist_state = @global_initial_states[:minimalist_state]
 
-          render_inline(Main::CommandLine::Output::Component.new(
+          render_inline(Shared::CommandLine::Output::Component.new(
             state_translation: @global_state_translation,
             initial_state: minimalist_state
           ))
@@ -145,7 +145,7 @@ module Main
         def test_api_mode_base_setup_command_line_output
           api_state = @global_initial_states[:api_state]
 
-          render_inline(Main::CommandLine::Output::Component.new(
+          render_inline(Shared::CommandLine::Output::Component.new(
             state_translation: @global_state_translation,
             initial_state: api_state
           ))
