@@ -1,5 +1,5 @@
-module Main
-  module MenuCard
+module Tabs
+  module Main
     module RadioButton
       module BaseSetup
         class Component < ViewComponent::Base

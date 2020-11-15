@@ -9,7 +9,7 @@ module Main
     end
 
     def test_omakase_menu_card_setup
-      render_inline(Main::Component.new(
+      render_inline(Tabs::Main::Component.new(
         all_menu_cards_in_all_states: @all_menu_cards_in_all_states,
         state_translation: @state_translation,
         initial_state: @base_states[:omakase_state]

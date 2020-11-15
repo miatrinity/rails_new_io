@@ -1,7 +1,7 @@
-module Main
-  module MenuCard
-    module Checkbox
-      module Mains
+module Tabs
+  module Main
+    module RadioButton
+      module Database
         class Component < ViewComponent::Base
           def initialize(menu_card_in_all_states:, menu_card_in_a_specific_state:, card_state_translation:)
             @menu_card_in_all_states       = menu_card_in_all_states

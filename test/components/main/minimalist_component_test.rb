@@ -9,7 +9,7 @@ module Main
     end
 
     def test_menu_cards_setup_in_minimalist_base_state
-      render_inline(Main::Component.new(
+      render_inline(Tabs::Main::Component.new(
         all_menu_cards_in_all_states: @all_menu_cards_in_all_states,
         state_translation: @state_translation,
         initial_state: @base_states[:minimalist_state]

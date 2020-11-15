@@ -1,5 +1,5 @@
-module Main
-  module MenuCard
+module Tabs
+  module Main
     module Checkbox
       module Testing
         class Component < ViewComponent::Base
