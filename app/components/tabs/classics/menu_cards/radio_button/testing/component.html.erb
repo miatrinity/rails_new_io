@@ -1,0 +1,29 @@
+      <%= render Shared::MenuCard::RadioButton::Component.new(
+           menu_card_id: :database_choice,
+           title: 'Our Database Menu 🗄️',
+           subtitle: 'More than a toy app? Pick a heavy-duty tool!',
+           items: [
+            {              
+              title: 'SQLite',
+              has_image: true,
+              description: 'The current default. Recommended by @librarycongress for archival!',
+            },
+            {
+              title: 'Postgres',
+              has_image: true,
+              description: 'The real default. No-brainer if you ever plan to leave development.',
+            },
+            {
+              title: 'MySQL',
+              has_image: true,
+              description: "The original default. It's fine, but Postgres is finer!",
+            }              
+           ],
+           menu_card_in_all_states: @menu_card_in_all_states,
+           menu_card_in_a_specific_state: @menu_card_in_a_specific_state,
+           card_state_translation: @card_state_translation,
+           data_controller: 'database-choice',
+           data_action: 'change->database-choice#update',
+           data_target: 'database-choice.name'
+          ) 
+      %>

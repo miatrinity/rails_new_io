@@ -15,16 +15,16 @@ module Shared
         private
 
         def database_choice
-          database_choice = @initial_state[:database_config][:database_choice].find { |_, checked| checked }
+          database_choice = @initial_state[:main_tab][:database_config][:database_choice].find { |_, checked| checked }
           database_name, database_checked = *database_choice
 
-          @state_translation[:database_config][:database_choice][database_name][database_checked]
+          @state_translation[:main_tab][:database_config][:database_choice][database_name][database_checked]
         end
 
         def rails_flags
-          @initial_state[:rails_flags_config].each_with_object([]) do |(menu_card, items), result|
+          @initial_state[:main_tab][:rails_flags_config].each_with_object([]) do |(menu_card, items), result|
             result << items.map do |item_name, checked|
-              @state_translation[:rails_flags_config][menu_card][item_name][checked]
+              @state_translation[:main_tab][:rails_flags_config][menu_card][item_name][checked]
             end
           end.flatten.reject(&:blank?).sort.join(' ')
         end
@@ -34,8 +34,8 @@ module Shared
         end
 
         def api_flag_output
-          content_tag :code, id: 'api-flag' do            
-            api_flag_value = @initial_state[:ui_config][:base_setup][:api] ? '--api' : ''
+          content_tag :code, id: 'api-flag' do
+            api_flag_value = @initial_state[:main_tab][:ui_config][:base_setup][:api] ? '--api' : ''
             with_spacer api_flag_value
           end
         end

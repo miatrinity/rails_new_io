@@ -1,161 +1,165 @@
 ---
 :omakase_state:
-  :ui_config:
-    :base_setup:
-      :omakase: true
-      :api: false
-      :early: false
-      :minimalist: false
-  :database_config:
-    :database_choice:
-      :SQLite: true
-      :Postgres: false
-      :MySQL: false
-  :rails_flags_config:
-    :guest_favorites:
-      :spring: true
-      :listen: true
-      :bootsnap: true
-    :starters:
-      :gemfile: true
-      :gitignore: true
-      :keep: true
-      :bundle: true
-      :puma: true
-    :mains:
-      :actionText: true
-      :activeRecord: true
-      :activeStorage: true
-      :actionCable: true
-    :email:
-      :actionMailer: true
-      :actionMailbox: true
-    :frontend:
-      :sprockets: true
-      :javascript: true
-      :turbolinks: true
-      :webpacker: true
-      :yarn: true
-    :testing:
-      :minitest: true
-      :system: true
+  :main_tab:
+    :database_config:
+      :database_choice:
+        :SQLite: true
+        :Postgres: false
+        :MySQL: false
+    :ui_config:
+      :base_setup:
+        :omakase: true
+        :api: false
+        :early: false
+        :minimalist: false    
+    :rails_flags_config:
+      :guest_favorites:
+        :spring: true
+        :listen: true
+        :bootsnap: true
+      :starters:
+        :gemfile: true
+        :gitignore: true
+        :keep: true
+        :bundle: true
+        :puma: true
+      :mains:
+        :actionText: true
+        :activeRecord: true
+        :activeStorage: true
+        :actionCable: true
+      :email:
+        :actionMailer: true
+        :actionMailbox: true
+      :frontend:
+        :sprockets: true
+        :javascript: true
+        :turbolinks: true
+        :webpacker: true
+        :yarn: true
+      :testing:
+        :minitest: true
+        :system: true
 :api_state:
-  :ui_config:
-    :base_setup:
-      :omakase: false
-      :api: true
-      :early: false
-      :minimalist: false
-  :database_config:
-    :database_choice:
-      :SQLite: true
-      :Postgres: false
-      :MySQL: false
-  :rails_flags_config:
-    :guest_favorites:
-      :spring: true
-      :listen: true
-      :bootsnap: true
-    :starters:
-      :gemfile: true
-      :gitignore: true
-      :keep: true
-      :bundle: true
-      :puma: true
-    :mains:
-      :actionText: true
-      :activeRecord: true
-      :activeStorage: true
-      :actionCable: true
-    :email:
-      :actionMailer: true
-      :actionMailbox: true
-    :frontend:
-      :sprockets: true
-      :javascript: true
-      :turbolinks: true
-      :webpacker: true
-      :yarn: true
-    :testing:
-      :minitest: true
-      :system: true
+  :main_tab:
+    :database_config:
+      :database_choice:
+        :SQLite: true
+        :Postgres: false
+        :MySQL: false
+    :ui_config:
+      :base_setup:
+        :omakase: false
+        :api: true
+        :early: false
+        :minimalist: false        
+    :rails_flags_config:
+      :guest_favorites:
+        :spring: true
+        :listen: true
+        :bootsnap: true
+      :starters:
+        :gemfile: true
+        :gitignore: true
+        :keep: true
+        :bundle: true
+        :puma: true
+      :mains:
+        :actionText: true
+        :activeRecord: true
+        :activeStorage: true
+        :actionCable: true
+      :email:
+        :actionMailer: true
+        :actionMailbox: true
+      :frontend:
+        :sprockets: true
+        :javascript: true
+        :turbolinks: true
+        :webpacker: true
+        :yarn: true
+      :testing:
+        :minitest: true
+        :system: true
 :early_state:
-  :ui_config:
-    :base_setup:
-      :omakase: false
-      :api: false
-      :early: true
-      :minimalist: false
-  :database_config:
-    :database_choice:
-      :SQLite: true
-      :Postgres: false
-      :MySQL: false
-  :rails_flags_config:
-    :guest_favorites:
-      :spring: false
-      :listen: false
-      :bootsnap: false
-    :starters:
-      :gemfile: true
-      :gitignore: true
-      :keep: false
-      :bundle: true
-      :puma: true
-    :mains:
-      :actionText: false
-      :activeRecord: true
-      :activeStorage: false
-      :actionCable: false
-    :email:
-      :actionMailer: true
-      :actionMailbox: false
-    :frontend:
-      :sprockets: true
-      :javascript: false
-      :turbolinks: false
-      :webpacker: false
-      :yarn: false
-    :testing:
-      :minitest: true
-      :system: false
+  :main_tab:
+    :database_config:
+      :database_choice:
+        :SQLite: true
+        :Postgres: false
+        :MySQL: false
+    :ui_config:
+      :base_setup:
+        :omakase: false
+        :api: false
+        :early: true
+        :minimalist: false        
+    :rails_flags_config:
+      :guest_favorites:
+        :spring: false
+        :listen: false
+        :bootsnap: false
+      :starters:
+        :gemfile: true
+        :gitignore: true
+        :keep: false
+        :bundle: true
+        :puma: true
+      :mains:
+        :actionText: false
+        :activeRecord: true
+        :activeStorage: false
+        :actionCable: false
+      :email:
+        :actionMailer: true
+        :actionMailbox: false
+      :frontend:
+        :sprockets: true
+        :javascript: false
+        :turbolinks: false
+        :webpacker: false
+        :yarn: false
+      :testing:
+        :minitest: true
+        :system: false
 :minimalist_state:
-  :ui_config:
-    :base_setup:
-      :omakase: false
-      :api: false
-      :early: false
-      :minimalist: true
-  :database_config:
-    :database_choice:
-      :SQLite: true
-      :Postgres: false
-      :MySQL: false
-  :rails_flags_config:
-    :guest_favorites:
-      :spring: false
-      :listen: false
-      :bootsnap: false
-    :starters:
-      :gemfile: false
-      :gitignore: false
-      :keep: false
-      :bundle: false
-      :puma: false
-    :mains:
-      :actionText: false
-      :activeRecord: true
-      :activeStorage: false
-      :actionCable: false
-    :email:
-      :actionMailer: false
-      :actionMailbox: false
-    :frontend:
-      :sprockets: false
-      :javascript: false
-      :turbolinks: false
-      :webpacker: false
-      :yarn: false
-    :testing:
-      :minitest: false
-      :system: false
+  :main_tab:
+    :database_config:
+      :database_choice:
+        :SQLite: true
+        :Postgres: false
+        :MySQL: false
+    :ui_config:
+      :base_setup:
+        :omakase: false
+        :api: false
+        :early: false
+        :minimalist: true        
+    :rails_flags_config:
+      :guest_favorites:
+        :spring: false
+        :listen: false
+        :bootsnap: false
+      :starters:
+        :gemfile: false
+        :gitignore: false
+        :keep: false
+        :bundle: false
+        :puma: false
+      :mains:
+        :actionText: false
+        :activeRecord: true
+        :activeStorage: false
+        :actionCable: false
+      :email:
+        :actionMailer: false
+        :actionMailbox: false
+      :frontend:
+        :sprockets: false
+        :javascript: false
+        :turbolinks: false
+        :webpacker: false
+        :yarn: false
+      :testing:
+        :minitest: false
+        :system: false        

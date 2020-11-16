@@ -1,46 +1,46 @@
     <%= render Shared::MenuCard::Title::Component.new(title: 'Choose Your Base') %>
     
     <%= render Tabs::Main::MenuCards::RadioButton::BaseSetup::Component.new(
-        menu_card_in_all_states: @all_menu_cards_in_all_states[:ui_config][:base_setup],
-        menu_card_in_a_specific_state: @initial_state[:ui_config][:base_setup],
-        card_state_translation: @state_translation[:ui_config][:base_setup]) 
+        menu_card_in_all_states: @all_menu_cards_in_all_states[:main_tab][:ui_config][:base_setup],
+        menu_card_in_a_specific_state: @initial_state[:main_tab][:ui_config][:base_setup],
+        card_state_translation: @state_translation[:main_tab][:ui_config][:base_setup]) 
     %>
     
     <%= render Shared::MenuCard::Title::Component.new(title: "Customize A'la Carte") %>
     
     <%= render Tabs::Main::MenuCards::RadioButton::Database::Component.new(
-        menu_card_in_all_states: @all_menu_cards_in_all_states[:database_config][:database_choice],
-        menu_card_in_a_specific_state: @initial_state[:database_config][:database_choice],
-        card_state_translation: @state_translation[:database_config][:database_choice])
+        menu_card_in_all_states: @all_menu_cards_in_all_states[:main_tab][:database_config][:database_choice],
+        menu_card_in_a_specific_state: @initial_state[:main_tab][:database_config][:database_choice],
+        card_state_translation: @state_translation[:main_tab][:database_config][:database_choice])
     %>
     <%= render Tabs::Main::MenuCards::Checkbox::GuestFavorites::Component.new(
-        menu_card_in_all_states: @all_menu_cards_in_all_states[:rails_flags_config][:guest_favorites],
-        menu_card_in_a_specific_state: @initial_state[:rails_flags_config][:guest_favorites],        
-        card_state_translation: @state_translation[:rails_flags_config][:guest_favorites])
+        menu_card_in_all_states: @all_menu_cards_in_all_states[:main_tab][:rails_flags_config][:guest_favorites],
+        menu_card_in_a_specific_state: @initial_state[:main_tab][:rails_flags_config][:guest_favorites],        
+        card_state_translation: @state_translation[:main_tab][:rails_flags_config][:guest_favorites])
     %>
     <%= render Tabs::Main::MenuCards::Checkbox::Starters::Component.new(
-        menu_card_in_all_states: @all_menu_cards_in_all_states[:rails_flags_config][:starters],
-        menu_card_in_a_specific_state: @initial_state[:rails_flags_config][:starters],
-        card_state_translation: @state_translation[:rails_flags_config][:starters])
+        menu_card_in_all_states: @all_menu_cards_in_all_states[:main_tab][:rails_flags_config][:starters],
+        menu_card_in_a_specific_state: @initial_state[:main_tab][:rails_flags_config][:starters],
+        card_state_translation: @state_translation[:main_tab][:rails_flags_config][:starters])
     %>
     <%= render Tabs::Main::MenuCards::Checkbox::Mains::Component.new(
-        menu_card_in_all_states: @all_menu_cards_in_all_states[:rails_flags_config][:mains],
-        menu_card_in_a_specific_state: @initial_state[:rails_flags_config][:mains],
-        card_state_translation: @state_translation[:rails_flags_config][:mains]) 
+        menu_card_in_all_states: @all_menu_cards_in_all_states[:main_tab][:rails_flags_config][:mains],
+        menu_card_in_a_specific_state: @initial_state[:main_tab][:rails_flags_config][:mains],
+        card_state_translation: @state_translation[:main_tab][:rails_flags_config][:mains]) 
     %>
     <%= render Tabs::Main::MenuCards::Checkbox::Email::Component.new(
-        menu_card_in_all_states: @all_menu_cards_in_all_states[:rails_flags_config][:email],
-        menu_card_in_a_specific_state: @initial_state[:rails_flags_config][:email],
-        card_state_translation: @state_translation[:rails_flags_config][:email])   
+        menu_card_in_all_states: @all_menu_cards_in_all_states[:main_tab][:rails_flags_config][:email],
+        menu_card_in_a_specific_state: @initial_state[:main_tab][:rails_flags_config][:email],
+        card_state_translation: @state_translation[:main_tab][:rails_flags_config][:email])   
     %>
     <%= render Tabs::Main::MenuCards::Checkbox::Frontend::Component.new(
-        menu_card_in_all_states: @all_menu_cards_in_all_states[:rails_flags_config][:frontend],
-        menu_card_in_a_specific_state: @initial_state[:rails_flags_config][:frontend],
-        card_state_translation: @state_translation[:rails_flags_config][:frontend])
+        menu_card_in_all_states: @all_menu_cards_in_all_states[:main_tab][:rails_flags_config][:frontend],
+        menu_card_in_a_specific_state: @initial_state[:main_tab][:rails_flags_config][:frontend],
+        card_state_translation: @state_translation[:main_tab][:rails_flags_config][:frontend])
          
     %>
     <%= render Tabs::Main::MenuCards::Checkbox::Testing::Component.new(
-        menu_card_in_all_states: @all_menu_cards_in_all_states[:rails_flags_config][:testing],
-        menu_card_in_a_specific_state: @initial_state[:rails_flags_config][:testing],
-        card_state_translation: @state_translation[:rails_flags_config][:testing])         
+        menu_card_in_all_states: @all_menu_cards_in_all_states[:main_tab][:rails_flags_config][:testing],
+        menu_card_in_a_specific_state: @initial_state[:main_tab][:rails_flags_config][:testing],
+        card_state_translation: @state_translation[:main_tab][:rails_flags_config][:testing])         
     %>

@@ -9,29 +9,33 @@ module Main
           @global_initial_states = Rails.configuration.base_states
           
           @state_translation = {
-            database_config: {
-              database_choice: {
-                DB1: { true => '', false => '' },
-                DB2: { true => '-d db-option2', false => '' },
-              }
-            },
-            rails_flags_config: {
-              checkbox_items: {
-                Checkbox1: { true => '', false => '--skip-checkbox-option1' },
-                Checkbox2: { true => '', false => '--skip-checkbox-option2' }
+            main_tab: {
+              database_config: {
+                database_choice: {
+                  DB1: { true => '', false => '' },
+                  DB2: { true => '-d db-option2', false => '' },
+                }
+              },
+              rails_flags_config: {
+                checkbox_items: {
+                  Checkbox1: { true => '', false => '--skip-checkbox-option1' },
+                  Checkbox2: { true => '', false => '--skip-checkbox-option2' }
+                }
               }
             }
           }
 
           @initial_state = {
-            database_config: {
-              database_choice: { DB1: true, DB2: nil }
-            },
-            ui_config: {
-              base_setup: { state1: nil, state2: nil }
-            },
-            rails_flags_config: {
-              checkbox_items: { Checkbox1: nil, Checkbox2: nil }
+            main_tab: {
+              database_config: {
+                database_choice: { DB1: true, DB2: nil }
+              },
+              ui_config: {
+                base_setup: { state1: nil, state2: nil }
+              },
+              rails_flags_config: {
+                checkbox_items: { Checkbox1: nil, Checkbox2: nil }
+              }
             }
           }
         end
@@ -47,14 +51,16 @@ module Main
 
         def test_command_line_output_for_db1_and_checkbox1_selected
           @initial_state = {
-            database_config: {
-              database_choice: { DB1: true, DB2: false }
-            },
-            ui_config: {
-              base_setup: { state1: nil, state2: nil }
-            },            
-            rails_flags_config: {
-              checkbox_items: { Checkbox1: true, Checkbox2: false }
+            main_tab: {
+              database_config: {
+                database_choice: { DB1: true, DB2: false }
+              },
+              ui_config: {
+                base_setup: { state1: nil, state2: nil }
+              },
+              rails_flags_config: {
+                checkbox_items: { Checkbox1: true, Checkbox2: false }
+              }
             }
           }
 
@@ -65,17 +71,19 @@ module Main
 
           assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --skip-checkbox-option2')
         end
-        
+
         def test_command_line_output_for_db2_and_checkbox2_selected
           @initial_state = {
-            database_config: {
-              database_choice: { DB1: false, DB2: true }
-            },
-            ui_config: {
-              base_setup: { state1: nil, state2: nil }
-            },
-            rails_flags_config: {
-              checkbox_items: { Checkbox1: false, Checkbox2: true }
+            main_tab: {
+              database_config: {
+                database_choice: { DB1: false, DB2: true }
+              },
+              ui_config: {
+                base_setup: { state1: nil, state2: nil }
+              },
+              rails_flags_config: {
+                checkbox_items: { Checkbox1: false, Checkbox2: true }
+              }
             }
           }
 
@@ -89,14 +97,16 @@ module Main
         
         def test_command_line_output_for_db2_and_all_checkboxes_selected
           @initial_state = {
-            database_config: {
-              database_choice: { DB1: false, DB2: true }
-            },
-            ui_config: {
-              base_setup: { state1: nil, state2: nil }
-            },            
-            rails_flags_config: {
-              checkbox_items: { Checkbox1: false, Checkbox2: false }
+            main_tab: {
+              database_config: {
+                database_choice: { DB1: false, DB2: true }
+              },
+              ui_config: {
+                base_setup: { state1: nil, state2: nil }
+              },            
+              rails_flags_config: {
+                checkbox_items: { Checkbox1: false, Checkbox2: false }
+              }
             }
           }
 
