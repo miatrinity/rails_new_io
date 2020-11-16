@@ -99,9 +99,19 @@
   :rails_bytes_config:
     :testing:
       :Minitest:
-        true: 'Minitest TRUE'
-        false: 'Minitest FALSE'
+        true: ''
+        false: ''
       :RSpec:
-        true: "Valmaia Rspec igaz"
-        false: "Rspec hamis" 
+        true: "https://www.railsbytes.com/script/VD7sra"
+        false: ''
+    :css_framework:
+      :None:
+        true: ''
+        false: ''
+      :TailwindCSS:
+        true: "https://www.railsbytes.com/script/X8BsGy"
+        false: ''
+      :Bootstrap:
+        true: "https://www.railsbytes.com/script/VMys5p"
+        false: ''
         

@@ -7,7 +7,7 @@ module Main
         def setup
           @global_state_translation = Rails.configuration.state_translation
           @global_initial_states = Rails.configuration.base_states
-          
+
           @state_translation = {
             main_tab: {
               database_config: {
@@ -20,6 +20,14 @@ module Main
                 checkbox_items: {
                   Checkbox1: { true => '', false => '--skip-checkbox-option1' },
                   Checkbox2: { true => '', false => '--skip-checkbox-option2' }
+                }
+              }
+            },
+            classics_tab: {
+              rails_bytes_config: {
+                testing: {
+                  testing1: { true => '', false => '' },
+                  testing2: { true => '', false => '' }
                 }
               }
             }
@@ -35,6 +43,14 @@ module Main
               },
               rails_flags_config: {
                 checkbox_items: { Checkbox1: nil, Checkbox2: nil }
+              }
+            },
+            classics_tab: {
+              rails_bytes_config: {
+                testing: {
+                  testing1: { true => '', false => '' },
+                  testing2: { true => '', false => '' }
+                }
               }
             }
           }
@@ -61,6 +77,14 @@ module Main
               rails_flags_config: {
                 checkbox_items: { Checkbox1: true, Checkbox2: false }
               }
+            },
+            classics_tab: {
+              rails_bytes_config: {
+                testing: {
+                  testing1: { true => '', false => '' },
+                  testing2: { true => '', false => '' }
+                }
+              }
             }
           }
 
@@ -84,6 +108,14 @@ module Main
               rails_flags_config: {
                 checkbox_items: { Checkbox1: false, Checkbox2: true }
               }
+            },
+            classics_tab: {
+              rails_bytes_config: {
+                testing: {
+                  testing1: { true => '', false => '' },
+                  testing2: { true => '', false => '' }
+                }
+              }
             }
           }
 
@@ -103,9 +135,14 @@ module Main
               },
               ui_config: {
                 base_setup: { state1: nil, state2: nil }
-              },            
+              },
               rails_flags_config: {
                 checkbox_items: { Checkbox1: false, Checkbox2: false }
+              }
+            },
+            classics_tab: {
+              rails_bytes_config: {
+                testing: { testing1: true, testing2: false }
               }
             }
           }

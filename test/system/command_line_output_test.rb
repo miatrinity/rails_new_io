@@ -25,4 +25,14 @@ class CommandLineOutputTest < ApplicationSystemTestCase
 
     assert_equal command_line_output.squish, 'rails new my_app -d postgresql --skip-action-mailer --skip-active-storage --skip-keeps --skip-spring --skip-test --skip-webpack-install'
   end
+
+  test 'Choosing the RSpec railsbyte is reflected in the command line output' do
+    visit root_path
+
+    click_item_by html_id: 'classic-tab-testing-framework-choice-rspec'
+
+    command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
+
+    assert_equal command_line_output.squish, 'rails new my_app --template https://www.railsbytes.com/script/VD7sra'
+  end
 end

@@ -3,12 +3,10 @@ module Shared
     module Output
       class Component < ViewComponent::Base
         def initialize(initial_state:, state_translation:)
-          @app_name = 'my_app'
-          @initial_state = initial_state
-          @state_translation = state_translation
+          @app_name            = 'my_app'
+          @initial_state       = initial_state
+          @state_translation   = state_translation
 
-          @database_choice = database_choice
-          @rails_flags = rails_flags
           @command_line_output = command_line_output
         end
 
@@ -30,7 +28,20 @@ module Shared
         end
 
         def command_line_output
-          "<code>rails new </code>#{app_name_output}#{api_flag_output}#{database_choice_output}#{rails_flags_output}".html_safe
+          "<code>rails new </code>#{app_name_output}#{api_flag_output}#{database_choice_output}#{rails_flags_output}#{rails_bytes_output}".html_safe
+        end
+
+        def rails_bytes_url
+          rails_bytes_choice = @initial_state[:classics_tab][:rails_bytes_config][:testing].find { |_, checked| checked }
+
+          rails_bytes_name, rails_bytes_checked = *rails_bytes_choice          
+          @state_translation[:classics_tab][:rails_bytes_config][:testing][rails_bytes_name][rails_bytes_checked]
+        end
+
+        def rails_bytes
+          return '' if rails_bytes_url.blank?
+
+          "--template #{rails_bytes_url}"
         end
 
         def api_flag_output
@@ -48,13 +59,19 @@ module Shared
 
         def database_choice_output
           content_tag :code, id: 'database-choice' do
-            with_spacer @database_choice
+            with_spacer database_choice
           end
         end
 
         def rails_flags_output
           content_tag :code, id: 'rails-flags' do
-            with_spacer @rails_flags
+            with_spacer rails_flags
+          end
+        end
+
+        def rails_bytes_output
+          content_tag :code, id: 'rails-bytes' do
+            with_spacer rails_bytes
           end
         end
 

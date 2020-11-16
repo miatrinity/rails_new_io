@@ -50,6 +50,16 @@ class EarlyDaysTest < ApplicationSystemTestCase
     assert page.find('#main-tab-testing-minitest').checked?
     refute page.find('#main-tab-testing-system').checked?
 
+    ##############
+    #
+    # Classics Tab
+    #
+    ##############
+
+    # Testing Framework Menu Card
+    assert page.find('#classic-tab-testing-framework-choice-minitest').checked?
+    refute page.find('#classic-tab-testing-framework-choice-rspec').checked?
+
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 
     assert_equal command_line_output.squish, 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn'
