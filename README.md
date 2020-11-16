@@ -41,7 +41,7 @@
    in `app/views/initial_setup/index.html.erb`, render your component with
    
    ```
-   <%= render Tabs::Main::Checkbox::WhateverMyComponentDoes::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
+   <%= render Tabs::Main::MenuCards::Checkbox::WhateverMyComponentDoes::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
    ```
    
 4. If you created a new menu card, update the system test named 'Changing an item on every menu card is reflected in the command line output' (not specifying the file name on purpose, as it is subject to change at the time of writing). 
