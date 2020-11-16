@@ -1,0 +1,7 @@
+    <%= render Shared::MenuCard::Title::Component.new(title: 'Add Extra Ingredients (powered by railsbytes.com)') %>
+    
+    <%= render Tabs::Classics::MenuCards::RadioButton::Testing::Component.new(
+        menu_card_in_all_states: @all_menu_cards_in_all_states[:classics_tab][:rails_bytes_config][:testing],
+        menu_card_in_a_specific_state: @initial_state[:classics_tab][:rails_bytes_config][:testing],
+        card_state_translation: @state_translation[:classics_tab][:rails_bytes_config][:testing]) 
+    %>
