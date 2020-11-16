@@ -6,7 +6,7 @@ module Main
       class ComponentTest < ViewComponent::TestCase
         def setup
           @component_setup = {
-            menu_card_id: :menu_card_id,
+            menu_card_id: :main_tab_rails_flags_menu_card_id,
             title: 'Title',
             subtitle: 'Subtitle',
             items: [
@@ -58,8 +58,8 @@ module Main
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option1' and @checked]")
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option2' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='main-tab-rails-flags-menu-card-id-option1' and @checked]")
+          assert_selector(:xpath, "//input[@id='main-tab-rails-flags-menu-card-id-option2' and not(@checked)]")
         end
 
         def test_only_second_item_checked_for_checkbox_card_component
@@ -70,8 +70,8 @@ module Main
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option1' and not(@checked)]")
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option2' and @checked]")
+          assert_selector(:xpath, "//input[@id='main-tab-rails-flags-menu-card-id-option1' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='main-tab-rails-flags-menu-card-id-option2' and @checked]")
         end
 
         def test_both_items_checked_for_checkbox_card_component
@@ -82,8 +82,8 @@ module Main
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option1' and @checked]")
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option2' and @checked]")
+          assert_selector(:xpath, "//input[@id='main-tab-rails-flags-menu-card-id-option1' and @checked]")
+          assert_selector(:xpath, "//input[@id='main-tab-rails-flags-menu-card-id-option2' and @checked]")
         end
 
         def test_none_of_the_items_checked_for_checkbox_card_component
@@ -94,8 +94,8 @@ module Main
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option1' and not(@checked)]")
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option2' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='main-tab-rails-flags-menu-card-id-option1' and not(@checked)]")
+          assert_selector(:xpath, "//input[@id='main-tab-rails-flags-menu-card-id-option2' and not(@checked)]")
         end
 
         def test_html_data_attributes_are_rendered_correctly
@@ -106,8 +106,8 @@ module Main
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option1' and @data-base-state1='true' and @data-base-state2='false']")
-          assert_selector(:xpath, "//input[@id='rails-flags-menu-card-id-option2' and @data-base-state1='false' and @data-base-state2='true']")
+          assert_selector(:xpath, "//input[@id='main-tab-rails-flags-menu-card-id-option1' and @data-base-state1='true' and @data-base-state2='false']")
+          assert_selector(:xpath, "//input[@id='main-tab-rails-flags-menu-card-id-option2' and @data-base-state1='false' and @data-base-state2='true']")
         end
       end
     end

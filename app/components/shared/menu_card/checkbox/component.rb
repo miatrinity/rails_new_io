@@ -46,7 +46,7 @@ module Shared
         end
 
         def html_id_for(item_name)
-          "rails-flags-#{@menu_card_id}-#{item_name}".downcase.dasherize
+          "#{@menu_card_id}-#{item_name}".downcase.dasherize
         end
       end
     end

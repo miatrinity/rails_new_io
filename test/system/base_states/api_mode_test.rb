@@ -5,51 +5,51 @@ class APIModeTest < ApplicationSystemTestCase
   test 'Switching from "Omakase" to "API Mode" works correctly' do
     visit root_path
 
-    click_item_by html_id: 'base-setup-api'
+    click_item_by html_id: 'main-tab-base-setup-api'
 
     # Time to Start Cooking Menu card
-    refute page.find('#base-setup-omakase').checked?
-    assert page.find('#base-setup-api').checked?
-    refute page.find('#base-setup-early').checked?
-    refute page.find('#base-setup-minimalist').checked?
+    refute page.find('#main-tab-base-setup-omakase').checked?
+    assert page.find('#main-tab-base-setup-api').checked?
+    refute page.find('#main-tab-base-setup-early').checked?
+    refute page.find('#main-tab-base-setup-minimalist').checked?
 
     # Our Database Menu Menu card
-    assert page.find('#database-choice-sqlite').checked?
-    refute page.find('#database-choice-postgres').checked?
-    refute page.find('#database-choice-mysql').checked?
+    assert page.find('#main-tab-database-choice-sqlite').checked?
+    refute page.find('#main-tab-database-choice-postgres').checked?
+    refute page.find('#main-tab-database-choice-mysql').checked?
 
     # Guest Favorites Menu card
-    assert page.find('#rails-flags-guest-favorites-spring').checked?
-    assert page.find('#rails-flags-guest-favorites-listen').checked?
-    assert page.find('#rails-flags-guest-favorites-bootsnap').checked?
+    assert page.find('#main-tab-guest-favorites-spring').checked?
+    assert page.find('#main-tab-guest-favorites-listen').checked?
+    assert page.find('#main-tab-guest-favorites-bootsnap').checked?
 
     # Starters Menu card
-    assert page.find('#rails-flags-starters-gemfile').checked?
-    assert page.find('#rails-flags-starters-gitignore').checked?
-    assert page.find('#rails-flags-starters-keep').checked?
-    assert page.find('#rails-flags-starters-bundle').checked?
-    assert page.find('#rails-flags-starters-puma').checked?
+    assert page.find('#main-tab-starters-gemfile').checked?
+    assert page.find('#main-tab-starters-gitignore').checked?
+    assert page.find('#main-tab-starters-keep').checked?
+    assert page.find('#main-tab-starters-bundle').checked?
+    assert page.find('#main-tab-starters-puma').checked?
 
     # Mains Menu card
-    assert page.find('#rails-flags-mains-actiontext').checked?
-    assert page.find('#rails-flags-mains-activerecord').checked?
-    assert page.find('#rails-flags-mains-activestorage').checked?
-    assert page.find('#rails-flags-mains-actioncable').checked?
+    assert page.find('#main-tab-mains-actiontext').checked?
+    assert page.find('#main-tab-mains-activerecord').checked?
+    assert page.find('#main-tab-mains-activestorage').checked?
+    assert page.find('#main-tab-mains-actioncable').checked?
 
     # Email me Maybe (#not) Menu card
-    assert page.find('#rails-flags-email-actionmailer').checked?
-    assert page.find('#rails-flags-email-actionmailbox').checked?
+    assert page.find('#main-tab-email-actionmailer').checked?
+    assert page.find('#main-tab-email-actionmailbox').checked?
 
     # Le Frontend Menu card
-    assert page.find('#rails-flags-frontend-sprockets').checked?
-    assert page.find('#rails-flags-frontend-javascript').checked?
-    assert page.find('#rails-flags-frontend-turbolinks').checked?
-    assert page.find('#rails-flags-frontend-webpacker').checked?
-    assert page.find('#rails-flags-frontend-yarn').checked?
+    assert page.find('#main-tab-frontend-sprockets').checked?
+    assert page.find('#main-tab-frontend-javascript').checked?
+    assert page.find('#main-tab-frontend-turbolinks').checked?
+    assert page.find('#main-tab-frontend-webpacker').checked?
+    assert page.find('#main-tab-frontend-yarn').checked?
 
     # Testing Menu card
-    assert page.find('#rails-flags-testing-minitest').checked?
-    assert page.find('#rails-flags-testing-system').checked?
+    assert page.find('#main-tab-testing-minitest').checked?
+    assert page.find('#main-tab-testing-system').checked?
 
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 
@@ -59,8 +59,8 @@ class APIModeTest < ApplicationSystemTestCase
   test 'Switching from "The Early Days" to "API Mode": --api flag should appear in the command line output' do
     visit root_path
 
-    click_item_by html_id: 'base-setup-early'
-    click_item_by html_id: 'base-setup-api'
+    click_item_by html_id: 'main-tab-base-setup-early'
+    click_item_by html_id: 'main-tab-base-setup-api'
 
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 
@@ -70,8 +70,8 @@ class APIModeTest < ApplicationSystemTestCase
   test 'Switching from "API Mode" to "The Minimalist": --api flag should disappear from the command line output' do
     visit root_path
 
-    click_item_by html_id: 'base-setup-api'
-    click_item_by html_id: 'base-setup-minimalist'
+    click_item_by html_id: 'main-tab-base-setup-api'
+    click_item_by html_id: 'main-tab-base-setup-minimalist'
 
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 

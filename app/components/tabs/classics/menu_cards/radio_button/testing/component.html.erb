@@ -1,29 +1,24 @@
       <%= render Shared::MenuCard::RadioButton::Component.new(
-           menu_card_id: :database_choice,
-           title: 'Our Database Menu 🗄️',
-           subtitle: 'More than a toy app? Pick a heavy-duty tool!',
+           menu_card_id: :classic_tab_testing_framework_choice,
+           title: 'Testing Framework Menu 🔬',
+           subtitle: 'Optional: Minitest or RSpec, that is the Question',
            items: [
             {              
-              title: 'SQLite',
+              title: 'Minitest',
               has_image: true,
-              description: 'The current default. Recommended by @librarycongress for archival!',
+              description: 'The default testing framework',
             },
             {
-              title: 'Postgres',
+              title: 'RSpec',
               has_image: true,
-              description: 'The real default. No-brainer if you ever plan to leave development.',
-            },
-            {
-              title: 'MySQL',
-              has_image: true,
-              description: "The original default. It's fine, but Postgres is finer!",
-            }              
+              description: 'The non-default testing framework used by (almost) everyone',
+            }           
            ],
            menu_card_in_all_states: @menu_card_in_all_states,
            menu_card_in_a_specific_state: @menu_card_in_a_specific_state,
            card_state_translation: @card_state_translation,
-           data_controller: 'database-choice',
-           data_action: 'change->database-choice#update',
-           data_target: 'database-choice.name'
+           data_controller: 'rails-bytes-choice',
+           data_action: 'change->rails-bytes-choice#update',
+           data_target: 'rails-bytes-choice.name'
           ) 
       %>

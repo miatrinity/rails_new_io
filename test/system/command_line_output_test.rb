@@ -13,13 +13,13 @@ class CommandLineOutputTest < ApplicationSystemTestCase
   test 'Changing an item on every menu card is reflected in the command line output' do
     visit root_path
 
-    click_item_by html_id: 'database-choice-postgres'
-    click_item_by html_id: 'rails-flags-guest-favorites-spring'
-    click_item_by html_id: 'rails-flags-starters-keep'
-    click_item_by html_id: 'rails-flags-mains-activestorage'
-    click_item_by html_id: 'rails-flags-email-actionmailer'
-    click_item_by html_id: 'rails-flags-frontend-webpacker'
-    click_item_by html_id: 'rails-flags-testing-minitest'
+    click_item_by html_id: 'main-tab-database-choice-postgres'
+    click_item_by html_id: 'main-tab-guest-favorites-spring'
+    click_item_by html_id: 'main-tab-starters-keep'
+    click_item_by html_id: 'main-tab-mains-activestorage'
+    click_item_by html_id: 'main-tab-email-actionmailer'
+    click_item_by html_id: 'main-tab-frontend-webpacker'
+    click_item_by html_id: 'main-tab-testing-minitest'
 
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 

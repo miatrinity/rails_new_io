@@ -1,5 +1,5 @@
 module Tabs
-  module Main
+  module Classics
     module MenuCards
       module RadioButton
         module Testing

@@ -95,3 +95,13 @@
       :system:
         true: ''
         false: "--skip-system-test"
+:classics_tab:
+  :rails_bytes_config:
+    :testing:
+      :Minitest:
+        true: 'Minitest TRUE'
+        false: 'Minitest FALSE'
+      :RSpec:
+        true: "Valmaia Rspec igaz"
+        false: "Rspec hamis" 
+        

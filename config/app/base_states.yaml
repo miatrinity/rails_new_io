@@ -40,6 +40,11 @@
       :testing:
         :minitest: true
         :system: true
+  :classics_tab:
+    :rails_bytes_config:
+      :testing:
+        :Minitest: true
+        :RSpec: false
 :api_state:
   :main_tab:
     :database_config:
@@ -81,6 +86,11 @@
       :testing:
         :minitest: true
         :system: true
+  :classics_tab:
+    :rails_bytes_config:
+      :testing:
+        :Minitest: true
+        :RSpec: false
 :early_state:
   :main_tab:
     :database_config:
@@ -122,6 +132,11 @@
       :testing:
         :minitest: true
         :system: false
+  :classics_tab:
+    :rails_bytes_config:
+      :testing:
+        :Minitest: true
+        :RSpec: false
 :minimalist_state:
   :main_tab:
     :database_config:
@@ -162,4 +177,9 @@
         :yarn: false
       :testing:
         :minitest: false
-        :system: false        
+        :system: false
+  :classics_tab:
+    :rails_bytes_config:
+      :testing:
+        :Minitest: true
+        :RSpec: false    
