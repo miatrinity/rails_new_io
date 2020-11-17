@@ -11,8 +11,8 @@
         </div>
       </div>
       <div class="hidden md:block">
-        <% @items.each do |item| %>
-          <a href="/" class="ml-10 first:ml-0 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"><%= item %></a> 
+        <% @items.each do |item| %>        
+          <a href="<%= page_path(:foo) %>" class="ml-10 first:ml-0 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"><%= item %></a> 
         <% end %>
       </div>
     </nav>
