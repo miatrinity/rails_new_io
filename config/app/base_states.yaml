@@ -49,6 +49,10 @@
         :none: true
         :Stimulus: false
         :"Stimulus Reflex": false
+      :css:
+        :none: true
+        :Tailwind: false
+        :Bootstrap: false         
 :api_state:
   :main_tab:
     :database_config:
@@ -98,7 +102,11 @@
       :frontend:
         :none: true
         :Stimulus: false
-        :"Stimulus Reflex": false        
+        :"Stimulus Reflex": false
+      :css:
+        :none: true
+        :Tailwind: false
+        :Bootstrap: false             
 :early_state:
   :main_tab:
     :database_config:
@@ -149,6 +157,10 @@
         :none: true
         :Stimulus: false
         :"Stimulus Reflex": false
+      :css:
+        :none: true
+        :Tailwind: false
+        :Bootstrap: false 
 :minimalist_state:
   :main_tab:
     :database_config:
@@ -199,3 +211,7 @@
         :none: true
         :Stimulus: false
         :"Stimulus Reflex": false          
+      :css:
+        :none: true
+        :Tailwind: false
+        :Bootstrap: false          

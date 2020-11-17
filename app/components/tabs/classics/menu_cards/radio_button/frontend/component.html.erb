@@ -1,7 +1,7 @@
       <%= render Shared::MenuCard::RadioButton::Component.new(
-           menu_card_id: :classic_tab_frontend,
+           menu_card_id: :classics_tab_frontend,
            title: 'Frontend Framework Menu 🖼️',
-           subtitle: 'Optional: Mix in a frontend framework for extra zest ',
+           subtitle: 'Optional: Mix in a frontend framework for extra zest',
            items: [
             {              
               title: 'None',
@@ -9,7 +9,7 @@
               description: '',
             },
             {
-              title: 'Stimulus.js',
+              title: 'Stimulus',
               has_image: true,
               description: 'A modest JavaScript framework for the HTML you already have',
             },           
@@ -24,6 +24,6 @@
            card_state_translation: @card_state_translation,
            data_controller: 'rails-bytes',
            data_action: 'change->rails-bytes#update',
-           data_target: 'rails-bytes.name'
+           data_target: ''
           ) 
       %>

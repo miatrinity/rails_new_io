@@ -62,8 +62,8 @@ class OmakaseTest < ApplicationSystemTestCase
     ##############
 
     # Testing Framework Menu Card
-    assert page.find('#classic-tab-testing-minitest').checked?
-    refute page.find('#classic-tab-testing-rspec').checked?
+    assert page.find('#classics-tab-testing-minitest').checked?
+    refute page.find('#classics-tab-testing-rspec').checked?
 
     command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
 

@@ -102,26 +102,26 @@
         true: ''
         false: ''
       :RSpec:
-        true: "https://www.railsbytes.com/script/VD7sra"
+        true: ''
         false: ''
-    :css_framework:
+    :css:
       :none:
         true: ''
         false: ''
-      :TailwindCSS:
-        true: "https://www.railsbytes.com/script/X8BsGy"
+      :Tailwind:
+        true: ''
         false: ''
       :Bootstrap:
-        true: "https://www.railsbytes.com/script/VMys5p"
+        true: ''
         false: ''
     :frontend:
       :none:
         true: ''
         false: ''
       :Stimulus:
-        true: "https://www.railsbytes.com/script/V33s33"
+        true: ''
         false: ''
       :"Stimulus Reflex":
-        true: "https://www.railsbytes.com/script/zr4s0Y"
+        true: ''
         false: ''
         

@@ -51,7 +51,7 @@ module Shared
           @items.find { |item| item[:title] =~ /#{item_name}/i }
         end
 
-        def command_output_for(item_name)
+        def command_output_for(item_name)          
           @card_state_translation[item_name][true]
         end
 
@@ -64,7 +64,7 @@ module Shared
         end
 
         def html_id_for(item_name)
-          "#{@menu_card_id}-#{item_name}".downcase.dasherize
+          "#{@menu_card_id}-#{item_name}".tr(' ','-').downcase.dasherize
         end
       end
     end

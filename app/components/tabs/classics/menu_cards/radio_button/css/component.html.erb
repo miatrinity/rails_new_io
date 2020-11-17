@@ -1,17 +1,22 @@
       <%= render Shared::MenuCard::RadioButton::Component.new(
-           menu_card_id: :classics_tab_testing,
-           title: 'Testing Framework Menu 🔬',
-           subtitle: 'Optional: Minitest or RSpec, that is the Question',
+           menu_card_id: :classics_tab_css,
+           title: 'CSS Framework Menu 🎨',
+           subtitle: 'Optional: Add a CSS framework - present in style!',
            items: [
             {              
-              title: 'Minitest',
+              title: 'None',
               has_image: true,
-              description: 'The default testing framework',
+              description: '',
             },
             {
-              title: 'RSpec',
+              title: 'TailwindCSS',
               has_image: true,
-              description: 'The non-default testing framework used by (almost) everyone',
+              description: 'A utility-first CSS framework for rapidly building custom designs',
+            },           
+            {
+              title: 'Bootstrap',
+              has_image: true,
+              description: 'Quickly design and customize responsive mobile-first sites',
             }           
            ],
            menu_card_in_all_states: @menu_card_in_all_states,
