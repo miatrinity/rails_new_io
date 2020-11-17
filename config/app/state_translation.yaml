@@ -105,7 +105,7 @@
         true: "https://www.railsbytes.com/script/VD7sra"
         false: ''
     :css_framework:
-      :None:
+      :none:
         true: ''
         false: ''
       :TailwindCSS:
@@ -113,5 +113,15 @@
         false: ''
       :Bootstrap:
         true: "https://www.railsbytes.com/script/VMys5p"
+        false: ''
+    :frontend:
+      :none:
+        true: ''
+        false: ''
+      :Stimulus:
+        true: "https://www.railsbytes.com/script/V33s33"
+        false: ''
+      :"Stimulus Reflex":
+        true: "https://www.railsbytes.com/script/zr4s0Y"
         false: ''
         

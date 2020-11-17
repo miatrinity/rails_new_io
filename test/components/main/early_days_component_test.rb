@@ -77,8 +77,8 @@ module Main
         initial_state: @base_states[:early_state]
       ))
 
-      assert page.find('#classic-tab-testing-framework-choice-minitest').checked?
-      refute page.find('#classic-tab-testing-framework-choice-rspec').checked?
+      assert page.find('#classic-tab-testing-minitest').checked?
+      refute page.find('#classic-tab-testing-rspec').checked?
     end
   end
 end

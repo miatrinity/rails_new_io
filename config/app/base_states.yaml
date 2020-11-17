@@ -45,6 +45,10 @@
       :testing:
         :Minitest: true
         :RSpec: false
+      :frontend:
+        :none: true
+        :Stimulus: false
+        :"Stimulus Reflex": false
 :api_state:
   :main_tab:
     :database_config:
@@ -91,6 +95,10 @@
       :testing:
         :Minitest: true
         :RSpec: false
+      :frontend:
+        :none: true
+        :Stimulus: false
+        :"Stimulus Reflex": false        
 :early_state:
   :main_tab:
     :database_config:
@@ -137,6 +145,10 @@
       :testing:
         :Minitest: true
         :RSpec: false
+      :frontend:
+        :none: true
+        :Stimulus: false
+        :"Stimulus Reflex": false
 :minimalist_state:
   :main_tab:
     :database_config:
@@ -182,4 +194,8 @@
     :rails_bytes_config:
       :testing:
         :Minitest: true
-        :RSpec: false    
+        :RSpec: false
+      :frontend:
+        :none: true
+        :Stimulus: false
+        :"Stimulus Reflex": false          

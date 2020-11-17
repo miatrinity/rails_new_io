@@ -1,17 +1,22 @@
       <%= render Shared::MenuCard::RadioButton::Component.new(
-           menu_card_id: :classic_tab_testing,
-           title: 'Testing Framework Menu 🔬',
-           subtitle: 'Optional: Minitest or RSpec, that is the Question',
+           menu_card_id: :classic_tab_frontend,
+           title: 'Frontend Framework Menu 🖼️',
+           subtitle: 'Optional: Mix in a frontend framework for extra zest ',
            items: [
             {              
-              title: 'Minitest',
+              title: 'None',
               has_image: true,
-              description: 'The default testing framework',
+              description: '',
             },
             {
-              title: 'RSpec',
+              title: 'Stimulus.js',
               has_image: true,
-              description: 'The non-default testing framework used by (almost) everyone',
+              description: 'A modest JavaScript framework for the HTML you already have',
+            },           
+            {
+              title: 'Stimulus Reflex',
+              has_image: true,
+              description: 'Craft modern, reactive web interfaces',
             }           
            ],
            menu_card_in_all_states: @menu_card_in_all_states,
