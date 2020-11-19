@@ -22,9 +22,13 @@ module Main
             },
             classics_tab: {
               rails_bytes_config: {
-                testing: {
-                  testing1: { true => '', false => '' },
-                  testing2: { true => '', false => '' }
+                rails_byte_radio_button_menu_card1: {
+                  rails_byte1: { true => '', false => '' },
+                  rails_byte2: { true => '', false => '' }
+                },
+                rails_byte_radio_button_menu_card2: {
+                  rails_byte3: { true => '', false => '' },
+                  rails_byte4: { true => '', false => '' }
                 }
               }
             }
@@ -44,17 +48,15 @@ module Main
             },
             classics_tab: {
               rails_bytes_config: {
-                testing: {
-                  testing1: { true => '', false => '' },
-                  testing2: { true => '', false => '' }
-                }
+                rails_byte_radio_button_menu_card1: { rails_byte1: true, rails_byte2: false },
+                rails_byte_radio_button_menu_card2: { rails_byte3: true, rails_byte4: false }
               }
             }
           }
 
           @rails_bytes_combos = {
             rails_bytes_combo1: 'url1',
-            rails_bytes_combo2: 'url2',
+            rails_bytes_combo2: 'url2'
           }
         end
 
