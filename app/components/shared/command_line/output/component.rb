@@ -2,10 +2,11 @@ module Shared
   module CommandLine
     module Output
       class Component < ViewComponent::Base
-        def initialize(initial_state:, state_translation:)
+        def initialize(initial_state:, state_translation:, rails_bytes_combos:)
           @app_name            = 'my_app'
           @initial_state       = initial_state
           @state_translation   = state_translation
+          @rails_bytes_combos  = rails_bytes_combos
 
           @command_line_output = command_line_output
         end
@@ -32,10 +33,15 @@ module Shared
         end
 
         def rails_bytes_url
-          rails_bytes_choice = @initial_state[:classics_tab][:rails_bytes_config][:testing].find { |_, checked| checked }
+          rails_bytes_choices = @initial_state[:classics_tab][:rails_bytes_config].each_with_object([]) do |(menu_card, items), result|
+            checked_item_name = items.find { |_, checked| checked }[0]
 
-          rails_bytes_name, rails_bytes_checked = *rails_bytes_choice          
-          @state_translation[:classics_tab][:rails_bytes_config][:testing][rails_bytes_name][rails_bytes_checked]
+            result << "#{menu_card}-#{checked_item_name}".downcase
+          end
+
+          rails_bytes_combos_key = rails_bytes_choices.sort.join('@')
+
+          @rails_bytes_combos[rails_bytes_combos_key]
         end
 
         def rails_bytes

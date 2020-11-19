@@ -14,6 +14,7 @@ class InitialSetupController < ApplicationController
     @base_states = Rails.configuration.base_states
     @initial_state = Rails.configuration.initial_state
     @all_menu_cards_in_all_states = Rails.configuration.all_menu_cards_in_all_states
+    @rails_bytes_combos = Rails.configuration.rails_bytes_combos
 
     # @single_rails_bytes = {
     #   frontend: {
@@ -38,7 +39,5 @@ class InitialSetupController < ApplicationController
     # puts combos.each_with_object({}){|v,a| a[v] = ''}.to_yaml
     
     # ap combos
-    
-    @rails_bytes_combos = YAML::load(File.open("#{Rails.root}/config/app/rails_bytes_combos.yaml"))        
   end
 end

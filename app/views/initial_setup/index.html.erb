@@ -7,7 +7,7 @@
     
     <div id="rails-new-command-generator-holder" data-controller="clipboard" class="flex-col bg-gray-700 pt-3 z-50">
       
-      <%= render Shared::CommandLine::Output::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>      
+      <%= render Shared::CommandLine::Output::Component.new(initial_state: @initial_state, state_translation: @state_translation, rails_bytes_combos: @rails_bytes_combos) %>      
       <%= render Shared::CommandLine::Buttons::Component.new %>
       <div class="animate-notice">Copied to Clipboard!</div>                
     </div>
