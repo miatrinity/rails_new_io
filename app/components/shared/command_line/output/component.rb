@@ -36,7 +36,7 @@ module Shared
           rails_bytes_choices = @initial_state[:classics_tab][:rails_bytes_config].each_with_object([]) do |(menu_card, items), result|
             checked_item_name = items.find { |_, checked| checked }[0]
 
-            result << "#{menu_card}-#{checked_item_name}".downcase
+            result << "#{menu_card}-#{checked_item_name}".dasherize.downcase
           end
 
           rails_bytes_combos_key = rails_bytes_choices.sort.join('@')
