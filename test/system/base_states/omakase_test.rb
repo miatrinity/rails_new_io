@@ -65,8 +65,6 @@ class OmakaseTest < ApplicationSystemTestCase
     assert page.find('#classics-tab-testing-minitest').checked?
     refute page.find('#classics-tab-testing-rspec').checked?
 
-    command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
-
-    assert_equal command_line_output.squish, 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn'
+    assert_command_line_equals 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn'
   end
 end

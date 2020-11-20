@@ -7,7 +7,7 @@ class CommandLineOutputTest < ApplicationSystemTestCase
 
     fill_in 'app-name', with: 'edited_app_name'
 
-    assert_selector(:xpath, "//p[@id='rails-new-output-text']",text: /rails new\s+edited_app_name/)
+    assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: /rails new\s+edited_app_name/)
   end
 
   test 'Changing an item on every menu card is reflected in the command line output' do
@@ -20,10 +20,11 @@ class CommandLineOutputTest < ApplicationSystemTestCase
     click_item_by html_id: 'main-tab-email-actionmailer'
     click_item_by html_id: 'main-tab-frontend-webpacker'
     click_item_by html_id: 'main-tab-testing-minitest'
+    click_item_by html_id: 'classics-tab-frontend-stimulus-reflex'
+    click_item_by html_id: 'classics-tab-testing-rspec'
+    click_item_by html_id: 'classics-tab-css-bootstrap'
 
-    command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
-
-    assert_equal command_line_output.squish, 'rails new my_app -d postgresql --skip-action-mailer --skip-active-storage --skip-keeps --skip-spring --skip-test --skip-webpack-install'
+    assert_command_line_equals 'rails new my_app -d postgresql --skip-action-mailer --skip-active-storage --skip-keeps --skip-spring --skip-test --skip-webpack-install --template https://www.railsbytes.com/script/zyvso6'
   end
 
   test 'Choosing the RSpec railsbyte is reflected in the command line output' do
@@ -31,8 +32,6 @@ class CommandLineOutputTest < ApplicationSystemTestCase
 
     click_item_by html_id: 'classics-tab-testing-rspec'
 
-    command_line_output = find(:xpath, "//p[@id='rails-new-output-text']").text
-
-    assert_equal command_line_output.squish, 'rails new my_app --template https://www.railsbytes.com/script/VD7sra'
+    assert_command_line_equals 'rails new my_app --template https://www.railsbytes.com/script/VD7sra'
   end
 end
