@@ -60,25 +60,18 @@ class APIModeTest < ApplicationSystemTestCase
     # Testing Framework Menu Card
     assert page.find('#classics-tab-testing-minitest').checked?
     refute page.find('#classics-tab-testing-rspec').checked?
+
+    # Frontend Framework Menu Card
+    assert page.find('#classics-tab-frontend-none').checked?
+    refute page.find('#classics-tab-frontend-stimulus').checked?
+    refute page.find('#classics-tab-frontend-stimulus-reflex').checked?
+
+    # CSS Framework Menu Card
+
+    assert page.find('#classics-tab-css-none').checked?
+    refute page.find('#classics-tab-css-tailwind').checked?
+    refute page.find('#classics-tab-css-bootstrap').checked?
   
     assert_command_line_equals 'rails new my_app --api'
-  end
-
-  test 'Switching from "The Early Days" to "API Mode": --api flag should appear in the command line output' do
-    visit root_path
-
-    click_item_by html_id: 'main-tab-base-setup-early'
-    click_item_by html_id: 'main-tab-base-setup-api'
-
-    assert_command_line_equals 'rails new my_app --api'
-  end
-
-  test 'Switching from "API Mode" to "The Minimalist": --api flag should disappear from the command line output' do
-    visit root_path
-
-    click_item_by html_id: 'main-tab-base-setup-api'
-    click_item_by html_id: 'main-tab-base-setup-minimalist'
-
-    assert_command_line_equals 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-bundle --skip-gemfile --skip-git --skip-javascript --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --skip-turbolinks --skip-webpack-install --skip-yarn'
   end
 end

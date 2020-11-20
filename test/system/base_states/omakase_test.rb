@@ -2,12 +2,13 @@ require 'application_system_test_case'
 
 class OmakaseTest < ApplicationSystemTestCase
  
-  test 'Starting with omakase initial state, tweaking setup then swithing initial state to early state works correctly' do
+  test 'Starting with omakase initial state, tweaking setup then switching initial state to early state works correctly' do
     visit root_path
 
     click_item_by html_id: 'main-tab-starters-keep'
     click_item_by html_id: 'main-tab-mains-activestorage'
     click_item_by html_id: 'main-tab-email-actionmailer'
+    click_item_by html_id: 'classics-tab-css-bootstrap'
 
     find('#main-tab-base-setup-early').click
 
@@ -64,6 +65,17 @@ class OmakaseTest < ApplicationSystemTestCase
     # Testing Framework Menu Card
     assert page.find('#classics-tab-testing-minitest').checked?
     refute page.find('#classics-tab-testing-rspec').checked?
+
+    # Frontend Framework Menu Card
+    assert page.find('#classics-tab-frontend-none').checked?
+    refute page.find('#classics-tab-frontend-stimulus').checked?
+    refute page.find('#classics-tab-frontend-stimulus-reflex').checked?
+
+    # CSS Framework Menu Card
+
+    assert page.find('#classics-tab-css-none').checked?
+    refute page.find('#classics-tab-css-tailwind').checked?
+    refute page.find('#classics-tab-css-bootstrap').checked?
 
     assert_command_line_equals 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn'
   end

@@ -5,7 +5,7 @@ class EarlyDaysTest < ApplicationSystemTestCase
     visit root_path
 
     find('#main-tab-base-setup-early').click
-    
+
     # Time to Start Cooking Menu card
     refute page.find('#main-tab-base-setup-omakase').checked?
     refute page.find('#main-tab-base-setup-api').checked?
@@ -59,6 +59,17 @@ class EarlyDaysTest < ApplicationSystemTestCase
     # Testing Framework Menu Card
     assert page.find('#classics-tab-testing-minitest').checked?
     refute page.find('#classics-tab-testing-rspec').checked?
+
+    # Frontend Framework Menu Card
+    assert page.find('#classics-tab-frontend-none').checked?
+    refute page.find('#classics-tab-frontend-stimulus').checked?
+    refute page.find('#classics-tab-frontend-stimulus-reflex').checked?
+
+    # CSS Framework Menu Card
+
+    assert page.find('#classics-tab-css-none').checked?
+    refute page.find('#classics-tab-css-tailwind').checked?
+    refute page.find('#classics-tab-css-bootstrap').checked?
 
     assert_command_line_equals 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn'
   end
