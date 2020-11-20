@@ -1,6 +1,6 @@
 require 'view_component/test_case'
 
-module Main
+module Shared
   module MenuCard
     module Checkbox
       class ComponentTest < ViewComponent::TestCase
