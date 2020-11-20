@@ -2,7 +2,7 @@ require 'view_component/test_case'
 
 module Tabs
   module Main
-    class OmakaseComponentTest < ViewComponent::TestCase
+    class ApiComponentTest < ViewComponent::TestCase
       def setup
         @state_translation = Rails.configuration.state_translation
         @base_states = Rails.configuration.base_states
@@ -13,7 +13,7 @@ module Tabs
         render_inline(Tabs::Main::Component.new(
           all_menu_cards_in_all_states: @all_menu_cards_in_all_states,
           state_translation: @state_translation,
-          initial_state: @base_states[:omakase_state]
+          initial_state: @base_states[:api_state]
         ))
 
         ##########
@@ -23,8 +23,8 @@ module Tabs
         ##########
 
         # Time to Start Cooking Menu card
-        assert page.find('#main-tab-base-setup-omakase').checked?
-        refute page.find('#main-tab-base-setup-api').checked?
+        refute page.find('#main-tab-base-setup-omakase').checked?
+        assert page.find('#main-tab-base-setup-api').checked?
         refute page.find('#main-tab-base-setup-early').checked?
         refute page.find('#main-tab-base-setup-minimalist').checked?
 
@@ -69,7 +69,7 @@ module Tabs
         render_inline(Tabs::Classics::Component.new(
           all_menu_cards_in_all_states: @all_menu_cards_in_all_states,
           state_translation: @state_translation,
-          initial_state: @base_states[:omakase_state]
+          initial_state: @base_states[:api_state]
         ))
 
         assert page.find('#classics-tab-testing-minitest').checked?

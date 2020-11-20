@@ -69,7 +69,7 @@ module Tabs
         render_inline(Tabs::Classics::Component.new(
           all_menu_cards_in_all_states: @all_menu_cards_in_all_states,
           state_translation: @state_translation,
-          initial_state: @base_states[:early_state]
+          initial_state: @base_states[:minimalist_state]
         ))
         
         assert page.find('#classics-tab-testing-minitest').checked?
