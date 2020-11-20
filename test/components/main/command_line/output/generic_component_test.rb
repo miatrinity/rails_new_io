@@ -65,7 +65,7 @@ module Main
         def test_initital_command_line_output
           render_component
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app')
+          assert_command_line_equals 'rails new my_app'
         end
 
         def test_command_line_output_for_db1_and_checkbox1_selected
@@ -83,7 +83,7 @@ module Main
 
           render_component
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --skip-checkbox-option2')
+          assert_command_line_equals 'rails new my_app --skip-checkbox-option2'
         end
 
         def test_command_line_output_for_db2_and_checkbox2_selected
@@ -101,10 +101,10 @@ module Main
 
           render_component
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app -d db-option2 --skip-checkbox-option1')
+          assert_command_line_equals 'rails new my_app -d db-option2 --skip-checkbox-option1'
         end
 
-        def test_command_line_output_for_db2_and_all_checkboxes_selected
+        def test_command_line_output_for_db2_and_no_checkboxes_selected
           @initial_state[:main_tab] = {
             database_config: {
               database_choice: { DB1: false, DB2: true }
@@ -119,7 +119,7 @@ module Main
 
           render_component
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app -d db-option2')
+          assert_command_line_equals 'rails new my_app -d db-option2 --skip-checkbox-option1 --skip-checkbox-option2'
         end
 
         def test_command_line_output_for_rails_byte1_and_rails_byte3_selected
@@ -138,7 +138,7 @@ module Main
 
           render_component
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --template url2')
+          assert_command_line_equals 'rails new my_app --template url2'
         end
 
         def test_command_line_output_for_rails_byte2_and_rails_byte3_selected
@@ -151,7 +151,7 @@ module Main
 
           render_component
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --template url3')
+          assert_command_line_equals 'rails new my_app --template url3'
         end
 
         def test_command_line_output_for_rails_byte2_and_rails_byte4_selected
@@ -164,7 +164,7 @@ module Main
 
           render_component
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --template url4')
+          assert_command_line_equals 'rails new my_app --template url4'
         end
 
         def test_command_line_output_for_db2_and_checkbox2_and_rails_byte2_and_rails_byte4_selected
@@ -189,8 +189,8 @@ module Main
           }
 
           render_component
-          
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app -d db-option2 --skip-checkbox-option1 --template url4')
+
+          assert_command_line_equals 'rails new my_app -d db-option2 --skip-checkbox-option1 --template url4'
         end
 
         def test_command_line_output_for_db2_and_checkbox2_and_rails_byte1_and_rails_byte3_selected
@@ -216,7 +216,7 @@ module Main
 
           render_component
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app -d db-option2 --skip-checkbox-option1')
+          assert_command_line_equals 'rails new my_app -d db-option2 --skip-checkbox-option1'
         end
 
         private
@@ -227,6 +227,12 @@ module Main
             initial_state: @initial_state,
             rails_bytes_combos: @rails_bytes_combos
           ))
+        end
+
+        def assert_command_line_equals(expected_command_line_output)
+          command_line_output = page.find(:xpath, "//p[@id='rails-new-output-text']").text
+
+          assert_equal command_line_output.squish, expected_command_line_output
         end
       end
     end
