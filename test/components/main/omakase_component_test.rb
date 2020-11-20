@@ -65,12 +65,6 @@ module Main
       assert page.find('#main-tab-testing-minitest').checked?
       assert page.find('#main-tab-testing-system').checked?
 
-      ##############
-      #
-      # Classics Tab
-      #
-      ##############
-
       render_inline(Tabs::Classics::Component.new(
         all_menu_cards_in_all_states: @all_menu_cards_in_all_states,
         state_translation: @state_translation,

@@ -6,6 +6,12 @@ class EarlyDaysTest < ApplicationSystemTestCase
 
     find('#main-tab-base-setup-early').click
 
+    ##########
+    #
+    # Main Tab
+    #
+    ##########
+
     # Time to Start Cooking Menu card
     refute page.find('#main-tab-base-setup-omakase').checked?
     refute page.find('#main-tab-base-setup-api').checked?

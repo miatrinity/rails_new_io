@@ -5,7 +5,7 @@ module Main
     def setup
       @state_translation = Rails.configuration.state_translation
       @base_states = Rails.configuration.base_states
-      @all_menu_cards_in_all_states = Rails.configuration.all_menu_cards_in_all_states
+      @all_menu_cards_in_all_states = Rails.configuration.all_menu_cards_in_all_states      
     end
 
     def test_menu_cards_setup_in_minimalist_base_state
@@ -64,13 +64,7 @@ module Main
       # Testing Menu card
       refute page.find('#main-tab-testing-minitest').checked?
       refute page.find('#main-tab-testing-system').checked?
-      
-      ##############
-      #
-      # Classics Tab
-      #
-      ##############
-      
+
       render_inline(Tabs::Classics::Component.new(
         all_menu_cards_in_all_states: @all_menu_cards_in_all_states,
         state_translation: @state_translation,
