@@ -24,12 +24,18 @@ module Shared
               Option2: { true => '-d option1', false => '' },
             },
             menu_card_in_all_states: {
-              Option1: { base_state1: true, base_state2: false},
-              Option2: { base_state1: false, base_state2: true}
+              Option1: { 
+                base_state1: {checked: nil, locked: nil},
+                base_state2: {checked: nil, locked: nil}
+              },
+              Option2: {
+                base_state1: {checked: nil, locked: nil},
+                base_state2: {checked: nil, locked: nil}
+              }
             },
             menu_card_in_a_specific_state: {
-              Option1: nil,
-              Option2: nil
+              Option1: { checked: nil, locked: nil },
+              Option2: { checked: nil, locked: nil }
             },
             data_controller: nil,
             data_action: nil,
@@ -37,7 +43,7 @@ module Shared
           }
         end
 
-        def test_render_title_and_subtitle_for_radio_button_menu_card_component
+        def test_render_title_and_subtitle_for_radio_button_menu_card_component          
           render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
 
           assert_text('Title')
@@ -55,8 +61,8 @@ module Shared
 
         def test_first_item_checked_for_radio_button_menu_card_component
           @component_setup[:menu_card_in_a_specific_state] = {
-            Option1: true,
-            Option2: false
+            Option1: { checked: true, locked: false },
+            Option2: { checked: false, locked: false }
           }
 
           render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
@@ -66,8 +72,8 @@ module Shared
 
         def test_second_item_checked_for_radio_button_menu_card_component
           @component_setup[:menu_card_in_a_specific_state] = {
-            Option1: false,
-            Option2: true
+            Option1: { checked: false, locked: false },
+            Option2: { checked: true, locked: false }
           }
 
           render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
@@ -76,15 +82,21 @@ module Shared
         end
 
         def test_html_data_attributes_are_rendered_correctly
-          @component_setup[:menu_card_in_a_specific_state] = {
-            Option1: true,
-            Option2: false
+          @component_setup[:menu_card_in_all_states] = {
+            Option1: { 
+              base_state1: {checked: false, locked: nil},
+              base_state2: {checked: true, locked: nil}
+            },
+            Option2: { 
+              base_state1: {checked: true, locked: nil},
+              base_state2: {checked: false, locked: nil}
+            }
           }
 
           render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
 
-          assert_selector(:xpath, "//input[@id='menu-card-id-option1' and @data-base-state1='true' and @data-base-state2='false']")
-          assert_selector(:xpath, "//input[@id='menu-card-id-option2' and @data-base-state1='false' and @data-base-state2='true']")
+          assert_selector(:xpath, "//input[@id='menu-card-id-option1' and @data-base-state1='false' and @data-base-state2='true']")
+          assert_selector(:xpath, "//input[@id='menu-card-id-option2' and @data-base-state1='true' and @data-base-state2='false']")
         end
       end
     end

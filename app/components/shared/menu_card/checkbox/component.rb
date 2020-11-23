@@ -25,12 +25,12 @@ module Shared
 
         private
 
-        def update_items
-          @menu_card_in_a_specific_state.each do |item_name, checked|
+        def update_items          
+          @menu_card_in_a_specific_state.each do |item_name, display_state|
             item_to_update_for(item_name).merge!(
               {
                 command_output: command_output_for(item_name),
-                checked: checked,
+                checked: display_state[:checked],
                 html_data_attributes: html_data_attributes_for(item_name),
                 html_id: html_id_for(item_name),
                 #locked: locked_for(item_name)

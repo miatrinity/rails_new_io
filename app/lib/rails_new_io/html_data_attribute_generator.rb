@@ -7,8 +7,8 @@ module RailsNewIo
     end
 
     def html_data_attributes
-      @menu_card_in_all_states[@item_name].each_with_object([]) do |(base_state_name, base_state_value), html_data_attributes|
-        html_data_attributes << html_data_attribute(base_state_name, base_state_value)
+      @menu_card_in_all_states[@item_name].each_with_object([]) do |(base_state_name, base_state_display_state), html_data_attributes|
+        html_data_attributes << html_data_attribute(base_state_name, base_state_display_state[:checked])
       end.join(' ').html_safe
     end
 

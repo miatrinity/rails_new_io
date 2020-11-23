@@ -3,215 +3,503 @@
   :main_tab:
     :database_config:
       :database_choice:
-        :SQLite: true
-        :Postgres: false
-        :MySQL: false
+        :SQLite: 
+          :checked: true
+          :locked: false
+        :Postgres:
+          :checked: false
+          :locked: false
+        :MySQL:
+          :checked: false
+          :locked: false
     :ui_config:
       :base_setup:
-        :omakase: true
-        :api: false
-        :early: false
-        :minimalist: false    
+        :omakase:
+          :checked: true
+          :locked: false
+        :api:
+          :checked: false
+          :locked: false
+        :early:
+          :checked: false
+          :locked: false
+        :minimalist:
+          :checked: false
+          :locked: false    
     :rails_flags_config:
       :guest_favorites:
-        :spring: true
-        :listen: true
-        :bootsnap: true
+        :spring:
+          :checked: true
+          :locked: false
+        :listen:
+          :checked: true
+          :locked: false
+        :bootsnap:
+          :checked: true
+          :locked: false
       :starters:
-        :gemfile: true
-        :gitignore: true
-        :keep: true
-        :bundle: true
-        :puma: true
+        :gemfile:
+          :checked: true
+          :locked: false
+        :gitignore:
+          :checked: true
+          :locked: false
+        :keep:
+          :checked: true
+          :locked: false
+        :bundle:
+          :checked: true
+          :locked: false
+        :puma:
+          :checked: true
+          :locked: false
       :mains:
-        :actionText: true
-        :activeRecord: true
-        :activeStorage: true
-        :actionCable: true
+        :actionText:
+          :checked: true
+          :locked: false
+        :activeRecord:
+          :checked: true
+          :locked: false
+        :activeStorage:
+          :checked: true
+          :locked: false
+        :actionCable:
+          :checked: true
+          :locked: false
       :email:
-        :actionMailer: true
-        :actionMailbox: true
+        :actionMailer:
+          :checked: true
+          :locked: false
+        :actionMailbox:
+          :checked: true
+          :locked: false
       :frontend:
-        :sprockets: true
-        :javascript: true
-        :turbolinks: true
-        :webpacker: true
-        :yarn: true
+        :sprockets:
+          :checked: true
+          :locked: false
+        :javascript:
+          :checked: true
+          :locked: false
+        :turbolinks:
+          :checked: true
+          :locked: false
+        :webpacker:
+          :checked: true
+          :locked: false
+        :yarn:
+          :checked: true
+          :locked: false
       :testing:
-        :minitest: true
-        :system: true
+        :minitest:
+          :checked: true
+          :locked: true
+        :system:
+          :checked: true
+          :locked: false
   :classics_tab:
     :rails_bytes_config:
       :testing:
-        :Minitest: true
-        :RSpec: false
+        :Minitest:
+          :checked: true
+          :locked: false
+        :RSpec:
+          :checked: false
+          :locked: false
       :frontend:
-        :none: true
-        :Stimulus: false
-        :"Stimulus Reflex": false
+        :none:
+          :checked: true
+          :locked: false
+        :Stimulus:
+          :checked: false
+          :locked: false
+        :"Stimulus Reflex":
+          :checked: false
+          :locked: false
       :css:
-        :none: true
-        :Tailwind: false
-        :Bootstrap: false         
+        :none:
+          :checked: true
+          :locked: false
+        :Tailwind:
+          :checked: false
+          :locked: false
+        :Bootstrap:
+          :checked: false
+          :locked: false         
 :api_state:
   :main_tab:
     :database_config:
       :database_choice:
-        :SQLite: true
-        :Postgres: false
-        :MySQL: false
+        :SQLite:
+          :checked: true
+          :locked: false
+        :Postgres:
+          :checked: false
+          :locked: false
+        :MySQL:
+          :checked: false
+          :locked: false
     :ui_config:
       :base_setup:
-        :omakase: false
-        :api: true
-        :early: false
-        :minimalist: false        
+        :omakase:
+          :checked: false
+          :locked: false
+        :api:
+          :checked: true
+          :locked: false
+        :early:
+          :checked: false
+          :locked: false
+        :minimalist:
+          :checked: false
+          :locked: false        
     :rails_flags_config:
       :guest_favorites:
-        :spring: true
-        :listen: true
-        :bootsnap: true
+        :spring:
+          :checked: true
+          :locked: false
+        :listen:
+          :checked: true
+          :locked: false
+        :bootsnap:
+          :checked: true
+          :locked: false
       :starters:
-        :gemfile: true
-        :gitignore: true
-        :keep: true
-        :bundle: true
-        :puma: true
+        :gemfile:
+          :checked: true
+          :locked: false
+        :gitignore:
+          :checked: true
+          :locked: false
+        :keep:
+          :checked: true
+          :locked: false
+        :bundle:
+          :checked: true
+          :locked: false
+        :puma:
+          :checked: true
+          :locked: false
       :mains:
-        :actionText: true
-        :activeRecord: true
-        :activeStorage: true
-        :actionCable: true
+        :actionText:
+          :checked: true
+          :locked: false
+        :activeRecord:
+          :checked: true
+          :locked: false
+        :activeStorage:
+          :checked: true
+          :locked: false
+        :actionCable:
+          :checked: true
+          :locked: false
       :email:
-        :actionMailer: true
-        :actionMailbox: true
+        :actionMailer:
+          :checked: true
+          :locked: false
+        :actionMailbox:
+          :checked: true
+          :locked: false
       :frontend:
-        :sprockets: true
-        :javascript: true
-        :turbolinks: true
-        :webpacker: true
-        :yarn: true
+        :sprockets:
+          :checked: true
+          :locked: false
+        :javascript:
+          :checked: true
+          :locked: false
+        :turbolinks:
+          :checked: true
+          :locked: false
+        :webpacker:
+          :checked: true
+          :locked: false
+        :yarn:
+          :checked: true
+          :locked: false
       :testing:
-        :minitest: true
-        :system: true
+        :minitest:
+          :checked: true
+          :locked: true
+        :system:
+          :checked: true
+          :locked: false
   :classics_tab:
     :rails_bytes_config:
       :testing:
-        :Minitest: true
-        :RSpec: false
+        :Minitest:
+          :checked: true
+          :locked: false
+        :RSpec:
+          :checked: false
+          :locked: false
       :frontend:
-        :none: true
-        :Stimulus: false
-        :"Stimulus Reflex": false
+        :none:
+          :checked: true
+          :locked: false
+        :Stimulus:
+          :checked: false
+          :locked: false
+        :"Stimulus Reflex":
+          :checked: false
+          :locked: false
       :css:
-        :none: true
-        :Tailwind: false
-        :Bootstrap: false             
+        :none:
+          :checked: true
+          :locked: false
+        :Tailwind:
+          :checked: false
+          :locked: false
+        :Bootstrap:
+          :checked: false
+          :locked: false             
 :early_state:
   :main_tab:
     :database_config:
       :database_choice:
-        :SQLite: true
-        :Postgres: false
-        :MySQL: false
+        :SQLite:
+          :checked: true
+          :locked: false
+        :Postgres:
+          :checked: false
+          :locked: false
+        :MySQL:
+          :checked: false
+          :locked: false
     :ui_config:
       :base_setup:
-        :omakase: false
-        :api: false
-        :early: true
-        :minimalist: false        
+        :omakase:
+          :checked: false
+          :locked: false
+        :api:
+          :checked: false
+          :locked: false
+        :early:
+          :checked: true
+          :locked: false
+        :minimalist:
+          :checked: false
+          :locked: false        
     :rails_flags_config:
       :guest_favorites:
-        :spring: false
-        :listen: false
-        :bootsnap: false
+        :spring:
+          :checked: false
+          :locked: false
+        :listen:
+          :checked: false
+          :locked: false
+        :bootsnap:
+          :checked: false
+          :locked: false
       :starters:
-        :gemfile: true
-        :gitignore: true
-        :keep: false
-        :bundle: true
-        :puma: true
+        :gemfile:
+          :checked: true
+          :locked: false
+        :gitignore:
+          :checked: true
+          :locked: false
+        :keep:
+          :checked: false
+          :locked: false
+        :bundle:
+          :checked: true
+          :locked: false
+        :puma:
+          :checked: true
+          :locked: false
       :mains:
-        :actionText: false
-        :activeRecord: true
-        :activeStorage: false
-        :actionCable: false
+        :actionText:
+          :checked: false
+          :locked: false
+        :activeRecord:
+          :checked: true
+          :locked: false
+        :activeStorage:
+          :checked: false
+          :locked: false
+        :actionCable:
+          :checked: false
+          :locked: false
       :email:
-        :actionMailer: true
-        :actionMailbox: false
+        :actionMailer:
+          :checked: true
+          :locked: false
+        :actionMailbox:
+          :checked: false
+          :locked: false
       :frontend:
-        :sprockets: true
-        :javascript: false
-        :turbolinks: false
-        :webpacker: false
-        :yarn: false
+        :sprockets:
+          :checked: true
+          :locked: false
+        :javascript:
+          :checked: false
+          :locked: false
+        :turbolinks:
+          :checked: false
+          :locked: false
+        :webpacker:
+          :checked: false
+          :locked: false
+        :yarn:
+          :checked: false
+          :locked: false
       :testing:
-        :minitest: true
-        :system: false
+        :minitest:
+          :checked: true
+          :locked: true
+        :system:
+          :checked: false
+          :locked: false
   :classics_tab:
     :rails_bytes_config:
       :testing:
-        :Minitest: true
-        :RSpec: false
+        :Minitest:
+          :checked: true
+          :locked: false
+        :RSpec:
+          :checked: false
+          :locked: false
       :frontend:
-        :none: true
-        :Stimulus: false
-        :"Stimulus Reflex": false
+        :none:
+          :checked: true
+          :locked: false
+        :Stimulus:
+          :checked: false
+          :locked: false
+        :"Stimulus Reflex":
+          :checked: false
+          :locked: false
       :css:
-        :none: true
-        :Tailwind: false
-        :Bootstrap: false 
+        :none:
+          :checked: true
+          :locked: false
+        :Tailwind:
+          :checked: false
+          :locked: false
+        :Bootstrap:
+          :checked: false
+          :locked: false 
 :minimalist_state:
   :main_tab:
     :database_config:
       :database_choice:
-        :SQLite: true
-        :Postgres: false
-        :MySQL: false
+        :SQLite:
+          :checked: true
+          :locked: false
+        :Postgres:
+          :checked: false
+          :locked: false
+        :MySQL:
+          :checked: false
+          :locked: false
     :ui_config:
       :base_setup:
-        :omakase: false
-        :api: false
-        :early: false
-        :minimalist: true        
+        :omakase:
+          :checked: false
+          :locked: false
+        :api:
+          :checked: false
+          :locked: false
+        :early:
+          :checked: false
+          :locked: false
+        :minimalist:
+          :checked: true
+          :locked: false        
     :rails_flags_config:
       :guest_favorites:
-        :spring: false
-        :listen: false
-        :bootsnap: false
+        :spring:
+          :checked: false
+          :locked: false
+        :listen:
+          :checked: false
+          :locked: false
+        :bootsnap:
+          :checked: false
+          :locked: false
       :starters:
-        :gemfile: false
-        :gitignore: false
-        :keep: false
-        :bundle: false
-        :puma: false
+        :gemfile:
+          :checked: false
+          :locked: false
+        :gitignore:
+          :checked: false
+          :locked: false
+        :keep:
+          :checked: false
+          :locked: false
+        :bundle:
+          :checked: false
+          :locked: false
+        :puma:
+          :checked: false
+          :locked: false
       :mains:
-        :actionText: false
-        :activeRecord: true
-        :activeStorage: false
-        :actionCable: false
+        :actionText:
+          :checked: false
+          :locked: false
+        :activeRecord:
+          :checked: true
+          :locked: false
+        :activeStorage:
+          :checked: false
+          :locked: false
+        :actionCable:
+          :checked: false
+          :locked: false
       :email:
-        :actionMailer: false
-        :actionMailbox: false
+        :actionMailer:
+          :checked: false
+          :locked: false
+        :actionMailbox:
+          :checked: false
+          :locked: false
       :frontend:
-        :sprockets: false
-        :javascript: false
-        :turbolinks: false
-        :webpacker: false
-        :yarn: false
+        :sprockets:
+          :checked: false
+          :locked: false
+        :javascript:
+          :checked: false
+          :locked: false
+        :turbolinks:
+          :checked: false
+          :locked: false
+        :webpacker:
+          :checked: false
+          :locked: false
+        :yarn:
+          :checked: false
+          :locked: false
       :testing:
-        :minitest: false
-        :system: false
+        :minitest:
+          :checked: false
+          :locked: true
+        :system:
+          :checked: false
+          :locked: false
   :classics_tab:
     :rails_bytes_config:
       :testing:
-        :Minitest: true
-        :RSpec: false
+        :Minitest:
+          :checked: true
+          :locked: false
+        :RSpec:
+          :checked: false
+          :locked: false
       :frontend:
-        :none: true
-        :Stimulus: false
-        :"Stimulus Reflex": false          
+        :none:
+          :checked: true
+          :locked: false
+        :Stimulus:
+          :checked: false
+          :locked: false
+        :"Stimulus Reflex":
+          :checked: false
+          :locked: false          
       :css:
-        :none: true
-        :Tailwind: false
-        :Bootstrap: false          
+        :none:
+          :checked: true
+          :locked: false
+        :Tailwind:
+          :checked: false
+          :locked: false
+        :Bootstrap:
+          :checked: false
+          :locked: false

@@ -29,14 +29,14 @@ module Shared
         end
 
         private
-
+        
         def update_items
-          @menu_card_in_a_specific_state.each do |item_name, checked|
+          @menu_card_in_a_specific_state.each do |item_name, display_state|
             item_to_update_for(item_name).merge!(
               {
                 menu_card_id: @menu_card_id,
                 command_output: command_output_for(item_name),
-                checked: checked,
+                checked: display_state[:checked],
                 html_data_attributes: html_data_attributes_for(item_name),
                 html_id: html_id_for(item_name),
                 data_controller: @data_controller,
@@ -51,7 +51,7 @@ module Shared
           @items.find { |item| item[:title] =~ /#{item_name}/i }
         end
 
-        def command_output_for(item_name)          
+        def command_output_for(item_name)
           @card_state_translation[item_name][true]
         end
 

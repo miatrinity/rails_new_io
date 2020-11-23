@@ -37,19 +37,35 @@ module Shared
           @initial_state = {
             main_tab: {
               database_config: {
-                database_choice: { DB1: true, DB2: nil }
+                database_choice: { 
+                  DB1: {checked: true, locked: nil},
+                  DB2: {checked: false, locked: nil}
+                }
               },
               ui_config: {
-                base_setup: { state1: nil, state2: nil }
+                base_setup: { 
+                  api: {checked: nil, locked: nil},
+                  state1: {checked: nil, locked: nil},
+                  state2: {checked: nil, locked: nil}
+                }
               },
               rails_flags_config: {
-                checkbox_items: { Checkbox1: nil, Checkbox2: nil }
+                checkbox_items: { 
+                  Checkbox1: {checked: nil, locked: nil},
+                  Checkbox2: {checked: nil, locked: nil}
+                }
               }
             },
             classics_tab: {
               rails_bytes_config: {
-                rails_byte_radio_button_menu_card1: { rails_byte1: true, rails_byte2: false },
-                rails_byte_radio_button_menu_card2: { rails_byte3: true, rails_byte4: false }
+                rails_byte_radio_button_menu_card1: { 
+                  rails_byte1: {checked: true, locked: nil}, 
+                  rails_byte2: {checked: false, locked: nil} 
+                },
+                rails_byte_radio_button_menu_card2: { 
+                  rails_byte3: {checked: true, locked: nil},
+                  rails_byte4: {checked: false, locked: nil}
+                }
               }
             }
           }
@@ -71,13 +87,23 @@ module Shared
         def test_command_line_output_for_db1_and_checkbox1_selected
           @initial_state[:main_tab] = {
             database_config: {
-              database_choice: { DB1: true, DB2: false }
+              database_choice: {
+                DB1: {checked: true, locked: nil},
+                DB2: {checked: false, locked: nil}
+              }
             },
             ui_config: {
-              base_setup: { state1: nil, state2: nil }
+              base_setup: {
+                api: {checked: nil, locked: nil},
+                state1: {checked: nil, locked: nil},
+                state2: {checked: nil, locked: nil}
+               }
             },
             rails_flags_config: {
-              checkbox_items: { Checkbox1: true, Checkbox2: false }
+              checkbox_items: {
+                Checkbox1: {checked: true, locked: nil},
+                Checkbox2: {checked: false, locked: nil}
+              }
             }
           }
 
@@ -89,13 +115,23 @@ module Shared
         def test_command_line_output_for_db2_and_checkbox2_selected
           @initial_state[:main_tab] = {
             database_config: {
-              database_choice: { DB1: false, DB2: true }
+              database_choice: { 
+                DB1: {checked: false, locked: nil},
+                DB2: {checked: true, locked: nil}
+              }
             },
             ui_config: {
-              base_setup: { state1: nil, state2: nil }
+              base_setup: { 
+                api: {checked: nil, locked: nil},
+                state1: {checked: nil, locked: nil},
+                state2: {checked: nil, locked: nil}
+              }
             },
             rails_flags_config: {
-              checkbox_items: { Checkbox1: false, Checkbox2: true }
+              checkbox_items: {
+                Checkbox1: {checked: false, locked: nil},
+                Checkbox2: {checked: true, locked: nil}
+              }
             }
           }
 
@@ -107,13 +143,23 @@ module Shared
         def test_command_line_output_for_db2_and_no_checkboxes_selected
           @initial_state[:main_tab] = {
             database_config: {
-              database_choice: { DB1: false, DB2: true }
+              database_choice: {
+                DB1: {checked: false, locked: nil},
+                DB2: {checked: true, locked: nil}
+               }
             },
             ui_config: {
-              base_setup: { state1: nil, state2: nil }
+              base_setup: { 
+                api: {checked: nil, locked: nil},
+                state1: {checked: nil, locked: nil},
+                state2: {checked: nil, locked: nil}
+               }
             },
             rails_flags_config: {
-              checkbox_items: { Checkbox1: false, Checkbox2: false }
+              checkbox_items: {
+                Checkbox1: {checked: false, locked: nil},
+                Checkbox2: {checked: false, locked: nil}
+              }
             }
           }
 
@@ -131,8 +177,14 @@ module Shared
         def test_command_line_output_for_rails_byte1_and_rails_byte4_selected
           @initial_state[:classics_tab] = {
             rails_bytes_config: {
-              rails_byte_radio_button_menu_card1: { rails_byte1: true, rails_byte2: false },
-              rails_byte_radio_button_menu_card2: { rails_byte3: false, rails_byte4: true }
+              rails_byte_radio_button_menu_card1: {
+                rails_byte1: {checked: true, locked: nil}, 
+                rails_byte2: {checked: false, locked: nil}
+              },
+              rails_byte_radio_button_menu_card2: {
+                rails_byte3: {checked: false, locked: nil}, 
+                rails_byte4: {checked: true, locked: nil}
+              }
             }
           }
 
@@ -144,8 +196,14 @@ module Shared
         def test_command_line_output_for_rails_byte2_and_rails_byte3_selected
           @initial_state[:classics_tab] = {
             rails_bytes_config: {
-              rails_byte_radio_button_menu_card1: { rails_byte1: false, rails_byte2: true },
-              rails_byte_radio_button_menu_card2: { rails_byte3: true, rails_byte4: false }
+              rails_byte_radio_button_menu_card1: {
+                rails_byte1: {checked: false, locked: nil}, 
+                rails_byte2: {checked: true, locked: nil}
+              },
+              rails_byte_radio_button_menu_card2: {
+                rails_byte3: {checked: true, locked: nil}, 
+                rails_byte4: {checked: false, locked: nil}
+              }
             }
           }
 
@@ -157,8 +215,14 @@ module Shared
         def test_command_line_output_for_rails_byte2_and_rails_byte4_selected
           @initial_state[:classics_tab] = {
             rails_bytes_config: {
-              rails_byte_radio_button_menu_card1: { rails_byte1: false, rails_byte2: true },
-              rails_byte_radio_button_menu_card2: { rails_byte3: false, rails_byte4: true }
+              rails_byte_radio_button_menu_card1: {
+                rails_byte1: {checked: false, locked: nil}, 
+                rails_byte2: {checked: true, locked: nil}
+              },
+              rails_byte_radio_button_menu_card2: {
+                rails_byte3: {checked: false, locked: nil}, 
+                rails_byte4: {checked: true, locked: nil}
+              }
             }
           }
 
@@ -171,19 +235,35 @@ module Shared
           @initial_state = {
             main_tab: {
               database_config: {
-                database_choice: { DB1: false, DB2: true }
+                database_choice: {
+                  DB1: {checked: false, locked: nil},
+                  DB2: {checked: true, locked: nil}
+                 }
               },
               ui_config: {
-                base_setup: { state1: nil, state2: nil }
+                base_setup: { 
+                  api: {checked: nil, locked: nil},
+                  state1: {checked: nil, locked: nil},
+                  state2: {checked: nil, locked: nil}
+                 }
               },
               rails_flags_config: {
-                checkbox_items: { Checkbox1: false, Checkbox2: true }
+                checkbox_items: {
+                  Checkbox1: {checked: false, locked: nil},
+                  Checkbox2: {checked: true, locked: nil}
+                }
               }
             },
             classics_tab: {
               rails_bytes_config: {
-                rails_byte_radio_button_menu_card1: { rails_byte1: false, rails_byte2: true },
-                rails_byte_radio_button_menu_card2: { rails_byte3: false, rails_byte4: true }
+                rails_byte_radio_button_menu_card1: {
+                  rails_byte1: {checked: false, locked: nil}, 
+                  rails_byte2: {checked: true, locked: nil}
+                },
+                rails_byte_radio_button_menu_card2: {
+                  rails_byte3: {checked: false, locked: nil}, 
+                  rails_byte4: {checked: true, locked: nil}
+                }
               }
             }
           }
@@ -197,19 +277,35 @@ module Shared
           @initial_state = {
             main_tab: {
               database_config: {
-                database_choice: { DB1: false, DB2: true }
+                database_choice: { 
+                  DB1: {checked: false, locked: nil},
+                  DB2: {checked: true, locked: nil}
+                }
               },
               ui_config: {
-                base_setup: { state1: nil, state2: nil }
+                base_setup: {
+                  api: {checked: nil, locked: nil},
+                  state1: {checked: nil, locked: nil},
+                  state2: {checked: nil, locked: nil} 
+                }
               },
               rails_flags_config: {
-                checkbox_items: { Checkbox1: false, Checkbox2: true }
+                checkbox_items: {
+                  Checkbox1: {checked: false, locked: nil},
+                  Checkbox2: {checked: true, locked: nil}
+                }
               }
             },
             classics_tab: {
               rails_bytes_config: {
-                rails_byte_radio_button_menu_card1: { rails_byte1: true, rails_byte2: false },
-                rails_byte_radio_button_menu_card2: { rails_byte3: true, rails_byte4: false }
+                rails_byte_radio_button_menu_card1: {
+                  rails_byte1: {checked: true, locked: nil}, 
+                  rails_byte2: {checked: false, locked: nil}
+                },
+                rails_byte_radio_button_menu_card2: {
+                  rails_byte3: {checked: true, locked: nil}, 
+                  rails_byte4: {checked: false, locked: nil}
+                }
               }
             }
           }
@@ -232,7 +328,7 @@ module Shared
         def assert_command_line_equals(expected_command_line_output)
           command_line_output = page.find(:xpath, "//p[@id='rails-new-output-text']").text
 
-          assert_equal command_line_output.squish, expected_command_line_output
+          assert_equal expected_command_line_output, command_line_output.squish
         end
       end
     end

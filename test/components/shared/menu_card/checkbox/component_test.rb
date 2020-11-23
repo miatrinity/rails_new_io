@@ -24,12 +24,18 @@ module Shared
               Option2: { true => '', false => '--skip-option2' }
             },
             menu_card_in_all_states: {
-              Option1: { base_state1: true, base_state2: false},
-              Option2: { base_state1: false, base_state2: true}
+              Option1: { 
+                base_state1: {checked: nil, locked: nil},
+                base_state2: {checked: nil, locked: nil}
+              },
+              Option2: { 
+                base_state1: {checked: nil, locked: nil},
+                base_state2: {checked: nil, locked: nil}
+              }
             },
             menu_card_in_a_specific_state: {
-              Option1: nil,
-              Option2: nil
+              Option1: { checked: nil, locked: nil },
+              Option2: { checked: nil, locked: nil }
             }
           }
         end
@@ -52,9 +58,9 @@ module Shared
 
         def test_only_first_item_checked_for_checkbox_card_component
           @component_setup[:menu_card_in_a_specific_state] = {
-            Option1: true,
-            Option2: false
-          }
+            Option1: { checked: true, locked: nil },
+            Option2: { checked: false, locked: nil }
+        }
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
 
@@ -64,8 +70,8 @@ module Shared
 
         def test_only_second_item_checked_for_checkbox_card_component
           @component_setup[:menu_card_in_a_specific_state] = {
-            Option1: false,
-            Option2: true
+            Option1: { checked: false, locked: nil },
+            Option2: { checked: true, locked: nil }
           }
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
@@ -76,8 +82,8 @@ module Shared
 
         def test_both_items_checked_for_checkbox_card_component
           @component_setup[:menu_card_in_a_specific_state] = {
-            Option1: true,
-            Option2: true
+            Option1: { checked: true, locked: nil },
+            Option2: { checked: true, locked: nil }
           }
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
@@ -88,8 +94,8 @@ module Shared
 
         def test_none_of_the_items_checked_for_checkbox_card_component
           @component_setup[:menu_card_in_a_specific_state] = {
-            Option1: false,
-            Option2: false
+            Option1: { checked: false, locked: nil },
+            Option2: { checked: false, locked: nil }
           }
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
@@ -99,9 +105,15 @@ module Shared
         end
 
         def test_html_data_attributes_are_rendered_correctly
-          @component_setup[:menu_card_in_a_specific_state] = {
-            Option1: true,
-            Option2: false
+          @component_setup[:menu_card_in_all_states] = {
+            Option1: { 
+              base_state1: {checked: true, locked: nil},
+              base_state2: {checked: false, locked: nil}
+            },
+            Option2: { 
+              base_state1: {checked: false, locked: nil},
+              base_state2: {checked: true, locked: nil}
+            }
           }
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))

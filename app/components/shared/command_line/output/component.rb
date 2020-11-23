@@ -14,16 +14,16 @@ module Shared
         private
 
         def database_choice
-          database_choice = @initial_state[:main_tab][:database_config][:database_choice].find { |_, checked| checked }
-          database_name, database_checked = *database_choice
+          database_choice = @initial_state[:main_tab][:database_config][:database_choice].find { |_, display_state| display_state[:checked] == true }
+          database_name = database_choice[0]
 
-          @state_translation[:main_tab][:database_config][:database_choice][database_name][database_checked]
+          @state_translation[:main_tab][:database_config][:database_choice][database_name][true]
         end
 
         def rails_flags
           @initial_state[:main_tab][:rails_flags_config].each_with_object([]) do |(menu_card, items), result|
-            result << items.map do |item_name, checked|
-              @state_translation[:main_tab][:rails_flags_config][menu_card][item_name][checked]
+            result << items.map do |item_name, display_state|
+              @state_translation[:main_tab][:rails_flags_config][menu_card][item_name][display_state[:checked]]
             end
           end.flatten.reject(&:blank?).sort.join(' ')
         end
@@ -34,7 +34,7 @@ module Shared
 
         def rails_bytes_url
           rails_bytes_choices = @initial_state[:classics_tab][:rails_bytes_config].each_with_object([]) do |(menu_card, items), result|
-            checked_item_name = items.find { |_, checked| checked }[0]
+            checked_item_name = items.find { |_, display_state| display_state[:checked] == true }[0]
 
             result << "#{menu_card}-#{checked_item_name}".dasherize.downcase
           end
@@ -52,7 +52,7 @@ module Shared
 
         def api_flag_output
           content_tag :code, id: 'api-flag' do
-            api_flag_value = @initial_state[:main_tab][:ui_config][:base_setup][:api] ? '--api' : ''
+            api_flag_value = @initial_state[:main_tab][:ui_config][:base_setup][:api][:checked] ? '--api' : ''            
             with_spacer api_flag_value
           end
         end

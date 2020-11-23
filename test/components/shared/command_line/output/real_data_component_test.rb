@@ -71,9 +71,20 @@ module Shared
           @base_states_clone = @base_states.deep_dup
 
           @base_states_clone[:omakase_state][:classics_tab][:rails_bytes_config] = {
-            testing: { Minitest: true, RSpec: false },
-            css: { none: false, Tailwind: false, Bootstrap: true},
-            frontend: { none: true, Stimulus: false, "Stimulus Reflex": false }
+            testing: {
+              Minitest: { checked: true, locked: nil},
+              RSpec: { checked: false, locked: nil},
+            },
+            css: {
+              none: { checked: false, locked: nil},
+              Tailwind: { checked: false, locked: nil},
+              Bootstrap: { checked: true, locked: nil}
+            },
+            frontend: {
+              none: { checked: true, locked: nil},
+              Stimulus: { checked: false, locked: nil},
+              "Stimulus Reflex": { checked: false, locked: nil}
+            }
           }
 
           render_inline(
