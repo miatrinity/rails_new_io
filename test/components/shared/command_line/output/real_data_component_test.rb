@@ -6,13 +6,13 @@ module Shared
       class RealDataComponentTest < ViewComponent::TestCase
         def setup
           @state_translation = Rails.configuration.state_translation
-          @initial_states = Rails.configuration.base_states
+          @base_states = Rails.configuration.base_states
           @rails_bytes_combos = Rails.configuration.rails_bytes_combos
         end
 
         # Testing real-life initial state command line outputs
         def test_omakase_command_line_output
-          omakase_state = @initial_states[:omakase_state]
+          omakase_state = @base_states[:omakase_state]
 
           render_inline(
             Shared::CommandLine::Output::Component.new(
@@ -26,7 +26,7 @@ module Shared
         end
 
         def test_early_base_setup_command_line_output
-          early_state = @initial_states[:early_state]
+          early_state = @base_states[:early_state]
 
           render_inline(
             Shared::CommandLine::Output::Component.new(
@@ -40,7 +40,7 @@ module Shared
         end
 
         def test_minimalist_base_setup_command_line_output
-          minimalist_state = @initial_states[:minimalist_state]
+          minimalist_state = @base_states[:minimalist_state]
 
           render_inline(
             Shared::CommandLine::Output::Component.new(
@@ -54,7 +54,7 @@ module Shared
         end
 
         def test_api_mode_base_setup_command_line_output
-          api_state = @initial_states[:api_state]
+          api_state = @base_states[:api_state]
 
           render_inline(
             Shared::CommandLine::Output::Component.new(
@@ -68,7 +68,9 @@ module Shared
         end
 
         def test_css_bootstrap_frontend_none_testing_minitest_command_line_output
-          @initial_states[:omakase_state][:classics_tab][:rails_bytes_config] = {
+          @base_states_clone = @base_states.deep_dup
+
+          @base_states_clone[:omakase_state][:classics_tab][:rails_bytes_config] = {
             testing: { Minitest: true, RSpec: false },
             css: { none: false, Tailwind: false, Bootstrap: true},
             frontend: { none: true, Stimulus: false, "Stimulus Reflex": false }
@@ -77,7 +79,7 @@ module Shared
           render_inline(
             Shared::CommandLine::Output::Component.new(
               state_translation: @state_translation,
-              initial_state: @initial_states[:omakase_state],
+              initial_state: @base_states_clone[:omakase_state],
               rails_bytes_combos: @rails_bytes_combos
             )
           )
