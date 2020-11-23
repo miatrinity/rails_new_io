@@ -12,7 +12,11 @@
         </div>
       </div>
     </div>
-    <span class="text-yellow-500 mr-4" style="display:none">⚠️ Set and locked by a railsbyte!</span>
+    <span id="<%= @html_id %>-railsbyte-lock"
+          style="<%= @locked ? 'display:block' : 'display:none;' %>"
+          class="text-yellow-500 mr-4">          
+          ⚠️ Set and locked by a railsbyte!
+    </span>
     <div>
       <input id="<%= @html_id %>"
              type="checkbox"              

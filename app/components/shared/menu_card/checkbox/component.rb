@@ -2,14 +2,23 @@ module Shared
   module MenuCard
     module Checkbox
       class Component < ViewComponent::Base
-        def initialize(menu_card_id:, title:, subtitle:, items:, menu_card_in_all_states:, menu_card_in_a_specific_state:, card_state_translation:)
-          @menu_card_id                  = menu_card_id
-          @title                         = title
-          @subtitle                      = subtitle
-          @items                         = items
-          @menu_card_in_all_states       = menu_card_in_all_states
-          @menu_card_in_a_specific_state = menu_card_in_a_specific_state
-          @card_state_translation        = card_state_translation
+        def initialize(menu_card_id:,
+                       title:,
+                       subtitle:,
+                       items:,
+                       menu_card_in_all_states:,
+                       menu_card_in_a_specific_state:,
+                       card_state_translation:)
+                       #menu_card_rails_bytes_locks_in_a_specific_state:)
+
+          @menu_card_id                                    = menu_card_id
+          @title                                           = title
+          @subtitle                                        = subtitle
+          @items                                           = items
+          @menu_card_in_all_states                         = menu_card_in_all_states
+          @menu_card_in_a_specific_state                   = menu_card_in_a_specific_state
+          @card_state_translation                          = card_state_translation
+          # @menu_card_rails_bytes_locks_in_a_specific_state = menu_card_rails_bytes_locks_in_a_specific_state
 
           update_items
         end
@@ -23,7 +32,8 @@ module Shared
                 command_output: command_output_for(item_name),
                 checked: checked,
                 html_data_attributes: html_data_attributes_for(item_name),
-                html_id: html_id_for(item_name)
+                html_id: html_id_for(item_name),
+                #locked: locked_for(item_name)
               }
             )
           end
@@ -47,6 +57,10 @@ module Shared
 
         def html_id_for(item_name)
           "#{@menu_card_id}-#{item_name}".downcase.dasherize
+        end
+
+        def locked_for(item_name)
+          @menu_card_rails_bytes_locks_in_a_specific_state[item_name]
         end
       end
     end
