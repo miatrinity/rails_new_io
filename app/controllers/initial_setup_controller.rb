@@ -16,28 +16,54 @@ class InitialSetupController < ApplicationController
     @all_menu_cards_in_all_states = Rails.configuration.all_menu_cards_in_all_states
     @rails_bytes_combos = Rails.configuration.rails_bytes_combos
 
-    # @single_rails_bytes = {
-    #   frontend: {
-    #     none: '',
-    #     stimulus: 'https://www.railsbytes.com/script/V33s33',
-    #     "stimulus-reflex": 'https://www.railsbytes.com/script/zr4s0Y'
-    #   },
-    #   testing: {
-    #     minitest: '',
-    #     rspec: 'https://www.railsbytes.com/script/VD7sra'
-    #   },
-    #   css: {
-    #     none: '',
-    #     tailwind: '',
-    #     bootstrap: ''
-    #   }
-    # }
-
-
-    
-    # combos = RailsNewIo::RailsBytesComboGenerator.new(@single_rails_bytes).generate
-    # puts combos.each_with_object({}){|v,a| a[v] = ''}.to_yaml
-    
-    # ap combos
+    @rails_bytes_locks = {
+      testing: {
+        Minitest: {
+          'main-tab-testing-minitest': true
+        },
+        RSpec: {
+          'main-tab-testing-minitest': false
+        }
+      },
+      frontend: {
+        none: {},
+        Stimulus: {
+          'main-tab-starters-gemfile': true,
+          'main-tab-starters-bundle': true,
+          'main-tab-frontend-javascript': true,
+          'main-tab-frontend-webpacker': false,
+          'main-tab-frontend-turbolinks': true,
+          'main-tab-frontend-yarn': true
+        },
+        "Stimulus Reflex": {
+          'main-tab-starters-gemfile': true,
+          'main-tab-starters-bundle': true,
+          'main-tab-mains-actioncable': true,
+          'main-tab-frontend-javascript': true,
+          'main-tab-frontend-webpacker': false,
+          'main-tab-frontend-turbolinks': true,
+          'main-tab-frontend-yarn': true
+        }
+      },
+      css: {
+        none: {},
+        Tailwind: {
+          'main-tab-starters-gemfile': true,
+          'main-tab-starters-bundle': true,
+          'main-tab-frontend-javascript': true,
+          'main-tab-frontend-webpacker': false,
+          'main-tab-frontend-turbolinks': true,
+          'main-tab-frontend-yarn': true
+        },
+        Bootstrap: {
+          'main-tab-starters-gemfile': true,
+          'main-tab-starters-bundle': true,
+          'main-tab-frontend-javascript': true,
+          'main-tab-frontend-webpacker': false,
+          'main-tab-frontend-turbolinks': true,
+          'main-tab-frontend-yarn': true
+        }
+      }
+    }
   end
 end
