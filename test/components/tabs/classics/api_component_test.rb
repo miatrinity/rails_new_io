@@ -9,7 +9,7 @@ module Tabs
         @all_menu_cards_in_all_states = Rails.configuration.all_menu_cards_in_all_states
       end
 
-      def test_omakase_menu_card_setup
+      def test_api_mode_menu_card_setup
 
         render_inline(Tabs::Classics::Component.new(
           all_menu_cards_in_all_states: @all_menu_cards_in_all_states,
