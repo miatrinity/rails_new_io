@@ -1,81 +1,17 @@
 require 'application_system_test_case'
 
 class EarlyDaysTest < ApplicationSystemTestCase
+  include RailsNewIo::BaseStateItemsChecks::EarlyDays::MainTab
+  include RailsNewIo::BaseStateItemsChecks::EarlyDays::ClassicsTab
+
   test '"The Early Days" radio button works correctly' do
     visit root_path
 
     find('#main-tab-base-setup-early').click
 
-    ##########
-    #
-    # Main Tab
-    #
-    ##########
-
-    # Time to Start Cooking Menu card
-    refute page.find('#main-tab-base-setup-omakase').checked?
-    refute page.find('#main-tab-base-setup-api').checked?
-    assert page.find('#main-tab-base-setup-early').checked?
-    refute page.find('#main-tab-base-setup-minimalist').checked?
-
-    # Our Database Menu Menu card
-    assert page.find('#main-tab-database-choice-sqlite').checked?
-    refute page.find('#main-tab-database-choice-postgres').checked?
-    refute page.find('#main-tab-database-choice-mysql').checked?
-
-    # Guest Favorites Menu card
-    refute page.find('#main-tab-guest-favorites-spring').checked?
-    refute page.find('#main-tab-guest-favorites-listen').checked?
-    refute page.find('#main-tab-guest-favorites-bootsnap').checked?
-
-    # Starters Menu card
-    assert page.find('#main-tab-starters-gemfile').checked?
-    assert page.find('#main-tab-starters-gitignore').checked?
-    refute page.find('#main-tab-starters-keep').checked?
-    assert page.find('#main-tab-starters-bundle').checked?
-    assert page.find('#main-tab-starters-puma').checked?
-
-    # Mains Menu card
-    refute page.find('#main-tab-mains-actiontext').checked?
-    assert page.find('#main-tab-mains-activerecord').checked?
-    refute page.find('#main-tab-mains-activestorage').checked?
-    refute page.find('#main-tab-mains-actioncable').checked?
-
-    # Email me Maybe (#not) Menu card
-    assert page.find('#main-tab-email-actionmailer').checked?
-    refute page.find('#main-tab-email-actionmailbox').checked?
-
-    # Le Frontend Menu card
-    assert page.find('#main-tab-frontend-sprockets').checked?
-    refute page.find('#main-tab-frontend-javascript').checked?
-    refute page.find('#main-tab-frontend-turbolinks').checked?
-    refute page.find('#main-tab-frontend-webpacker').checked?
-    refute page.find('#main-tab-frontend-yarn').checked?
-
-    # Testing Menu card
-    assert page.find('#main-tab-testing-minitest').checked?
-    refute page.find('#main-tab-testing-system').checked?
-
-    ##############
-    #
-    # Classics Tab
-    #
-    ##############
-
-    # Testing Framework Menu Card
-    assert page.find('#classics-tab-testing-minitest').checked?
-    refute page.find('#classics-tab-testing-rspec').checked?
-
-    # Frontend Framework Menu Card
-    assert page.find('#classics-tab-frontend-none').checked?
-    refute page.find('#classics-tab-frontend-stimulus').checked?
-    refute page.find('#classics-tab-frontend-stimulus-reflex').checked?
-
-    # CSS Framework Menu Card
-
-    assert page.find('#classics-tab-css-none').checked?
-    refute page.find('#classics-tab-css-tailwind').checked?
-    refute page.find('#classics-tab-css-bootstrap').checked?
+    verify_early_days_main_tab_items_checked
+    verify_early_days_classics_tab_items_checked
+    verify_early_days_main_tab_items_locked
 
     assert_command_line_equals 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn'
   end

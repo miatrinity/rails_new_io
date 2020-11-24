@@ -8,7 +8,7 @@ module CustomAsserts
   end
 
   def assert_hidden(element_id)
-    assert page.find(:xpath, "//*[@id='#{element_id}' and contains(@class,'hidden')]")
+    assert page.find(:xpath, "//*[@id='#{element_id}' and contains(@class,'hidden')]", :visible => false)
   end
 
   def assert_visible(element_id)

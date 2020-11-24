@@ -19,8 +19,8 @@ module Tabs
           initial_state: @base_states[:api_state]
         ))
 
-        verify_early_days_main_tab_items_checked
-        verify_early_days_main_tab_items_locked
+        verify_api_mode_main_tab_items_checked
+        verify_api_mode_main_tab_items_locked
       end
     end
   end

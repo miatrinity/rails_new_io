@@ -12,7 +12,6 @@ module Tabs
       end
 
       def test_omakase_menu_card_setup
-
         render_inline(Tabs::Classics::Component.new(
           all_menu_cards_in_all_states: @all_menu_cards_in_all_states,
           state_translation: @state_translation,

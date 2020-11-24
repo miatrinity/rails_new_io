@@ -2,7 +2,7 @@ module RailsNewIo
   module BaseStateItemsChecks
     module ApiMode
       module MainTab
-        def verify_early_days_main_tab_items_checked
+        def verify_api_mode_main_tab_items_checked
           # Time to Start Cooking Menu card
           refute page.find('#main-tab-base-setup-omakase').checked?
           assert page.find('#main-tab-base-setup-api').checked?
@@ -48,7 +48,7 @@ module RailsNewIo
           assert page.find('#main-tab-testing-system').checked?
         end
 
-        def verify_early_days_main_tab_items_locked
+        def verify_api_mode_main_tab_items_locked
           # Guest Favorites Menu card
           assert_hidden 'main-tab-guest-favorites-spring-railsbyte-lock'
           assert_hidden 'main-tab-guest-favorites-listen-railsbyte-lock'
