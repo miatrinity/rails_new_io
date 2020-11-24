@@ -98,6 +98,9 @@
 :classics_tab:
   :rails_bytes_config:
     :testing:
+      :None:
+        true: ''
+        false: ''      
       :Minitest:
         true: ''
         false: ''

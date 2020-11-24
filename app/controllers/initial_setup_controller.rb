@@ -37,11 +37,15 @@ class InitialSetupController < ApplicationController
         'main-tab-frontend-yarn': true
       },
       # testing
+      'classics-tab-testing-none': {
+        'main-tab-testing-minitest': false,
+        'main-tab-testing-system': false
+      },
       'classics-tab-testing-minitest': {
         'main-tab-testing-minitest': true
       },
       'classics-tab-testing-rspec': {
-        'main-tab-testing-minitest': false 
+        'main-tab-testing-minitest': false
       },
       # css
       'classics-tab-css-none': {},

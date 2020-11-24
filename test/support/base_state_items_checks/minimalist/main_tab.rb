@@ -79,8 +79,8 @@ module RailsNewIo
           assert_hidden 'main-tab-frontend-yarn-railsbyte-lock'
 
           # Testing Menu card
-          assert_hidden 'main-tab-testing-minitest-railsbyte-lock'
-          assert_hidden 'main-tab-testing-system-railsbyte-lock'
+          assert_visible 'main-tab-testing-minitest-railsbyte-lock'
+          assert_visible 'main-tab-testing-system-railsbyte-lock'
         end
       end
     end

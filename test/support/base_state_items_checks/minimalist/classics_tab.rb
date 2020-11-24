@@ -4,7 +4,8 @@ module RailsNewIo
       module ClassicsTab
         def verify_minimalist_classics_tab_items_checked
           # Testing Framework Menu Card
-          assert page.find('#classics-tab-testing-minitest').checked?
+          assert page.find('#classics-tab-testing-none').checked?
+          refute page.find('#classics-tab-testing-minitest').checked?
           refute page.find('#classics-tab-testing-rspec').checked?
 
           # Frontend Framework Menu Card

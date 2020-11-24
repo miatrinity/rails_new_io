@@ -99,6 +99,9 @@
   :classics_tab:
     :rails_bytes_config:
       :testing:
+        :None:
+          :checked: false
+          :locked: false        
         :Minitest:
           :checked: true
           :locked: false
@@ -225,6 +228,9 @@
   :classics_tab:
     :rails_bytes_config:
       :testing:
+        :None:
+          :checked: false
+          :locked: false      
         :Minitest:
           :checked: true
           :locked: false
@@ -351,6 +357,9 @@
   :classics_tab:
     :rails_bytes_config:
       :testing:
+        :None:
+          :checked: false
+          :locked: false      
         :Minitest:
           :checked: true
           :locked: false
@@ -470,15 +479,18 @@
       :testing:
         :minitest:
           :checked: false
-          :locked: false
+          :locked: true
         :system:
           :checked: false
-          :locked: false
+          :locked: true
   :classics_tab:
     :rails_bytes_config:
       :testing:
-        :Minitest:
+        :None:
           :checked: true
+          :locked: false      
+        :Minitest:
+          :checked: false
           :locked: false
         :RSpec:
           :checked: false

@@ -29,7 +29,7 @@ module Shared
         end
 
         private
-        
+
         def update_items
           @menu_card_in_a_specific_state.each do |item_name, display_state|
             item_to_update_for(item_name).merge!(
