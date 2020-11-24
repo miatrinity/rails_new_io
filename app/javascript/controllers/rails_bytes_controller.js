@@ -3,7 +3,7 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = [ "name" ]
     
-  update() {
+  update(event) {
     const railBytesCombos = JSON.parse(document.getElementById('rails-bytes-combos').textContent)
     
     const selectedRailsBytes = [...document.querySelectorAll("#tabs-classics [data-id=rails-menu-card] input")].filter(x => x.checked);
@@ -20,6 +20,20 @@ export default class extends Controller {
     
     // Lock Railsbytes
     
+    const railsBytesLocks = JSON.parse(document.getElementById('rails-bytes-locks').textContent)
     
+    const currentlySelectedRailsBytesId = event.target.id
+    
+    const itemsToLock = railsBytesLocks[currentlySelectedRailsBytesId]
+    for (const menuCardItemId in itemsToLock) {
+      const menuCardItem = document.getElementById(menuCardItemId)
+
+      if(menuCardItem.checked !== itemsToLock[menuCardItemId]) {
+        menuCardItem.click();
+      }
+            
+      const railsBytesLockMessage = document.getElementById(`${menuCardItemId}-railsbyte-lock`)
+      railsBytesLockMessage.classList.remove('hidden')
+    }
   }
 }
