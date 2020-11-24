@@ -3,6 +3,8 @@ require 'view_component/test_case'
 module Tabs
   module Classics
     class EarlyDaysComponentTest < ViewComponent::TestCase
+      include RailsNewIo::BaseStateItemsChecks::EarlyDays::ClassicsTab
+
       def setup
         @state_translation = Rails.configuration.state_translation
         @base_states = Rails.configuration.base_states
@@ -17,20 +19,7 @@ module Tabs
           initial_state: @base_states[:early_state]
         ))
 
-        # Testing Framework Menu Card
-        assert page.find('#classics-tab-testing-minitest').checked?
-        refute page.find('#classics-tab-testing-rspec').checked?
-
-        # Frontend Framework Menu Card
-        assert page.find('#classics-tab-frontend-none').checked?
-        refute page.find('#classics-tab-frontend-stimulus').checked?
-        refute page.find('#classics-tab-frontend-stimulus-reflex').checked?
-
-        # CSS Framework Menu Card
-
-        assert page.find('#classics-tab-css-none').checked?
-        refute page.find('#classics-tab-css-tailwind').checked?
-        refute page.find('#classics-tab-css-bootstrap').checked?
+        verify_early_days_classics_tab_items_checked
       end
     end
   end
