@@ -32,6 +32,6 @@ class CommandLineOutputTest < ApplicationSystemTestCase
 
     click_item_by html_id: 'classics-tab-testing-rspec'
 
-    assert_command_line_equals 'rails new my_app --template https://www.railsbytes.com/script/VD7sra'
+    assert_command_line_equals 'rails new my_app --skip-test --template https://www.railsbytes.com/script/VD7sra'
   end
 end
