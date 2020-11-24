@@ -4,8 +4,10 @@ module Shared
   module MenuCard
     module Checkbox
       class ComponentTest < ViewComponent::TestCase
+        include CustomAsserts
+
         def setup
-          @component_setup = {                        
+          @component_setup = {
             # menu_card_id: :main_tab_rails_flags_menu_card_id,
             menu_card_id: :tab1_config1_menu_card1_id,
             title: 'Title',
@@ -123,10 +125,40 @@ module Shared
           assert_selector(:xpath, "//input[@id='tab1-config1-menu-card1-id-option2' and @data-base-state1='false' and @data-base-state2='true']")
         end
 
-        def test_rails_byte_locks_are_working_correctly
-          
-          
+        def test_rails_byte_locks_are_working_correctly_for_option1_locked
+          @component_setup[:menu_card_in_a_specific_state] = {
+            Option1: { checked: nil, locked: true },
+            Option2: { checked: nil, locked: false }
+          }
+
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
+
+          assert_visible 'tab1-config1-menu-card1-id-option1-railsbyte-lock'
+          assert_hidden 'tab1-config1-menu-card1-id-option2-railsbyte-lock'
+        end
+
+        def test_rails_byte_locks_are_working_correctly_for_option2_locked
+          @component_setup[:menu_card_in_a_specific_state] = {
+            Option1: { checked: nil, locked: false },
+            Option2: { checked: nil, locked: true }
+          }
+
+          render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
+
+          assert_hidden 'tab1-config1-menu-card1-id-option1-railsbyte-lock'
+          assert_visible 'tab1-config1-menu-card1-id-option2-railsbyte-lock'
+        end
+
+        def test_rails_byte_locks_are_working_correctly_for_both_options_locked
+          @component_setup[:menu_card_in_a_specific_state] = {
+            Option1: { checked: nil, locked: true },
+            Option2: { checked: nil, locked: true }
+          }
+
+          render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
+
+          assert_visible 'tab1-config1-menu-card1-id-option1-railsbyte-lock'
+          assert_visible 'tab1-config1-menu-card1-id-option2-railsbyte-lock'
         end
       end
     end
