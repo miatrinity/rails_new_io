@@ -13,8 +13,7 @@
       </div>
     </div>
     <span id="<%= @html_id %>-railsbyte-lock"
-          style="<%= @locked ? 'display:block' : 'display:none;' %>"
-          class="text-yellow-500 mr-4">          
+          class="text-yellow-500 mr-4 <%= @display_locked_by_railsbytes %>">
           ⚠️ Set and locked by a railsbyte!
     </span>
     <div>
@@ -22,7 +21,7 @@
              type="checkbox"              
              data-action="change->rails-flag#update"
              <%= @html_data_attributes %>
-             <%= @checked ? 'checked' : '' %>
+             <%= @checked_attribute %>
              autocomplete="off"
              class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
     </div>
