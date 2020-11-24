@@ -470,7 +470,7 @@
       :testing:
         :minitest:
           :checked: false
-          :locked: true
+          :locked: false
         :system:
           :checked: false
           :locked: false

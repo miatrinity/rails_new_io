@@ -1,7 +1,6 @@
 require 'application_system_test_case'
 
 class MinimalistTest < ApplicationSystemTestCase
-
   test '"The minimalist" radio button works correctly' do
     visit root_path
 

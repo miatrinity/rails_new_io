@@ -3,6 +3,8 @@ require 'view_component/test_case'
 module Tabs
   module Main
     class MinimalistComponentTest < ViewComponent::TestCase
+      include CustomAsserts
+
       def setup
         @state_translation = Rails.configuration.state_translation
         @base_states = Rails.configuration.base_states
@@ -15,7 +17,7 @@ module Tabs
           state_translation: @state_translation,
           initial_state: @base_states[:minimalist_state]
         ))
-        
+
         ##########
         #
         # Main Tab
@@ -64,8 +66,9 @@ module Tabs
 
         # Testing Menu card
         refute page.find('#main-tab-testing-minitest').checked?
+        assert_hidden 'main-tab-testing-minitest-railsbyte-lock'
         refute page.find('#main-tab-testing-system').checked?
-
+        assert_hidden 'main-tab-testing-system-railsbyte-lock'
       end
     end
   end

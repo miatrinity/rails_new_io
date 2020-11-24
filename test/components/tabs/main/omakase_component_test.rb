@@ -3,6 +3,8 @@ require 'view_component/test_case'
 module Tabs
   module Main
     class OmakaseComponentTest < ViewComponent::TestCase
+      include CustomAsserts
+
       def setup
         @state_translation = Rails.configuration.state_translation
         @base_states = Rails.configuration.base_states
@@ -64,8 +66,9 @@ module Tabs
 
         # Testing Menu card
         assert page.find('#main-tab-testing-minitest').checked?
+        assert_visible 'main-tab-testing-minitest-railsbyte-lock'
         assert page.find('#main-tab-testing-system').checked?
-
+        assert_hidden 'main-tab-testing-system-railsbyte-lock'
       end
     end
   end

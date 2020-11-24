@@ -41,7 +41,7 @@ module RailsNewIo
     config.state_translation = YAML::load(File.open("#{Rails.root}/config/app/state_translation.yaml"))
     config.base_states = YAML::load(File.open("#{Rails.root}/config/app/base_states.yaml"))
     config.rails_bytes_combos = YAML::load(File.open("#{Rails.root}/config/app/rails_bytes_combos.yaml"))
-    
+
     config.initial_state_name = :omakase_state
     config.initial_state = config.base_states[config.initial_state_name]
     config.all_menu_cards_in_all_states = AllMenuCardsInAllStatesGenerator.new(base_states: config.base_states).generate
