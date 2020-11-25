@@ -14,4 +14,16 @@ module CustomAsserts
   def assert_visible(element_id)
     assert page.find(:xpath, "//*[@id='#{element_id}' and not(contains(@class,'hidden'))]")
   end
+
+  def assert_active_rails_byte(element_id)
+    assert_selector(
+      :xpath,
+      "//li[descendant::input[@id='#{element_id}'] and @data-active-railsbyte='true']")
+  end
+
+  def refute_active_rails_byte(element_id)
+    assert_selector(
+      :xpath,
+      "//li[descendant::input[@id='#{element_id}'] and @data-active-railsbyte='false']")
+  end
 end

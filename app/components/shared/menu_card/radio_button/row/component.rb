@@ -14,20 +14,22 @@ module Shared
             html_data_attributes:,
             data_controller:,
             data_action:,
-            data_target:
+            data_target:,
+            data_active_railsbyte:
           )
-            @title                = title
-            @has_image            = has_image
-            @description          = description
-            @menu_card_id         = menu_card_id
-            @command_output       = command_output
-            @checked              = checked
-            @html_id              = html_id
-            @icon                 = icon
-            @html_data_attributes = html_data_attributes
-            @data_controller      = data_controller
-            @data_action          = data_action
-            @data_target          = data_target
+            @title                 = title
+            @has_image             = has_image
+            @description           = description
+            @menu_card_id          = menu_card_id
+            @command_output        = command_output
+            @checked               = checked
+            @html_id               = html_id
+            @icon                  = icon
+            @html_data_attributes  = html_data_attributes
+            @data_controller       = data_controller
+            @data_action           = data_action
+            @data_target           = data_target
+            @data_active_railsbyte = data_active_railsbyte
           end
 
           private

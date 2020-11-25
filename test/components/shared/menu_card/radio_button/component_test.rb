@@ -4,6 +4,8 @@ module Shared
   module MenuCard
     module RadioButton
       class ComponentTest < ViewComponent::TestCase
+        include CustomAsserts
+        
         def setup
           @component_setup = {
             menu_card_id: :menu_card_id,
@@ -43,7 +45,7 @@ module Shared
           }
         end
 
-        def test_render_title_and_subtitle_for_radio_button_menu_card_component          
+        def test_render_title_and_subtitle_for_radio_button_menu_card_component
           render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
 
           assert_text('Title')
@@ -61,8 +63,8 @@ module Shared
 
         def test_first_item_checked_for_radio_button_menu_card_component
           @component_setup[:menu_card_in_a_specific_state] = {
-            Option1: { checked: true, locked: false },
-            Option2: { checked: false, locked: false }
+            Option1: { checked: true, locked: nil },
+            Option2: { checked: false, locked: nil }
           }
 
           render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
@@ -72,8 +74,8 @@ module Shared
 
         def test_second_item_checked_for_radio_button_menu_card_component
           @component_setup[:menu_card_in_a_specific_state] = {
-            Option1: { checked: false, locked: false },
-            Option2: { checked: true, locked: false }
+            Option1: { checked: false, locked: nil },
+            Option2: { checked: true, locked: nil }
           }
 
           render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
@@ -81,7 +83,7 @@ module Shared
           assert_selector(:xpath, "//input[@id='menu-card-id-option2' and @checked]")
         end
 
-        def test_html_data_attributes_are_rendered_correctly
+        def test_base_state_html_data_attributes_are_rendered_correctly
           @component_setup[:menu_card_in_all_states] = {
             Option1: { 
               base_state1: {checked: false, locked: nil},
@@ -97,6 +99,18 @@ module Shared
 
           assert_selector(:xpath, "//input[@id='menu-card-id-option1' and @data-base-state1='false' and @data-base-state2='true']")
           assert_selector(:xpath, "//input[@id='menu-card-id-option2' and @data-base-state1='true' and @data-base-state2='false']")
+        end
+
+        def test_active_railsbyte_html_data_attributes_are_rendered_correctly
+          @component_setup[:menu_card_in_a_specific_state] = {
+            Option1: { checked: true, locked: nil },
+            Option2: { checked: false, locked: nil }
+          }
+
+          render_inline(Shared::MenuCard::RadioButton::Component.new(@component_setup))
+
+          assert_active_rails_byte('menu-card-id-option1')
+          refute_active_rails_byte('menu-card-id-option2')
         end
       end
     end
