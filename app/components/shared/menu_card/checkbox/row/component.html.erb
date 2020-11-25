@@ -23,6 +23,7 @@
              <%= @html_data_attributes %>
              <%= @checked_attribute %>
              autocomplete="off"
+             <%= @display_locked_by_railsbytes == 'hidden' ? '' : 'disabled' %>
              class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
     </div>
   </label>

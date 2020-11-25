@@ -4,6 +4,11 @@ export default class extends Controller {
   static targets = [ "name" ]
     
   update(event) {
+    this.setCommandLineOutput()
+    this.lockMenuCardItems(event)
+  }
+  
+  setCommandLineOutput() {
     const railBytesCombos = JSON.parse(document.getElementById('rails-bytes-combos').textContent)
     
     const selectedRailsBytes = [...document.querySelectorAll("#tabs-classics [data-id=rails-menu-card] input")].filter(x => x.checked);
@@ -16,10 +21,10 @@ export default class extends Controller {
     const spacedOutput = ' ' + '--template ' + output
     const styledOutput = (output === '' ? '' : spacedOutput)
         
-    document.getElementById('rails-bytes').textContent = styledOutput
-    
-    // Lock Railsbytes
-    
+    document.getElementById('rails-bytes').textContent = styledOutput    
+  }
+  
+  lockMenuCardItems(event) {        
     const railsBytesLocks = JSON.parse(document.getElementById('rails-bytes-locks').textContent)
     
     const currentlySelectedRailsBytesId = event.target.id
@@ -27,13 +32,16 @@ export default class extends Controller {
     const itemsToLock = railsBytesLocks[currentlySelectedRailsBytesId]
     for (const menuCardItemId in itemsToLock) {
       const menuCardItem = document.getElementById(menuCardItemId)
-
+      
       if(menuCardItem.checked !== itemsToLock[menuCardItemId]) {
-        menuCardItem.click();
+        menuCardItem.disabled = false
+        menuCardItem.click()
       }
+      
+      menuCardItem.disabled = true
             
       const railsBytesLockMessage = document.getElementById(`${menuCardItemId}-railsbyte-lock`)
       railsBytesLockMessage.classList.remove('hidden')
-    }
+    }    
   }
 }
