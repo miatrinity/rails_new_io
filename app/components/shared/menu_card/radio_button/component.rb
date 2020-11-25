@@ -42,7 +42,7 @@ module Shared
                 data_controller: @data_controller,
                 data_action: @data_action,
                 data_target: @data_target,
-                data_active_railsbyte: active_railsbyte?(item_name)
+                data_active_rails_byte: active_rails_byte?(item_name)
               }
             )
           end
@@ -68,7 +68,7 @@ module Shared
           "#{@menu_card_id}-#{item_name}".tr(' ','-').downcase.dasherize
         end
 
-        def active_railsbyte?(item_name)
+        def active_rails_byte?(item_name)
           @menu_card_in_a_specific_state[item_name][:checked]
         end
       end

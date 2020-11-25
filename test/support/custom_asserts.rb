@@ -18,12 +18,12 @@ module CustomAsserts
   def assert_active_rails_byte(element_id)
     assert_selector(
       :xpath,
-      "//li[descendant::input[@id='#{element_id}'] and @data-active-railsbyte='true']")
+      "//li[descendant::input[@id='#{element_id}'] and @data-active-rails-byte='true']")
   end
 
   def refute_active_rails_byte(element_id)
     assert_selector(
       :xpath,
-      "//li[descendant::input[@id='#{element_id}'] and @data-active-railsbyte='false']")
+      "//li[descendant::input[@id='#{element_id}'] and @data-active-rails-byte='false']")
   end
 end

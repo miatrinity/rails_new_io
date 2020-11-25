@@ -101,7 +101,7 @@ module Shared
           assert_selector(:xpath, "//input[@id='menu-card-id-option2' and @data-base-state1='true' and @data-base-state2='false']")
         end
 
-        def test_active_railsbyte_html_data_attributes_are_rendered_correctly
+        def test_active_rails_byte_html_data_attributes_are_rendered_correctly
           @component_setup[:menu_card_in_a_specific_state] = {
             Option1: { checked: true, locked: nil },
             Option2: { checked: false, locked: nil }

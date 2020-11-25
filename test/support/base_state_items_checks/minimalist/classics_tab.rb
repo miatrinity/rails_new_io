@@ -22,8 +22,8 @@ module RailsNewIo
 
         def verify_minimalist_classics_tab_items_active
           # Testing Framework Menu Card
-          refute_active_rails_byte('classics-tab-testing-none')
-          assert_active_rails_byte('classics-tab-testing-minitest')
+          assert_active_rails_byte('classics-tab-testing-none')
+          refute_active_rails_byte('classics-tab-testing-minitest')
           refute_active_rails_byte('classics-tab-testing-rspec')
 
           # Frontend Framework Menu Card

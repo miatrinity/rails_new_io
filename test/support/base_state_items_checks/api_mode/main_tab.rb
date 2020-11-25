@@ -50,37 +50,37 @@ module RailsNewIo
 
         def verify_api_mode_main_tab_items_locked
           # Guest Favorites Menu card
-          assert_hidden 'main-tab-guest-favorites-spring-railsbyte-lock'
-          assert_hidden 'main-tab-guest-favorites-listen-railsbyte-lock'
-          assert_hidden 'main-tab-guest-favorites-bootsnap-railsbyte-lock'
+          assert_hidden 'main-tab-guest-favorites-spring-rails-byte-lock'
+          assert_hidden 'main-tab-guest-favorites-listen-rails-byte-lock'
+          assert_hidden 'main-tab-guest-favorites-bootsnap-rails-byte-lock'
 
           # Starters Menu card
-          assert_hidden 'main-tab-starters-gemfile-railsbyte-lock'
-          assert_hidden 'main-tab-starters-gitignore-railsbyte-lock'
-          assert_hidden 'main-tab-starters-keep-railsbyte-lock'
-          assert_hidden 'main-tab-starters-bundle-railsbyte-lock'
-          assert_hidden 'main-tab-starters-puma-railsbyte-lock'
+          assert_hidden 'main-tab-starters-gemfile-rails-byte-lock'
+          assert_hidden 'main-tab-starters-gitignore-rails-byte-lock'
+          assert_hidden 'main-tab-starters-keep-rails-byte-lock'
+          assert_hidden 'main-tab-starters-bundle-rails-byte-lock'
+          assert_hidden 'main-tab-starters-puma-rails-byte-lock'
 
           # Mains Menu card
-          assert_hidden 'main-tab-mains-actiontext-railsbyte-lock'
-          assert_hidden 'main-tab-mains-activerecord-railsbyte-lock'
-          assert_hidden 'main-tab-mains-activestorage-railsbyte-lock'
-          assert_hidden 'main-tab-mains-actioncable-railsbyte-lock'
+          assert_hidden 'main-tab-mains-actiontext-rails-byte-lock'
+          assert_hidden 'main-tab-mains-activerecord-rails-byte-lock'
+          assert_hidden 'main-tab-mains-activestorage-rails-byte-lock'
+          assert_hidden 'main-tab-mains-actioncable-rails-byte-lock'
 
           # Email me Maybe (#not) Menu card
-          assert_hidden 'main-tab-email-actionmailer-railsbyte-lock'
-          assert_hidden 'main-tab-email-actionmailbox-railsbyte-lock'
+          assert_hidden 'main-tab-email-actionmailer-rails-byte-lock'
+          assert_hidden 'main-tab-email-actionmailbox-rails-byte-lock'
 
           # Le Frontend Menu card
-          assert_hidden 'main-tab-frontend-sprockets-railsbyte-lock'
-          assert_hidden 'main-tab-frontend-javascript-railsbyte-lock'
-          assert_hidden 'main-tab-frontend-turbolinks-railsbyte-lock'
-          assert_hidden 'main-tab-frontend-webpacker-railsbyte-lock'
-          assert_hidden 'main-tab-frontend-yarn-railsbyte-lock'
+          assert_hidden 'main-tab-frontend-sprockets-rails-byte-lock'
+          assert_hidden 'main-tab-frontend-javascript-rails-byte-lock'
+          assert_hidden 'main-tab-frontend-turbolinks-rails-byte-lock'
+          assert_hidden 'main-tab-frontend-webpacker-rails-byte-lock'
+          assert_hidden 'main-tab-frontend-yarn-rails-byte-lock'
 
           # Testing Menu card
-          assert_visible 'main-tab-testing-minitest-railsbyte-lock'
-          assert_hidden 'main-tab-testing-system-railsbyte-lock'
+          assert_visible 'main-tab-testing-minitest-rails-byte-lock'
+          assert_hidden 'main-tab-testing-system-rails-byte-lock'
         end
       end
     end

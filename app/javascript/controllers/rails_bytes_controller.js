@@ -5,7 +5,11 @@ export default class extends Controller {
     
   update(event) {
     this.setCommandLineOutput()
-    this.lockMenuCardItems(event)
+    
+    const currentlySelectedRailsByte = event.target
+    
+    this.updateActiveRailsByteAttribute(currentlySelectedRailsByte)
+    this.lockMenuCardItems(currentlySelectedRailsByte)
   }
   
   setCommandLineOutput() {
@@ -24,12 +28,20 @@ export default class extends Controller {
     document.getElementById('rails-bytes').textContent = styledOutput    
   }
   
-  lockMenuCardItems(event) {        
+  updateActiveRailsByteAttribute(currentlySelectedRailsByte) {
+    // "//input[@id='classics-tab-frontend-stimulus-reflex']")[0].closest("li")    
+    const currentlySelectedRailsByteRow = currentlySelectedRailsByte.closest('li')
+    const allRailsBytesRows = [...currentlySelectedRailsByteRow.parentElement.children]
+    
+    allRailsBytesRows.forEach(element => element.setAttribute('data-active-rails-byte', 'false')) 
+    
+    currentlySelectedRailsByteRow.setAttribute('data-active-rails-byte', 'true')    
+  }
+  
+  lockMenuCardItems(currentlySelectedRailsByte) {        
     const railsBytesLocks = JSON.parse(document.getElementById('rails-bytes-locks').textContent)
     
-    const currentlySelectedRailsBytesId = event.target.id
-    
-    const itemsToLock = railsBytesLocks[currentlySelectedRailsBytesId]
+    const itemsToLock = railsBytesLocks[currentlySelectedRailsByte.id]
     for (const menuCardItemId in itemsToLock) {
       const menuCardItem = document.getElementById(menuCardItemId)
       
@@ -40,7 +52,7 @@ export default class extends Controller {
       
       menuCardItem.disabled = true
             
-      const railsBytesLockMessage = document.getElementById(`${menuCardItemId}-railsbyte-lock`)
+      const railsBytesLockMessage = document.getElementById(`${menuCardItemId}-rails-byte-lock`)
       railsBytesLockMessage.classList.remove('hidden')
     }    
   }

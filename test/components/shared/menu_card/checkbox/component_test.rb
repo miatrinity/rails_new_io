@@ -133,8 +133,8 @@ module Shared
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_visible 'tab1-config1-menu-card1-id-option1-railsbyte-lock'
-          assert_hidden 'tab1-config1-menu-card1-id-option2-railsbyte-lock'
+          assert_visible 'tab1-config1-menu-card1-id-option1-rails-byte-lock'
+          assert_hidden 'tab1-config1-menu-card1-id-option2-rails-byte-lock'
         end
 
         def test_rails_byte_locks_are_working_correctly_for_option2_locked
@@ -145,8 +145,8 @@ module Shared
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_hidden 'tab1-config1-menu-card1-id-option1-railsbyte-lock'
-          assert_visible 'tab1-config1-menu-card1-id-option2-railsbyte-lock'
+          assert_hidden 'tab1-config1-menu-card1-id-option1-rails-byte-lock'
+          assert_visible 'tab1-config1-menu-card1-id-option2-rails-byte-lock'
         end
 
         def test_rails_byte_locks_are_working_correctly_for_both_options_locked
@@ -157,8 +157,8 @@ module Shared
 
           render_inline(Shared::MenuCard::Checkbox::Component.new(@component_setup))
 
-          assert_visible 'tab1-config1-menu-card1-id-option1-railsbyte-lock'
-          assert_visible 'tab1-config1-menu-card1-id-option2-railsbyte-lock'
+          assert_visible 'tab1-config1-menu-card1-id-option1-rails-byte-lock'
+          assert_visible 'tab1-config1-menu-card1-id-option2-rails-byte-lock'
         end
       end
     end

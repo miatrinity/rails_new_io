@@ -31,7 +31,7 @@ module Shared
                 checked_attribute: checked_attribute_for(display_state),
                 html_data_attributes: html_data_attributes_for(item_name),
                 html_id: html_id_for(item_name),
-                display_locked_by_railsbytes: display_locked_by_railsbytes_for(item_name)
+                display_locked_by_rails_bytes: display_locked_by_rails_bytes_for(item_name)
               }
             )
           end
@@ -57,7 +57,7 @@ module Shared
           "#{@menu_card_id}-#{item_name}".downcase.dasherize
         end
 
-        def display_locked_by_railsbytes_for(item_name)
+        def display_locked_by_rails_bytes_for(item_name)
           locked?(item_name) ? '' : 'hidden'
         end
 

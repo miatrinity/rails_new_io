@@ -12,9 +12,9 @@
         </div>
       </div>
     </div>
-    <span id="<%= @html_id %>-railsbyte-lock"
-          class="text-yellow-500 mr-4 <%= @display_locked_by_railsbytes %>">
-          ⚠️ Set and locked by a railsbyte!
+    <span id="<%= @html_id %>-rails-byte-lock"
+          class="text-yellow-500 mr-4 <%= @display_locked_by_rails_bytes %>">
+          ⚠️ Set and locked by a RailsByte!
     </span>
     <div>
       <input id="<%= @html_id %>"
@@ -23,7 +23,7 @@
              <%= @html_data_attributes %>
              <%= @checked_attribute %>
              autocomplete="off"
-             <%= @display_locked_by_railsbytes == 'hidden' ? '' : 'disabled' %>
+             <%= @display_locked_by_rails_bytes == 'hidden' ? '' : 'disabled' %>
              class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
     </div>
   </label>
