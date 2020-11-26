@@ -34,4 +34,47 @@ class CommandLineOutputTest < ApplicationSystemTestCase
 
     assert_command_line_equals 'rails new my_app --skip-test --template https://www.railsbytes.com/script/VD7sra'
   end
+
+  test 'Choosing the Stimulus Reflex railsbyte is reflected in the command line output' do
+    visit root_path
+
+    click_item_by html_id: 'classics-tab-frontend-stimulus-reflex'
+
+    assert_command_line_equals 'rails new my_app --skip-webpack-install --template https://www.railsbytes.com/script/zr4s0Y'
+  end
+
+  test 'Switching between None -> Stimulus Reflex -> None railsbyte is reflected in the command line output' do
+    visit root_path
+
+    click_item_by html_id: 'classics-tab-frontend-stimulus-reflex'
+    click_item_by html_id: 'classics-tab-frontend-none'
+
+    assert_command_line_equals 'rails new my_app'
+  end
+
+  test 'Switching between railsbytes is reflected in the command line output' do
+    visit root_path
+
+    click_item_by html_id: 'classics-tab-frontend-stimulus-reflex'
+    click_item_by html_id: 'classics-tab-testing-rspec'
+    click_item_by html_id: 'classics-tab-css-bootstrap'
+
+    click_item_by html_id: 'classics-tab-frontend-none'
+    click_item_by html_id: 'classics-tab-testing-none'
+    click_item_by html_id: 'classics-tab-css-none'
+
+    assert_command_line_equals 'rails new my_app --skip-system-test --skip-test --template PlaceHODLER!'
+  end
+
+  test 'Switching base state to minimalist and switching between railsbytes is reflected in the command line output' do
+    visit root_path
+
+    click_item_by html_id: 'main-tab-base-setup-minimalist'
+
+    click_item_by html_id: 'classics-tab-frontend-stimulus'
+    click_item_by html_id: 'classics-tab-testing-rspec'
+    click_item_by html_id: 'classics-tab-css-tailwind'
+
+    assert_command_line_equals 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-git --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --skip-webpack-install --template https://www.railsbytes.com/script/Xo5s9m'
+  end
 end
