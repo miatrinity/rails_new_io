@@ -4,90 +4,65 @@ export default class extends Controller {
   static targets = [ "name" ]
     
   update(event) {
-    this.setCommandLineOutput()
+    this.railsBytesLocks = JSON.parse(document.getElementById('rails-bytes-locks').textContent)
+    this.railBytesCombos = JSON.parse(document.getElementById('rails-bytes-combos').textContent)
+    this.baseStates = JSON.parse(document.getElementById('base-states').textContent)    
     
     const railsByteToSwitchTo = event.target
-    this.railsBytesLocks = JSON.parse(document.getElementById('rails-bytes-locks').textContent)
+    const railsByteToSwitchFrom = this.railsBytesToSwitchFrom(railsByteToSwitchTo)
+        
+    this.setCommandLineOutput()
     
-    this.unLockMenuCardItems(railsByteToSwitchTo)
-    this.revertRailsByteChangesToCurrentBaseState(railsByteToSwitchTo)
+    this.unLockMenuCardItemsFor(railsByteToSwitchFrom)
+    this.revertRailsByteChangesToCurrentBaseStateFor(railsByteToSwitchFrom)
+    this.updateActiveRailsByteAttributeFor(railsByteToSwitchTo)
     
-    this.updateActiveRailsByteAttribute(railsByteToSwitchTo)
-    
-    this.updateAllActiveRailsBytes()
+    this.updateAllMenuCardItemsForActiveRailsBytes()
   }
   
   setCommandLineOutput() {
-    const railBytesCombos = JSON.parse(document.getElementById('rails-bytes-combos').textContent)
-    
-    const selectedRailsBytes = [...document.querySelectorAll("#tabs-classics [data-id=rails-menu-card] input")].filter(x => x.checked);
-    const selectedRailsBytesIds = selectedRailsBytes.map(item => item.id )
+    const railsByteURL = this.railBytesCombos[
+      this.railsBytesCombosKey(
+        this.selectedRailsBytesIds()
+      )
+    ]
         
-    const railsBytesCombosKey = selectedRailsBytesIds.sort().map(id => id.replace('classics-tab-','')).join('@')
+    document.getElementById('rails-bytes').textContent = this.styledCommandLineOutput(railsByteURL)
+  }
+    
+  unLockMenuCardItemsFor(railsByteToSwitchFrom) {    
+    const lockedItemIds = this.railsBytesLocks[
+      railsByteToSwitchFrom.id
+    ]
       
-    
-    const output = railBytesCombos[railsBytesCombosKey]
-    const spacedOutput = ' ' + '--template ' + output
-    const styledOutput = (output === '' ? '' : spacedOutput)
-        
-    document.getElementById('rails-bytes').textContent = styledOutput    
+    this.unlockAndHideLockMessageFor(lockedItemIds)
   }
   
-  unLockMenuCardItems(railsByteToSwitchTo) {
-    const activeMenuCard = railsByteToSwitchTo.closest('ul')
-        
-    const railsByteToSwitchFromRow = activeMenuCard.querySelector('li[data-active-rails-byte=true]')
-    const railsByteToSwitchFrom = railsByteToSwitchFromRow.querySelector('input')
-    
-    const lockedItemIds = this.railsBytesLocks[railsByteToSwitchFrom.id]
-    
-    for (const lockedItemId in lockedItemIds) {
-      const lockedItem = document.getElementById(lockedItemId)
-      lockedItem.disabled = false
-      
-      const railsBytesLockMessage = document.getElementById(`${lockedItemId}-rails-byte-lock`)
-      railsBytesLockMessage.classList.add('hidden')      
-    }
+  revertRailsByteChangesToCurrentBaseStateFor(railsBytesToSwitchFrom) {    
+    this.revertToCurrentBaseState(
+      this.lockedItemIdsFor(
+        railsBytesToSwitchFrom
+      )
+    )
   }
   
-  revertRailsByteChangesToCurrentBaseState(railsByteToSwitchTo) {    
-    this.baseStates = JSON.parse(document.getElementById('base-states').textContent)
-        
-    const currentBaseStateElement = [...document.querySelectorAll('input[id^=main-tab-base-setup]')].find( x => x.checked)
-    const currentBaseState = currentBaseStateElement.id.split('-').slice(-1)[0] + '_state'
-      
-    const activeMenuCard = railsByteToSwitchTo.closest('ul')
-        
-    const railsByteToSwitchFromRow = activeMenuCard.querySelector('li[data-active-rails-byte=true]')
-    const railsByteToSwitchFrom = railsByteToSwitchFromRow.querySelector('input')
-    
-    const lockedItemIds = this.railsBytesLocks[railsByteToSwitchFrom.id]    
-    
-    for (const lockedItemId in lockedItemIds) {
-      const itemName = lockedItemId.split('-').slice(-1)[0]
-      const menuCardName =  lockedItemId.split('-').slice(-2)[0]
-      
-      console.log(itemName)
-      const itemInBaseState = this.baseStates[currentBaseState]['main_tab']['rails_flags_config'][menuCardName][itemName]['checked']
-      
-      const lockedItem = document.getElementById(lockedItemId)
-      
-      if(lockedItem.checked !== itemInBaseState) {
-        lockedItem.click()
-      }      
-    }
-  }
-  
-  updateActiveRailsByteAttribute(railsByteToSwitchTo) {    
+  updateActiveRailsByteAttributeFor(railsByteToSwitchTo) {    
     const railsByteToSwitchToRow = railsByteToSwitchTo.closest('li')
     const allRailsBytesRows = [...railsByteToSwitchToRow.parentElement.children]
     
+    this.deactivateRailsBytesFor(allRailsBytesRows)
+    this.activateRailsByteFor(railsByteToSwitchToRow)    
+  }
+  
+  deactivateRailsBytesFor(allRailsBytesRows) {
     allRailsBytesRows.forEach(element => element.setAttribute('data-active-rails-byte', 'false')) 
-    
+  }
+  
+  activateRailsByteFor(railsByteToSwitchToRow) {
     railsByteToSwitchToRow.setAttribute('data-active-rails-byte', 'true')    
   }
   
-  setAndLockMenuCardItems(railsByteToSwitchTo) {        
+  setAndLockMenuCardItemsFor(railsByteToSwitchTo) {        
     const itemsToLock = this.railsBytesLocks[railsByteToSwitchTo.id]
     for (const menuCardItemId in itemsToLock) {
       const menuCardItem = document.getElementById(menuCardItemId)
@@ -104,8 +79,65 @@ export default class extends Controller {
     }    
   }
   
-  updateAllActiveRailsBytes() {
+  updateAllMenuCardItemsForActiveRailsBytes() {
     const activeRailsBytes = [...document.querySelectorAll("li[data-active-rails-byte=true] input")]
-    activeRailsBytes.forEach(activeRailsByte => this.setAndLockMenuCardItems(activeRailsByte))    
+    activeRailsBytes.forEach(activeRailsByte => this.setAndLockMenuCardItemsFor(activeRailsByte))    
+  }
+    
+  railsBytesCombosKey(selectedRailsBytesIds) {
+    return selectedRailsBytesIds.
+      sort().
+      map(id => id.replace('classics-tab-','')).
+      join('@')    
+  }
+  
+  selectedRailsBytesIds() {
+    return [...document.querySelectorAll("#tabs-classics [data-id=rails-menu-card] input")].
+      filter(x => x.checked)
+      .map(item => item.id )    
+  }
+  
+  styledCommandLineOutput(railsByteURL) {
+    const spacedOutput = ' ' + '--template ' + railsByteURL
+    return (railsByteURL === '' ? '' : spacedOutput)
+  }
+  
+  railsBytesToSwitchFrom(railsByteToSwitchTo) {
+    const activeMenuCard = railsByteToSwitchTo.closest('ul')
+        
+    const railsByteToSwitchFromRow = activeMenuCard.querySelector('li[data-active-rails-byte=true]')
+    return railsByteToSwitchFromRow.querySelector('input')
+  }
+  
+  unlockAndHideLockMessageFor(lockedItemIds) {
+    for (const lockedItemId in lockedItemIds) {
+      const lockedItem = document.getElementById(lockedItemId)
+      lockedItem.disabled = false
+      
+      const railsBytesLockMessage = document.getElementById(`${lockedItemId}-rails-byte-lock`)
+      railsBytesLockMessage.classList.add('hidden')      
+    }
+  }
+  
+  revertToCurrentBaseState(lockedItemIds) {
+    const currentBaseStateElement = [...document.querySelectorAll('input[id^=main-tab-base-setup]')].find( x => x.checked)
+    const currentBaseState = currentBaseStateElement.id.split('-').slice(-1)[0] + '_state'
+    
+    for (const lockedItemId in lockedItemIds) {
+      const itemName = lockedItemId.split('-').slice(-1)[0]
+      const menuCardName =  lockedItemId.split('-').slice(-2)[0]
+            
+      const itemInBaseState = this.baseStates[currentBaseState]['main_tab']['rails_flags_config'][menuCardName][itemName]['checked']
+      
+      const lockedItem = document.getElementById(lockedItemId)
+      
+      if(lockedItem.checked !== itemInBaseState) {
+        lockedItem.click()
+      }      
+    }
+  }
+  
+  lockedItemIdsFor(railsByteToSwitchFrom) {    
+    return this.railsBytesLocks[railsByteToSwitchFrom.id]        
   }
 }
