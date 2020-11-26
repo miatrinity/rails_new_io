@@ -4,6 +4,8 @@ module Shared
   module CommandLine
     module Output
       class GenericComponentTest < ViewComponent::TestCase
+        include CustomAsserts
+
         def setup
           @state_translation = {
             main_tab: {
@@ -323,12 +325,6 @@ module Shared
             initial_state: @initial_state,
             rails_bytes_combos: @rails_bytes_combos
           ))
-        end
-
-        def assert_command_line_equals(expected_command_line_output)
-          command_line_output = page.find(:xpath, "//p[@id='rails-new-output-text']").text
-
-          assert_equal expected_command_line_output, command_line_output.squish
         end
       end
     end

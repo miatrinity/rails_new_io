@@ -16,7 +16,7 @@ export default class extends Controller {
     menuItems.forEach(menuItem => {
       if(String(menuItem.checked) !== menuItem.getAttribute(initialStateValue)) {
         menuItem.disabled = false;
-        menuItem.click();
+        menuItem.click()
       }      
     })    
   }
