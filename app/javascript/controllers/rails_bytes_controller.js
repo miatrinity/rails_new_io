@@ -13,7 +13,8 @@ export default class extends Controller {
     this.revertRailsByteChangesToCurrentBaseState(railsByteToSwitchTo)
     
     this.updateActiveRailsByteAttribute(railsByteToSwitchTo)
-    this.lockMenuCardItems(railsByteToSwitchTo)
+    
+    this.updateAllActiveRailsBytes()
   }
   
   setCommandLineOutput() {
@@ -33,10 +34,8 @@ export default class extends Controller {
   }
   
   unLockMenuCardItems(railsByteToSwitchTo) {
-    // the menu Card of the RailsByte is just clicked on
     const activeMenuCard = railsByteToSwitchTo.closest('ul')
-    
-    // which railsbyte is active right now INSIDE this ^^^ card
+        
     const railsByteToSwitchFromRow = activeMenuCard.querySelector('li[data-active-rails-byte=true]')
     const railsByteToSwitchFrom = railsByteToSwitchFromRow.querySelector('input')
     
@@ -79,8 +78,7 @@ export default class extends Controller {
     }
   }
   
-  updateActiveRailsByteAttribute(railsByteToSwitchTo) {
-    // "//input[@id='classics-tab-frontend-stimulus-reflex']")[0].closest("li")    
+  updateActiveRailsByteAttribute(railsByteToSwitchTo) {    
     const railsByteToSwitchToRow = railsByteToSwitchTo.closest('li')
     const allRailsBytesRows = [...railsByteToSwitchToRow.parentElement.children]
     
@@ -89,7 +87,7 @@ export default class extends Controller {
     railsByteToSwitchToRow.setAttribute('data-active-rails-byte', 'true')    
   }
   
-  lockMenuCardItems(railsByteToSwitchTo) {        
+  setAndLockMenuCardItems(railsByteToSwitchTo) {        
     const itemsToLock = this.railsBytesLocks[railsByteToSwitchTo.id]
     for (const menuCardItemId in itemsToLock) {
       const menuCardItem = document.getElementById(menuCardItemId)
@@ -104,5 +102,10 @@ export default class extends Controller {
       const railsBytesLockMessage = document.getElementById(`${menuCardItemId}-rails-byte-lock`)
       railsBytesLockMessage.classList.remove('hidden')
     }    
+  }
+  
+  updateAllActiveRailsBytes() {
+    const activeRailsBytes = [...document.querySelectorAll("li[data-active-rails-byte=true] input")]
+    activeRailsBytes.forEach(activeRailsByte => this.setAndLockMenuCardItems(activeRailsByte))    
   }
 }
