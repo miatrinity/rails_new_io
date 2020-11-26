@@ -3,7 +3,7 @@ require 'view_component/test_case'
 module Tabs
   module Main
     class EarlyDaysComponentTest < ViewComponent::TestCase
-      include CustomAsserts
+      include RailsNewIo::CustomAsserts
       include RailsNewIo::BaseStateItemsChecks::EarlyDays::MainTab
 
       def setup

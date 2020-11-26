@@ -4,7 +4,7 @@ module Shared
   module MenuCard
     module Checkbox
       class ComponentTest < ViewComponent::TestCase
-        include CustomAsserts
+        include RailsNewIo::CustomAsserts
 
         def setup
           @component_setup = {

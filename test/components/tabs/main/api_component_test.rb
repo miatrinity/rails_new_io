@@ -3,7 +3,7 @@ require 'view_component/test_case'
 module Tabs
   module Main
     class ApiComponentTest < ViewComponent::TestCase
-      include CustomAsserts
+      include RailsNewIo::CustomAsserts
       include RailsNewIo::BaseStateItemsChecks::ApiMode::MainTab
 
       def setup

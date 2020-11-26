@@ -3,8 +3,8 @@ require 'view_component/test_case'
 module Shared
   module CommandLine
     module Output
-      class GenericComponentTest < ViewComponent::TestCase
-        include CustomAsserts
+      class GenericComponentTest < ViewComponent::TestCase        
+        include RailsNewIo::CustomAsserts
 
         def setup
           @state_translation = {

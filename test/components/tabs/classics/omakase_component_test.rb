@@ -3,7 +3,7 @@ require 'view_component/test_case'
 module Tabs
   module Classics
     class OmakaseComponentTest < ViewComponent::TestCase
-      include CustomAsserts
+      include RailsNewIo::CustomAsserts
       include RailsNewIo::BaseStateItemsChecks::Omakase::ClassicsTab
 
       def setup
