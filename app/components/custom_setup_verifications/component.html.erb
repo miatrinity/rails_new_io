@@ -1,0 +1,18 @@
+    <div class="flex justify-between text-4xl font-semibold antialiased text-gray-700 mb-4 pt-6 tracking-tight leading-tight">
+      Verify RailsByte setup for:      
+    </div>
+    
+    <div class="flex justify-between text-2xl font-medium antialiased text-gray-700 mb-6 p-3 tracking-tight leading-tight bg-gray-200 rounded-lg">
+      <div class="grid grid-cols-2 gap-y-1 gap-x-8">
+        <% @rails_bytes.each do |rails_byte| %>  
+          <%= table_row_for(rails_byte) %>
+        <% end %>
+      </div>     
+    </div>
+    
+    <ol class="list-decimal leading-loose ml-4">
+      <%= render CustomSetupVerifications::SetupSteps::Component.new(rails_bytes: @rails_bytes) %>      
+      <% @rails_bytes.each do |rails_byte| %>  
+        <%= render rails_byte_setup_component_for(rails_byte).new %>
+      <% end %>
+    </ol>
