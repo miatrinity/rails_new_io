@@ -11,11 +11,9 @@ export default class extends Controller {
     const railsByteToSwitchTo = event.target
     const railsByteToSwitchFrom = this.railsBytesToSwitchFrom(railsByteToSwitchTo)
 
-    const railsByteURL = this.railBytesCombos[
-      this.railsBytesCombosKey(
-        this.selectedRailsBytesIds()
-      )
-    ]
+    const railsBytesCombosKey = this.railsBytesCombosKey(this.selectedRailsBytesIds())
+    console.log(railsBytesCombosKey)
+    const railsByteURL = this.railBytesCombos[railsBytesCombosKey]
     
     this.unLockMenuCardItemsFor(railsByteToSwitchFrom)
     this.revertRailsByteChangesToCurrentBaseStateFor(railsByteToSwitchFrom)
@@ -23,14 +21,16 @@ export default class extends Controller {
     
     this.updateAllMenuCardItemsForActiveRailsBytes()
     this.setCommandLineOutput(railsByteURL)    
-    this.displayVerifyMySetupLink(railsByteURL)
+    this.displayVerifyMySetupLink(railsByteURL, railsBytesCombosKey)
   }
   
-  displayVerifyMySetupLink(railsByteURL) {
+  displayVerifyMySetupLink(railsByteURL, railsBytesCombosKey) {
+    const verifyMySetupLink = document.getElementById('verify-my-setup-link')
     if(railsByteURL === '') {
-      document.getElementById('verify-my-setup-link').classList.add('hidden') 
+      verifyMySetupLink.classList.add('hidden') 
     } else {
-      document.getElementById('verify-my-setup-link').classList.remove('hidden') 
+      verifyMySetupLink.classList.remove('hidden')
+      verifyMySetupLink.setAttribute('href', `/custom_setup_verifications/${railsBytesCombosKey}`)
     }
     
   }
