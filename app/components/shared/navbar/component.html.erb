@@ -1,0 +1,9 @@
+  <%= render Shared::Navbar::Desktop::Component.new(items: { 
+      '🏠️ Home': '', 
+      '🤔 Why?': 'why', 
+      '📽️ Live Demo': 'live-demo',
+      '📨 About / Contact': 'about'
+      }
+    )
+  %>
+  <%= render Shared::Navbar::Mobile::Component.new(items: ['🏠️ Home', '🤔 Why?', '📽️ Live Demo', '📨 About / Contact']) %>    
