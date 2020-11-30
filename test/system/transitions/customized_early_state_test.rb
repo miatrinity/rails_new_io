@@ -119,6 +119,6 @@ class CustomizedEarlyStateTest < ApplicationSystemTestCase
     assert_visible 'main-tab-testing-minitest-rails-byte-lock'
     assert_visible 'main-tab-testing-system-rails-byte-lock'
 
-    assert_command_line_equals 'rails new my_app --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-bootsnap --skip-listen --skip-spring --skip-system-test --skip-test --skip-webpack-install --template PlaceHODLER!'
+    assert_command_line_equals 'rails new my_app --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-bootsnap --skip-listen --skip-spring --skip-system-test --skip-test --skip-webpack-install --template https://www.railsbytes.com/script/zr4s0Y'
   end
 end

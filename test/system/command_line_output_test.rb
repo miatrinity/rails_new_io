@@ -63,7 +63,7 @@ class CommandLineOutputTest < ApplicationSystemTestCase
     click_item_by html_id: 'classics-tab-testing-none'
     click_item_by html_id: 'classics-tab-css-none'
 
-    assert_command_line_equals 'rails new my_app --skip-system-test --skip-test --template PlaceHODLER!'
+    assert_command_line_equals 'rails new my_app --skip-system-test --skip-test'
   end
 
   test 'Switching base state to minimalist and switching between railsbytes is reflected in the command line output' do
