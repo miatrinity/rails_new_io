@@ -21,6 +21,7 @@
     %>
     <%= render Shared::Navbar::Mobile::Component.new(items: ['🏠️ Home', '🤔 Why?', '📽️ Live Demo', '📨 About / Contact']) %>    
     <%= yield %>
-    <%= render Shared::Footer::Component.new %>    
+    <%= render Shared::Newsletter::Component.new %>
+    <%= render Shared::Footer::Component.new %>
   </body>
 </html>
