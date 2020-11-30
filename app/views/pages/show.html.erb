@@ -1,1 +1,1 @@
-I am page
+<%= render "Pages::#{params[:id].split('-').map(&:capitalize).join('')}::Component".constantize.new %>

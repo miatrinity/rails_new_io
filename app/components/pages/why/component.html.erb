@@ -1,0 +1,114 @@
+<div class="max-w-2xl py-0 px-6 mx-auto mt-0 mb-20 md:mt-10 lg:mt-16 xl:mt-18 mb-20">  
+  <h1 class="text-4xl font-semibold antialiased text-gray-700 tracking-tight leading-tight mb-6">
+    Why?
+  </h1>  
+  <p class="mb-4 text-lg">
+    There’s no shortage of confused/frustrated/angry tweets, forum messages,
+    and WTFs about creating a new Rails app from scratch.
+  </p> 
+  <div>
+    <%= image_tag src="6042a15.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="b3a2d05.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="08792e6.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="add1e3b.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="52898a1.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="2412e5a.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="1b53f9f.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="5bda1b0.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="6db156a.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="13b369d.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="21dfa77.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="ca7056e.png", class: "mb-1 mx-auto" %>
+    <%= image_tag src="6d2f781.png", class: "mb-8 mx-auto" %>
+  </div> 
+  <p class="mb-4 text-lg">
+    And that's just what I gathered in a couple of minutes, following a quick
+  'rails new' twitter search 😅.
+  </p> 
+  <p class="mb-4 text-lg"><a href="https://discuss.rubyonrails.org/t/interactive-rails-new/74355">
+    It’s one of the most popular threads (second, at the time of writing) in
+    the 2020’s “May of WTFs”
+    <%= image_tag src="651dc11.png", class: "mb-10 mt-10" %></a></p> <p class="mb-4 text-lg">
+  Even DHH weighed in on the subject:
+  <%= image_tag src="084228f.png", class: "mb-10 mt-10" %></p> <p class="mb-4 text-lg">
+  The same command that used to be every Rails dev’s favorite has become a
+  source of angst and developer fatigue. How did we get here, and more
+  importantly, how should we fix it?
+  </p> 
+  <p class="mb-4 text-lg">
+    It might seem like a trivial issue (‘just slap on an extra parameter
+  —-minimal’) so why the fuss?
+  <%= image_tag src="b7f1850.png", class: "mb-10 mt-10" %></p> 
+  <p class="mb-4 text-lg">
+    Well, if you start thinking about a generic solution that would benefit
+  the community at large (newbies and veterans alike), you’ll soon realize
+  that it’s necessarily going to be surprisingly complex and nuanced:
+  </p> 
+  <p class="mb-4 text-lg">
+    1) it’s difficult to agree even on the most basic terms. ‘simplistic’,
+  ‘everyday’, ‘circa-2007’, ‘used for most apps’ means something else for
+  everyone.
+  </p> 
+  <p class="mb-4 text-lg">
+    2) even once that’s clarified, there's plenty of implementational
+  complexity. Command line flags (which? how many? how should they work?) or
+  interactive mode (choosing the bits and pieces that should be generated)
+  or something else?
+  </p> 
+  <p class="mb-4 text-lg">
+    railsnew.io falls into the ‘something else’ category: it’s a web app to
+  <span class="italic">generate the command line</span>. Once it’s
+  generated, you just need to copy'n'paste and run it. No need for further
+  customization, extra flags or interactive mode: the generated command line
+  captures <span class="italic">everything you want your app to be</span>.
+  </p> 
+  <div class="mb-10 mt-10">
+    <%= image_tag src="cf8d31a.gif" %>
+  </div> 
+  <p class="mb-4 text-lg">
+    It might sound backwards to visit a webpage in order to accomplish an
+    inherently command line-based task, so here are some benefits to consider:
+  </p>
+  <p class="mb-4 text-lg">
+    1. Avoiding 'buying a latte in a hipster coffee shop' syndrome: sometimes
+    you just want a latte, and you don't know/care what to pick
+    <span class="italic">exactly</span>: 0.5%/1%/2%/3% milk?
+    soy/almond/rice/tapioca/buffalo/yak? bio/organic/vegan/fair trade?
+    hazelnut/toffee/organic pine nut/red-velvet-sorbet syrup? half-caff,
+    doppio, poured over brewed coffee, dipped, iced, stirred but not shaken?
+    JUST GIVE ME MY FUCKING LATTE ALREADY. Please?!<br>
+    But the questions just keep coming relentlessly! This is fine if you are a
+    coffee aficionado, but if you are ordering your first latte, you might
+    want to take your time and understand your options.
+  </p> 
+  <p class="mb-4 text-lg">
+    <%= image_tag src="5b37603.jpg" %>
+  </p> 
+  <p class="mb-4 text-lg">
+    2. Verifying your setup. Follow detailed instructions to feel confident
+    that the railsbytes you added (Stimulus, Strimulus Reflex, Tailwind,
+    Bootstrap etc.) work by generating a controller and checking the view
+    (using the generated stuff). The instructions are tailored to the stack
+    you just set up!
+  </p> 
+  <p class="mb-4 text-lg">
+    3. Storing and re-using your favorite `rails new` command lines (COMING
+    SOON). Perhaps minimalistic (whatever that means to YOU), stimulus-enabled
+    or omakase BUT (postgres, rspec, no emails - you get the idea). Set up
+    once, use anytime in the future!
+  </p> 
+  <p class="mb-4 text-lg">
+    4. Describing how each flag works / Linking to documentation / Displaying
+    what files would be added or changed (with diffs) etc. (COMING SOON)
+  </p> 
+  <p class="mb-4 text-lg">
+    5. And more -
+    <a href="/about#get-in-touch" class="underline text-indigo-800">get in touch</a>
+    and let us know what else would you find useful!
+  </p> 
+  <p class="mb-4 text-lg">
+    If it sounds interesting, check out the
+    <a href="/live-demo" class="underline text-indigo-800">live demo</a>
+    and give it a spin!
+  </p>
+</div>

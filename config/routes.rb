@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root to: 'initial_setup#index'
 
   resources :custom_setup_verifications, only: :show
-  resources :pages, only: :show
+  # resources :pages, only: :show
+  get '/:id', to: 'pages#show', as: 'page'
 end
