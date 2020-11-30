@@ -10,23 +10,32 @@ export default class extends Controller {
     
     const railsByteToSwitchTo = event.target
     const railsByteToSwitchFrom = this.railsBytesToSwitchFrom(railsByteToSwitchTo)
-        
-    this.setCommandLineOutput()
+
+    const railsByteURL = this.railBytesCombos[
+      this.railsBytesCombosKey(
+        this.selectedRailsBytesIds()
+      )
+    ]
     
     this.unLockMenuCardItemsFor(railsByteToSwitchFrom)
     this.revertRailsByteChangesToCurrentBaseStateFor(railsByteToSwitchFrom)
     this.updateActiveRailsByteAttributeFor(railsByteToSwitchTo)
     
     this.updateAllMenuCardItemsForActiveRailsBytes()
+    this.setCommandLineOutput(railsByteURL)    
+    this.displayVerifyMySetupLink(railsByteURL)
   }
   
-  setCommandLineOutput() {
-    const railsByteURL = this.railBytesCombos[
-      this.railsBytesCombosKey(
-        this.selectedRailsBytesIds()
-      )
-    ]
-        
+  displayVerifyMySetupLink(railsByteURL) {
+    if(railsByteURL === '') {
+      document.getElementById('verify-my-setup-link').classList.add('hidden') 
+    } else {
+      document.getElementById('verify-my-setup-link').classList.remove('hidden') 
+    }
+    
+  }
+  
+  setCommandLineOutput(railsByteURL) {
     document.getElementById('rails-bytes').textContent = this.styledCommandLineOutput(railsByteURL)
   }
     

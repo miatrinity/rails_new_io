@@ -15,4 +15,8 @@
       <% @rails_bytes.each do |rails_byte| %>  
         <%= render rails_byte_setup_component_for(rails_byte).new %>
       <% end %>
+      
+      <% @rails_bytes.each do |rails_byte| %>  
+        <%= render rails_byte_verification_component_for(rails_byte).new %>
+      <% end %>      
     </ol>
