@@ -24,14 +24,14 @@ module CustomSetupVerifications
       [ menu_card_name.capitalize, rails_byte_name.map(&:capitalize).join('') ].join('::')
     end
 
-    def bold_or_hairline(rails_byte_name)
-      rails_byte_name.downcase.in?(%w[none minitest]) ? 'font-hairline' : 'font-semibold'
+    def bold_or_extralight(rails_byte_name)
+      rails_byte_name.downcase.in?(%w[none minitest]) ? 'font-extralight' : 'font-semibold'
     end
 
     def menu_card_name_cell(rails_byte)
       menu_card_name, rails_byte_name = rails_byte.split('-')
 
-      content_tag :div, class: bold_or_hairline(rails_byte_name) do
+      content_tag :div, class: bold_or_extralight(rails_byte_name) do
         "#{menu_card_name.capitalize}:"
       end
     end
@@ -41,7 +41,7 @@ module CustomSetupVerifications
 
       rails_byte_name = rails_byte_name_pieces.map(&:capitalize).join(' ')
 
-      content_tag :div, class: bold_or_hairline(rails_byte_name) do
+      content_tag :div, class: bold_or_extralight(rails_byte_name) do
         rails_byte_name
       end
     end

@@ -249,7 +249,7 @@
           :locked: false
       :css:
         :none:
-          :checked: true
+          :checked: false
           :locked: false
         :Tailwind:
           :checked: false
