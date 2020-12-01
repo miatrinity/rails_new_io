@@ -9,6 +9,8 @@ class EarlyDaysTest < ApplicationSystemTestCase
 
     find('#main-tab-base-setup-early').click
 
+    refute_selector '#verify-my-setup-link', text: 'Verify My Setup'
+
     verify_early_days_main_tab_items_checked
     verify_early_days_main_tab_items_locked
 

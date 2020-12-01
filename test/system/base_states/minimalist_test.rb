@@ -9,6 +9,8 @@ class MinimalistTest < ApplicationSystemTestCase
 
     find('#main-tab-base-setup-minimalist').click
 
+    refute_selector '#verify-my-setup-link', text: 'Verify My Setup'
+
     verify_minimalist_main_tab_items_checked
     verify_minimalist_main_tab_items_locked
 

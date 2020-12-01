@@ -10,6 +10,8 @@ class OmakaseTest < ApplicationSystemTestCase
     find('#main-tab-base-setup-early').click
     find('#main-tab-base-setup-omakase').click
 
+    refute_selector '#verify-my-setup-link', text: 'Verify My Setup'
+
     verify_omakase_main_tab_items_checked
     verify_omakase_main_tab_items_locked
 

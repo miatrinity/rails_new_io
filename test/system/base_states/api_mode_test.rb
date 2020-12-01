@@ -9,6 +9,8 @@ class APIModeTest < ApplicationSystemTestCase
 
     click_item_by html_id: 'main-tab-base-setup-api'
 
+    refute_selector '#verify-my-setup-link', text: 'Verify My Setup'
+
     verify_api_mode_main_tab_items_checked
     verify_api_mode_main_tab_items_locked
     verify_api_mode_classics_tab_items_checked
