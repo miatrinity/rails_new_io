@@ -6,8 +6,10 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "autoprefixer": "^9",
+    "postcss": "^7",
     "stimulus": "^1.1.1",
-    "tailwindcss": "^1.9.5",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
