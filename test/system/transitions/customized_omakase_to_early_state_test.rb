@@ -7,8 +7,11 @@ class CustomizedOmakaseStateTest < ApplicationSystemTestCase
     click_item_by html_id: 'main-tab-starters-keep'
     click_item_by html_id: 'main-tab-mains-activestorage'
     click_item_by html_id: 'main-tab-email-actionmailer'
+
+    click_item_by html_id: 'classics-tab'
     click_item_by html_id: 'classics-tab-css-bootstrap'
 
+    click_item_by html_id: 'main-tab'
     find('#main-tab-base-setup-early').click
 
     # Time to Start Cooking Menu card
@@ -55,27 +58,6 @@ class CustomizedOmakaseStateTest < ApplicationSystemTestCase
     assert page.find('#main-tab-testing-minitest').checked?
     refute page.find('#main-tab-testing-system').checked?
 
-    ##############
-    #
-    # Classics Tab
-    #
-    ##############
-
-    # Testing Framework Menu Card
-    assert page.find('#classics-tab-testing-minitest').checked?
-    refute page.find('#classics-tab-testing-rspec').checked?
-
-    # Frontend Framework Menu Card
-    assert page.find('#classics-tab-frontend-none').checked?
-    refute page.find('#classics-tab-frontend-stimulus').checked?
-    refute page.find('#classics-tab-frontend-stimulus-reflex').checked?
-
-    # CSS Framework Menu Card
-
-    assert page.find('#classics-tab-css-none').checked?
-    refute page.find('#classics-tab-css-tailwind').checked?
-    refute page.find('#classics-tab-css-bootstrap').checked?
-    
     #################
     #
     # RailsByte Locks
@@ -113,6 +95,29 @@ class CustomizedOmakaseStateTest < ApplicationSystemTestCase
     # Testing Menu card
     assert_visible 'main-tab-testing-minitest-rails-byte-lock'
     assert_hidden 'main-tab-testing-system-rails-byte-lock'
+
+    ##############
+    #
+    # Classics Tab
+    #
+    ##############
+
+    click_item_by html_id: 'classics-tab'
+
+    # Testing Framework Menu Card
+    assert page.find('#classics-tab-testing-minitest').checked?
+    refute page.find('#classics-tab-testing-rspec').checked?
+
+    # Frontend Framework Menu Card
+    assert page.find('#classics-tab-frontend-none').checked?
+    refute page.find('#classics-tab-frontend-stimulus').checked?
+    refute page.find('#classics-tab-frontend-stimulus-reflex').checked?
+
+    # CSS Framework Menu Card
+
+    assert page.find('#classics-tab-css-none').checked?
+    refute page.find('#classics-tab-css-tailwind').checked?
+    refute page.find('#classics-tab-css-bootstrap').checked?
 
     assert_command_line_equals 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn'
   end

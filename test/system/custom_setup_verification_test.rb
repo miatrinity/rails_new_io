@@ -6,6 +6,7 @@ class CustomSetupVerificationTest < ApplicationSystemTestCase
   test 'Custom setup verification flow works correctly' do
     visit root_path
 
+    click_item_by html_id: 'classics-tab'
     click_item_by html_id: 'classics-tab-frontend-stimulus-reflex'
     click_on 'Verify My Setup'
 
@@ -20,6 +21,8 @@ class CustomSetupVerificationTest < ApplicationSystemTestCase
     click_item_by html_id: 'main-tab-starters-bundle'
     click_item_by html_id: 'main-tab-mains-actioncable'
     click_item_by html_id: 'main-tab-email-actionmailbox'
+
+    click_item_by html_id: 'classics-tab'
     click_item_by html_id: 'classics-tab-css-tailwind'
 
     click_on 'Verify My Setup'

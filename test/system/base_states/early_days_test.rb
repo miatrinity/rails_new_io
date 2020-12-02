@@ -14,6 +14,7 @@ class EarlyDaysTest < ApplicationSystemTestCase
     verify_early_days_main_tab_items_checked
     verify_early_days_main_tab_items_locked
 
+    click_item_by html_id: 'classics-tab'
     verify_early_days_classics_tab_items_checked
     verify_early_days_classics_tab_items_active
 

@@ -1,0 +1,54 @@
+<div class="px-4 sm:px-6 lg:px-8 py-6 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="sm:hidden">
+      <label for="tabs" class="sr-only">Select a tab</label>
+      <select id="tabs" name="tabs" class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+        <option>Basic Stuff</option>
+        <option>RailsBytes</option>
+      </select>
+    </div>
+    <div class="hidden sm:block">
+      <div class="border-b border-gray-200">
+        <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+          <a id="main-tab"
+             data-target="tabs.tab" 
+             data-action="click->tabs#change"
+             href="#"
+             aria-current="page"
+          >
+            <span class='text-lg'>🍽️ Basic Stuff</span>
+          </a>
+          <a id="classics-tab"
+             data-target="tabs.tab" 
+             data-action="click->tabs#change"
+             href="#"
+          >
+            <span class='text-lg'>🍩 RailsBytes</span>
+          </a>
+          <a id="custom-setup-tab"
+             data-target="tabs.tab" 
+             data-action="click->tabs#change"
+             href="#"
+          >
+            <span class='text-lg'>🍔 Custom Setup</span>
+          </a>
+          <a id="custom-setup-tab"
+             data-target="tabs.tab" 
+             data-action="click->tabs#change"
+             href="#"
+          >
+            <span class='text-lg'>🥡 Deployment</span>
+          </a>
+          <a id="custom-setup-tab"
+             data-target="tabs.tab" 
+             data-action="click->tabs#change"
+             href="#"
+          >
+            <span class='text-lg'>🥃 CI/CD</span>
+          </a>          
+
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

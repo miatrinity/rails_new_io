@@ -13,6 +13,8 @@ class APIModeTest < ApplicationSystemTestCase
 
     verify_api_mode_main_tab_items_checked
     verify_api_mode_main_tab_items_locked
+
+    click_item_by html_id: 'classics-tab'
     verify_api_mode_classics_tab_items_checked
     verify_api_mode_classics_tab_items_active
 

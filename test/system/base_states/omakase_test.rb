@@ -15,6 +15,7 @@ class OmakaseTest < ApplicationSystemTestCase
     verify_omakase_main_tab_items_checked
     verify_omakase_main_tab_items_locked
 
+    click_item_by html_id: 'classics-tab'
     verify_omakase_classics_tab_items_checked
     verify_omakase_classics_tab_items_active
 

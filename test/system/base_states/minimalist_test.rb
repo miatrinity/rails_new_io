@@ -14,6 +14,7 @@ class MinimalistTest < ApplicationSystemTestCase
     verify_minimalist_main_tab_items_checked
     verify_minimalist_main_tab_items_locked
 
+    click_item_by html_id: 'classics-tab'
     verify_minimalist_classics_tab_items_checked
     verify_minimalist_classics_tab_items_active
 
