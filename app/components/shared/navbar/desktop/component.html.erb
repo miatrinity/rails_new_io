@@ -1,19 +1,52 @@
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 sm:mt-0 md:mt-3 <%= sitcky_or_not(controller_name) %> bg-white">
-    <nav class="relative flex items-center justify-between sm:h-10 md:justify-center">
-      <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
-        <div class="flex items-center justify-end w-full md:w-auto">
-          <div class="-mr-4 flex items-center md:hidden mt-3"><button type="button"
-              class="inline-flex items-end justify-end p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"><svg
-                stroke="currentColor" fill="none" viewBox="0 0 24 24" class="h-6 w-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                </path>
-              </svg></button></div>
-        </div>
+
+    <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+      <div class="flex items-center justify-end w-full md:w-auto">
+        <%# <div class="-mr-4 flex items-center md:hidden mt-3">
+          <button type="button"
+                  class="inline-flex items-end justify-end p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+            <svg stroke="currentColor" fill="none" viewBox="0 0 24 24" class="h-6 w-6">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div> %>
+        
+        <div class="-mr-2 flex items-center md:hidden">
+        <!-- Mobile menu button -->
+        <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!-- Icon when menu is closed. -->
+          <!--
+            Heroicon name: menu
+
+            Menu open: "hidden", Menu closed: "block"
+          -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Icon when menu is open. -->
+          <!--
+            Heroicon name: x
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
-      <div class="hidden md:block">
-        <% @items.each do |link_name, link_path| %>        
-          <a href="<%= page_path(id: link_path) %>" class="ml-10 first:ml-0 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"><%= link_name %></a> 
-        <% end %>
+        
       </div>
-    </nav>
-  </div>
+    </div>
+    <div class="hidden md:block">
+      <% @items.each do |link_name, link_path| %>        
+        <a href="<%= page_path(id: link_path) %>" 
+           class="ml-10 first:ml-0 font-medium text-gray-500 px-1 pt-2 pb-3 border-b-2 border-transparent
+                  hover:text-gray-700 hover:border-gray-300 
+                  active:bg-green-600 
+                  transition duration-150 ease-in-out">
+           <%= link_name %>
+        </a> 
+      <% end %>
+    </div>
+
+
