@@ -3,8 +3,16 @@
     <div class="sm:hidden">
       <label for="tabs" class="sr-only">Select a tab</label>
       <select id="tabs" name="tabs" class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
-        <option>Basic Stuff</option>
-        <option>RailsBytes</option>
+        <option data-target="tabs.tab" 
+                data-action="click->tabs#change"
+        >
+          🍽️ Basic Stuff
+        </option>
+        <option data-target="tabs.tab" 
+                data-action="click->tabs#change"        
+        >
+          🍩 RailsBytes
+        </option>
       </select>
     </div>
     <div class="hidden sm:block">
@@ -25,7 +33,7 @@
           >
             <span class='text-lg'>🍩 RailsBytes</span>
           </a>
-          <a id="custom-setup-tab"
+          <%# <a id="custom-setup-tab"
              data-target="tabs.tab" 
              data-action="click->tabs#change"
              href="#"
@@ -45,7 +53,7 @@
              href="#"
           >
             <span class='text-lg'>🥃 CI/CD</span>
-          </a>          
+          </a>           %>
 
         </nav>
       </div>
