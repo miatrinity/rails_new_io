@@ -23,19 +23,6 @@ body {
   top: 0;
 }
 
-.animate-notice {  
-  transform: translateY(130%);
-  transition-timing-function: ease-in;
-  transition: 0.2s;
-    
-  background-color: #26a84d;
-  font: 1em sans-serif;
-  padding: 20px 20px;
-  color: #F0FFF4;
-  text-align: center;
-  display: none;
-}
-
 pre.code {
   color: #4AF626;
   background: #000000;

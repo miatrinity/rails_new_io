@@ -1,11 +1,10 @@
 require 'application_system_test_case'
 
 class ClipboardTest < ApplicationSystemTestCase
-  
   test '"Copy to Clipboard" button works correctly' do
     visit root_path
 
-    click_on 'Copy to Clipboard'
+    find(:xpath, "//a[contains(.,'📋️ Copy to Clipboard')]").click
 
     # paste clipboard content into the app-name input field
     # shift+insert works both on OS X and Linux for pasting

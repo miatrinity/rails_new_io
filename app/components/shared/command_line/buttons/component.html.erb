@@ -1,10 +1,16 @@
 <div
   class="sm:flex-wrap md:flex items-center justify-center divide-y sm:divide-y-2 md:divide-y-0 divide-gray-400 bg-gray-700 sm:pb-0 md:pb-8">
-  <a
-    data-action="click->clipboard#copy"
-    class="block bg-purple-500 md:rounded-lg ml-0 md:mr-5 px-6 text-gray-100 shadow-2xl whitespace-no-wrap py-3">
-    Copy to Clipboard
-  </a>   
+  <a id="copy-to-clipboard"
+     data-action="click->clipboard#copy"
+     class="block bg-purple-500 md:rounded-lg ml-0 md:mr-5 px-6 text-gray-100 shadow-2xl whitespace-no-wrap py-3"
+  >📋️ Copy to Clipboard</a>   
+  
+  <div id="copied-to-clipboard-notice"
+       class="hidden bg-green-600 md:rounded-lg ml-0 md:mr-5 px-6 text-gray-100 shadow-2xl whitespace-no-wrap py-3"
+  >
+    📋️ Copied to Clipboard!       
+  </div>
+  
   <a href="#"
      id="verify-my-setup-link"
      class="block bg-indigo-800 

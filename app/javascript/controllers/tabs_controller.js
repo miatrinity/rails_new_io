@@ -1,7 +1,7 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ['tab', 'panel']
+  static targets = ['mobile-tab', 'tab', 'panel']
 
   connect() {
     this.activeTabClasses = (this.data.get('activeTab') || 'active').split(' ')
@@ -29,8 +29,6 @@ export default class extends Controller {
     event.preventDefault()
     
     this.index = this.tabTargets.indexOf(event.currentTarget)
-
-    window.dispatchEvent(new CustomEvent('tsc:tab-change'))
   }
   
   get index() {

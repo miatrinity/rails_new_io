@@ -10,7 +10,6 @@
       
       <%= render Shared::CommandLine::Output::Component.new(initial_state: @initial_state, state_translation: @state_translation, rails_bytes_combos: @rails_bytes_combos) %>      
       <%= render Shared::CommandLine::Buttons::Component.new %>
-      <div class="animate-notice">Copied to Clipboard!</div>                
     </div>
     
     <div data-controller="tabs" 
@@ -19,28 +18,21 @@
     >
       <%= render Tabs::Navigation::Component.new %>
     
-    <%# <ul id="tabs">
-      <li id="tabs-main"> %>
       <div id="tabs-main" data-target="tabs.panel">
         <%= render Tabs::Main::Component.new(all_menu_cards_in_all_states: @all_menu_cards_in_all_states, initial_state: @initial_state, state_translation: @state_translation) %>
       </div>
-      <%# </li>
-      <li id="tabs-classics" class="hidden"> %>
       <div id="tabs-classics" data-target="tabs.panel">
         <%= render Tabs::Classics::Component.new(all_menu_cards_in_all_states: @all_menu_cards_in_all_states, initial_state: @initial_state, state_translation: @state_translation) %>
       </div>
-      <div id="tabs-power-user" data-target="tabs.panel">
-        <%= render Tabs::PowerUser::Component.new(all_menu_cards_in_all_states: @all_menu_cards_in_all_states, initial_state: @initial_state, state_translation: @state_translation) %>
-      </div>
-      <div id="tabs-deployment" data-target="tabs.panel">
-        <%= render Tabs::Deployment::Component.new %>
-      </div>
-      <div id="tabs-ci" data-target="tabs.panel">
-        <%= render Tabs::Ci::Component.new %>
-      </div>
-      
-      <%# </li>      
-    </ul> %>
+      <%# <div id="tabs-power-user" data-target="tabs.panel"> %>
+        <%# <%= render Tabs::PowerUser::Component.new(all_menu_cards_in_all_states: @all_menu_cards_in_all_states, initial_state: @initial_state, state_translation: @state_translation) %> %>
+      <%# </div> %>
+      <%# <div id="tabs-deployment" data-target="tabs.panel"> %>
+        <%# <%= render Tabs::Deployment::Component.new %> %>
+      <%# </div> %>
+      <%# <div id="tabs-ci" data-target="tabs.panel"> %>
+        <%# <%= render Tabs::Ci::Component.new %> %>
+      <%# </div> %>
     </div>
     
     <%= render Shared::RailsBytesCombos::Component.new(rails_bytes_combos: @rails_bytes_combos) %>
