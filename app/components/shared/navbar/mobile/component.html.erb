@@ -1,13 +1,46 @@
-<div class="hidden md:hidden">
-  <div class="pt-2 pb-3 space-y-1">
-    <% @items.each do |link_name, link_path| %>        
-      <a href="<%= page_path(id: link_path) %>"
-          class="block pl-3 pr-4 my-2 border-l-4 border-transparent text-gray-600
-                hover:text-gray-800 hover:bg-gray-100 hover:border-gray-400
-                transition duration-150 ease-in-out"
-      >
-        <%= link_name %>
-      </a>
-    <% end %>
+<div>
+  <div data-target="mobile-menu.close"
+       data-action="click->mobile-menu#toggleClose" 
+       class="absolute top-0 inset-x-0 p-2 origin-top-right hidden z-50">
+    <div class="rounded-lg shadow-md">
+      <div class="rounded-lg bg-white shadow-xs overflow-hidden">
+        <div class="px-5 pt-4">
+          <div class="-mr-2">
+            <button type="button" 
+                    class="absolute top-0 right-0 m-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+            >
+              <!-- X to close hamburger menu -->
+              <svg stroke="currentColor" 
+                   fill="none" 
+                   viewBox="0 0 24 24" 
+                   class="h-6 w-6"
+              >
+                <path stroke-linecap="round" 
+                         stroke-linejoin="round" 
+                         stroke-width="2" 
+                         d="M6 18L18 6M6 6l12 12"
+                >
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div data-target="mobile-menu.navigation"
+             class="px-2 pt-2 pb-3"
+        >
+          <% @items.each do |link_name, link_path| %>        
+            <a href="<%= page_path(id: link_path) %>"
+                class="block px-3 py-2 text-base font-medium my-2 border-l-4 border-transparent text-gray-700
+                      hover:text-gray-800 hover:bg-gray-100 hover:border-gray-400
+                      transition duration-150 ease-in-out"
+            >
+              <%= link_name %>
+            </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
