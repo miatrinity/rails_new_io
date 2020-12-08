@@ -7,8 +7,7 @@ ruby '2.7.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
-# Use Puma as the app server
-gem 'puma', '~> 4.1'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -32,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'view_component', '~> 2.20', require: "view_component/engine"
 
 group :development, :test do
+  gem 'puma', '~> 4.1'
   gem 'awesome_print'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
