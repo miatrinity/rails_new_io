@@ -10,11 +10,11 @@
     "postcss": "^7",
     "stimulus": "^1.1.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "@tailwindcss/forms": "^0.2.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
-  "devDependencies": {
-    "@tailwindcss/forms": "^0.2.1",
+  "devDependencies": {    
     "webpack-dev-server": "^3.11.0"
   }
 }
