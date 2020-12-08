@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'view_component', '~> 2.20', require: "view_component/engine"
 
 group :development, :test do
-  gem 'puma', '~> 4.1'
+  gem 'puma', '~> 5.1'
   gem 'awesome_print'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
