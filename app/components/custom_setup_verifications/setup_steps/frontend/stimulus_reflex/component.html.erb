@@ -1,7 +1,7 @@
         <li>
           paste this into
           <span class="italic">app/views/verify/index.html.erb</span>:
-          <div style="background: #272822; overflow:auto;width:auto;padding:.2em .6em;" class="px-5 my-5">
+          <div style="overflow:auto;width:auto;padding:.2em .6em;" class="px-5 my-5 bg-deep-azure-zeta">
             <pre style="margin: 0; line-height: 125%"><span style="color: #f92672">&lt;a</span> <span style="color: #a6e22e">href=</span><span style="color: #e6db74">&quot;#&quot;</span>
   <span style="color: #a6e22e">data-reflex=</span><span style="color: #e6db74">&quot;click-&gt;CounterReflex#increment&quot;</span>
   <span style="color: #a6e22e">data-step=</span><span style="color: #e6db74">&quot;1&quot;</span> 
@@ -22,7 +22,7 @@
           paste this into
           <span class="italic">app/reflexes/counter_reflex.rb</span>:
 
-          <div style="background: #272822; overflow:auto;width:auto;padding:.2em .6em;" class="px-5 my-5">
+          <div style="overflow:auto;width:auto;padding:.2em .6em;" class="px-5 my-5 bg-deep-azure-zeta">
             <pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">CounterReflex</span> <span style="color: #f92672">&lt;</span> <span style="color: #e6db74">StimulusReflex</span><span style="color: #f8f8f2">:</span><span style="color: #e6db74">:Reflex</span>
   <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">increment</span>
     <span style="color: #f8f8f2">@count</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">element</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">dataset</span><span style="color: #f92672">[</span><span style="color: #e6db74">:count</span><span style="color: #f92672">].</span><span style="color: #f8f8f2">to_i</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">element</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">dataset</span><span style="color: #f92672">[</span><span style="color: #e6db74">:step</span><span style="color: #f92672">].</span><span style="color: #f8f8f2">to_i</span>
