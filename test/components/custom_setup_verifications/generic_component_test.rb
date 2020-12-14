@@ -29,6 +29,20 @@ module CustomSetupVerifications
 end
 
 module CustomSetupVerifications
+  module TeardownSteps
+    module Config1
+      module RailsByte1
+        class Component < ViewComponent::Base
+          def call
+            'Teardown Step for Config1::Railsbyte1'
+          end
+        end
+      end
+    end
+  end
+end
+
+module CustomSetupVerifications
   module SetupSteps
     module Config1
       module None
@@ -44,6 +58,20 @@ end
 
 module CustomSetupVerifications
   module VerificationSteps
+    module Config1
+      module None
+        class Component < ViewComponent::Base
+          def call
+            ''
+          end
+        end
+      end
+    end
+  end
+end
+
+module CustomSetupVerifications
+  module TeardownSteps
     module Config1
       module None
         class Component < ViewComponent::Base
@@ -85,6 +113,21 @@ module CustomSetupVerifications
 end
 
 module CustomSetupVerifications
+  module TeardownSteps
+    module Config2
+      module RailsByte3
+        class Component < ViewComponent::Base
+          def call
+            'Teardown Step for Config2::Railsbyte3'
+          end
+        end
+      end
+    end
+  end
+end
+
+
+module CustomSetupVerifications
   class GenericComponentTest < ViewComponent::TestCase
     def setup
       @rails_bytes = [
@@ -116,6 +159,8 @@ module CustomSetupVerifications
       assert_text 'Setup Step for Config2::Railsbyte3'
       assert_text 'Verification Step for Config1::Railsbyte1'
       assert_text 'Verification Step for Config2::Railsbyte3'
+      assert_text 'Teardown Step for Config1::Railsbyte1'
+      assert_text 'Teardown Step for Config2::Railsbyte3'
     end
 
     def test_rails_byte_selection_is_formatted_correctly
