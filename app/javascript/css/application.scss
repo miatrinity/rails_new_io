@@ -16,6 +16,68 @@ body {
   background-attachment: fixed;
   /* background-size: cover; */
 }
+ 
+.text-apple { color: #61ac3b }
+
+.text-deep-azure-alfa { color: #1d61aa }
+.text-deep-azure-beta { color: #195595 }
+.text-deep-azure-gamma { color: #16487f}
+.text-deep-azure     { color: #123c69 }
+.text-deep-azure-delta { color: #0e3053 }
+.text-deep-azure-epsilon { color: #0b233d }
+.text-deep-azure-zeta { color: #071728 }
+
+.text-azure-tint-100 { color: #e7ebf0 }
+.text-azure-tint-200 { color: #cfd8e1 }
+.text-azure-tint-300 { color: #b7c4d2 }
+.text-azure-tint-400 { color: #a0b1c3 }
+.text-azure-tint-500 { color: #889db4 }
+.text-azure-tint-600 { color: #708aa5 }
+.text-azure-tint-700 { color: #597696 }
+.text-azure-tint-800 { color: #416287 }
+.text-azure-tint-900 { color: #294f78 }
+
+.bg-azure-tint-100 { background-color: #e7ebf0 }
+.bg-azure-tint-200 { background-color: #cfd8e1 }
+.bg-azure-tint-300 { background-color: #b7c4d2 }
+.bg-azure-tint-400 { background-color: #a0b1c3 }
+.bg-azure-tint-500 { background-color: #889db4 }
+.bg-azure-tint-600 { background-color: #708aa5 }
+.bg-azure-tint-700 { background-color: #597696 }
+.bg-azure-tint-800 { background-color: #416287 }
+.bg-azure-tint-900 { background-color: #294f78 }
+
+.bg-deep-azure-alfa    { background-color: #1d61aa }
+.bg-deep-azure-beta    { background-color: #195595 }
+.bg-deep-azure-gamma   { background-color: #16487f }
+.bg-deep-azure         { background-color: #123c69 }
+.bg-deep-azure-delta   { background-color: #0e3053 }
+.bg-deep-azure-epsilon { background-color: #0b233d }
+.bg-deep-azure-zeta    { background-color: #071728 }
+
+.text-ruby-alfa    { color: #cb688a }
+.text-ruby-beta    { color: #c5557b }
+.text-ruby-gamma   { color: #be426c }
+.text-ruby         { color: #ac3b61 }
+.text-ruby-delta   { color: #993456 }
+.text-ruby-epsilon { color: #862e4c }
+.text-ruby-zeta    { color: #732741 }
+
+.bg-ruby-alfa    { background-color: #cb688a }
+.bg-ruby-beta    { background-color: #c5557b }
+.bg-ruby-gamma   { background-color: #be426c }
+.bg-ruby         { background-color: #ac3b61 }
+.bg-ruby-delta   { background-color: #993456 }
+.bg-ruby-epsilon { background-color: #862e4c }
+.bg-ruby-zeta    { background-color: #732741 }
+
+
+.bg-lily   { background-color: #bab2b5 }
+.bg-watzusi   { background-color: #edc7b7 }
+.bg-fair-pink   { background-color: #eee2dc }
+.bg-hover-pink { background-color: #f6f0ed}
+.bg-azure-gray  { background-color: #e6e7e9 }
+.bg-apple { background-color: #61ac3b }
 
 #rails-new-command-generator-holder {
   position: -webkit-sticky;
@@ -31,4 +93,16 @@ pre.code {
   font-size: 1rem;
 }
 
+li.menu-card-row:hover {
+  background-color: #ac3b61;
+}
+
+li.menu-card-row:hover div.menu-card-row-title {
+  color: #edc7b7;
+  font-size: medium
+}
+
+li.menu-card-row:hover div.menu-card-row-description {
+  color: #eee2dc;
+}
 
