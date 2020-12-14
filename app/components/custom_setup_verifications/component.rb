@@ -15,6 +15,10 @@ module CustomSetupVerifications
     def rails_byte_verification_component_for(rails_byte)
       "CustomSetupVerifications::VerificationSteps::#{componentize(rails_byte)}::Component".constantize
     end
+    
+    def rails_byte_teardown_component_for(rails_byte)
+      "CustomSetupVerifications::TeardownSteps::#{componentize(rails_byte)}::Component".constantize
+    end
 
     private
 

@@ -20,7 +20,7 @@
       </div>     
     </div>
     
-    <hr>
+    <hr class="mt-6">
     <div class="text-2xl font-semibold antialiased text-ruby pt-3 mb-2 tracking-tight leading-tight">Set up Verification</div>
     <hr class="mb-5">
     
@@ -31,7 +31,7 @@
       <% end %>
     </ol>
     
-    <hr>
+    <hr class="mt-6">
     <div class="text-2xl font-semibold antialiased text-ruby pt-3 mb-2 tracking-tight leading-tight">Verify!</div>
     <hr class="mb-5">    
     
@@ -39,8 +39,21 @@
       <%= render CustomSetupVerifications::VerificationSteps::Component.new(rails_bytes: @rails_bytes) %>      
       <% @rails_bytes.each do |rails_byte| %>  
         <%= render rails_byte_verification_component_for(rails_byte).new %>
-      <% end %>      
+      <% end %>
     </ol>
+    
+    <hr class="mt-6">
+    <div class="text-2xl font-semibold antialiased text-ruby pt-3 mb-2 tracking-tight leading-tight">Teardown - Remove all Verification Files/Settings</div>
+    <hr class="mb-5">
+    
+    <ol class="list-decimal leading-loose ml-4">
+      <%= render CustomSetupVerifications::TeardownSteps::Component.new(rails_bytes: @rails_bytes) %>      
+      <% @rails_bytes.each do |rails_byte| %>  
+        <%= render rails_byte_teardown_component_for(rails_byte).new %>
+      <% end %>
+    </ol>
+    
+    
     <a href="javascript:history.back()"
        class="block bg-ruby
               lg:rounded-lg md:rounded-lg xl:rounded-lg
