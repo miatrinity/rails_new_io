@@ -6,7 +6,7 @@ module CustomSetupVerifications
       end
 
       def controller_generation_code
-        display_controller_generation_code? ? '' : '<li><pre>> rails g controller verify index</pre></li>'.html_safe
+        display_controller_generation_code? ? '' : '<li><pre class="code">> rails g controller verify index</pre></li>'.html_safe
       end
 
       private
