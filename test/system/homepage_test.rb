@@ -4,6 +4,6 @@ class HomepageTest < ApplicationSystemTestCase
   test 'Visiting Homepage' do
     visit root_path
 
-    assert_selector 'h2', text: "Rails is\nomakase 🔪🍱"
+    assert_selector 'h2', text: "Rails is\nomakase  🔪🍱"
   end
 end
