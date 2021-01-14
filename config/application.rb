@@ -19,7 +19,7 @@ module RailsNewIo
       menu_cards_in_all_states_blueprint.each do |tab_id, tab_data|
         tab_data.each do |config_id, config_data|
           config_data.each do |menu_card_id, menu_card_data|
-            menu_card_data.each do |item_name, item_value|
+            menu_card_data.each do |item_name, _|
               menu_card_in_all_states = {}
               all_initial_states.each do |initial_state|
                 menu_card_in_all_states[initial_state] = @base_states[initial_state][tab_id][config_id][menu_card_id][item_name] 
@@ -38,9 +38,10 @@ module RailsNewIo
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    config.state_translation = YAML::load(File.open("#{Rails.root}/config/app/state_translation.yaml"))
-    config.base_states = YAML::load(File.open("#{Rails.root}/config/app/base_states.yaml"))
-    config.rails_bytes_combos = YAML::load(File.open("#{Rails.root}/config/app/rails_bytes_combos.yaml"))
+    config.state_translation = YAML.safe_load(File.open("#{Rails.root}/config/app/state_translation.yaml"), [Symbol])
+    config.base_states = YAML.safe_load(File.open("#{Rails.root}/config/app/base_states.yaml"), [Symbol])
+    config.rails_bytes_combos = YAML.safe_load(File.open("#{Rails.root}/config/app/rails_bytes_combos.yaml"), [Symbol])
+    config.rails_bytes_locks = YAML.safe_load(File.open("#{Rails.root}/config/app/rails_bytes_locks.yaml"), [Symbol])
 
     config.initial_state_name = :omakase_state
     config.initial_state = config.base_states[config.initial_state_name]
