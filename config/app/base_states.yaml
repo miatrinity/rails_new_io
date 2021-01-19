@@ -118,6 +118,9 @@
         :"Stimulus Reflex":
           :checked: false
           :locked: false
+        # :Hotwire:
+        #   :checked: false
+        #   :locked: false
       :css:
         :none:
           :checked: true
@@ -247,6 +250,9 @@
         :"Stimulus Reflex":
           :checked: false
           :locked: false
+        # :Hotwire:
+        #   :checked: false
+        #   :locked: false          
       :css:
         :none:
           :checked: true
@@ -376,6 +382,9 @@
         :"Stimulus Reflex":
           :checked: false
           :locked: false
+        # :Hotwire:
+        #   :checked: false
+        #   :locked: false          
       :css:
         :none:
           :checked: true
@@ -504,7 +513,10 @@
           :locked: false
         :"Stimulus Reflex":
           :checked: false
-          :locked: false          
+          :locked: false
+        # :Hotwire:
+        #   :checked: false
+        #   :locked: false          
       :css:
         :none:
           :checked: true
