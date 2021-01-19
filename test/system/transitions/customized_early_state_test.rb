@@ -56,7 +56,7 @@ class CustomizedEarlyStateTest < ApplicationSystemTestCase
     assert page.find('#main-tab-frontend-sprockets').checked?
     assert page.find('#main-tab-frontend-javascript').checked?
     assert page.find('#main-tab-frontend-turbolinks').checked?
-    refute page.find('#main-tab-frontend-webpacker').checked?
+    assert page.find('#main-tab-frontend-webpacker').checked?
     assert page.find('#main-tab-frontend-yarn').checked?
 
     # Testing Menu card
@@ -125,6 +125,6 @@ class CustomizedEarlyStateTest < ApplicationSystemTestCase
     refute page.find('#classics-tab-css-tailwind').checked?
     refute page.find('#classics-tab-css-bootstrap').checked?
 
-    assert_command_line_equals 'rails new my_app --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-bootsnap --skip-listen --skip-spring --skip-system-test --skip-test --skip-webpack-install --template https://www.railsbytes.com/script/zr4s0Y'
+    assert_command_line_equals 'rails new my_app --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-bootsnap --skip-listen --skip-spring --skip-system-test --skip-test --template https://www.railsbytes.com/script/zJosl7'
   end
 end

@@ -4,7 +4,7 @@
   :main-tab-starters-gemfile: true
   :main-tab-starters-bundle: true
   :main-tab-frontend-javascript: true
-  :main-tab-frontend-webpacker: false
+  :main-tab-frontend-webpacker: true
   :main-tab-frontend-turbolinks: true
   :main-tab-frontend-yarn: true
 :classics-tab-frontend-stimulus-reflex:
@@ -12,9 +12,17 @@
   :main-tab-starters-bundle: true
   :main-tab-mains-actioncable: true
   :main-tab-frontend-javascript: true
-  :main-tab-frontend-webpacker: false
+  :main-tab-frontend-webpacker: true
   :main-tab-frontend-turbolinks: true
   :main-tab-frontend-yarn: true
+:classics-tab-frontend-hotwire:
+  :main-tab-starters-gemfile: true
+  :main-tab-starters-bundle: true
+  :main-tab-mains-actioncable: true
+  :main-tab-frontend-javascript: true
+  :main-tab-frontend-webpacker: true
+  :main-tab-frontend-turbolinks: true
+  :main-tab-frontend-yarn: true  
 :classics-tab-testing-none:
   :main-tab-testing-minitest: false
   :main-tab-testing-system: false
@@ -27,13 +35,13 @@
   :main-tab-starters-gemfile: true
   :main-tab-starters-bundle: true
   :main-tab-frontend-javascript: true
-  :main-tab-frontend-webpacker: false
+  :main-tab-frontend-webpacker: true
   :main-tab-frontend-turbolinks: true
   :main-tab-frontend-yarn: true
 :classics-tab-css-bootstrap:
   :main-tab-starters-gemfile: true
   :main-tab-starters-bundle: true
   :main-tab-frontend-javascript: true
-  :main-tab-frontend-webpacker: false
+  :main-tab-frontend-webpacker: true
   :main-tab-frontend-turbolinks: true
   :main-tab-frontend-yarn: true

@@ -26,7 +26,7 @@ class CommandLineOutputTest < ApplicationSystemTestCase
     click_item_by html_id: 'classics-tab-testing-rspec'
     click_item_by html_id: 'classics-tab-css-bootstrap'
 
-    assert_command_line_equals 'rails new my_app -d postgresql --skip-action-mailer --skip-active-storage --skip-keeps --skip-spring --skip-test --skip-webpack-install --template https://www.railsbytes.com/script/zyvso6'
+    assert_command_line_equals 'rails new my_app -d postgresql --skip-action-mailer --skip-active-storage --skip-keeps --skip-spring --skip-test --template https://www.railsbytes.com/script/zyvso6'
   end
 
   test 'Choosing the RSpec railsbyte is reflected in the command line output' do
@@ -35,7 +35,7 @@ class CommandLineOutputTest < ApplicationSystemTestCase
     click_item_by html_id: 'classics-tab'
     click_item_by html_id: 'classics-tab-testing-rspec'
 
-    assert_command_line_equals 'rails new my_app --skip-test --template https://www.railsbytes.com/script/VD7sra'
+    assert_command_line_equals 'rails new my_app --skip-test --template https://www.railsbytes.com/templates/VwysNL'
   end
 
   test 'Choosing the Stimulus Reflex railsbyte is reflected in the command line output' do
@@ -44,7 +44,7 @@ class CommandLineOutputTest < ApplicationSystemTestCase
     click_item_by html_id: 'classics-tab'
     click_item_by html_id: 'classics-tab-frontend-stimulus-reflex'
 
-    assert_command_line_equals 'rails new my_app --skip-webpack-install --template https://www.railsbytes.com/script/zr4s0Y'
+    assert_command_line_equals 'rails new my_app --template https://www.railsbytes.com/script/zJosl7'
   end
 
   test 'Switching between None -> Stimulus Reflex -> None railsbyte is reflected in the command line output' do
@@ -82,6 +82,6 @@ class CommandLineOutputTest < ApplicationSystemTestCase
     click_item_by html_id: 'classics-tab-testing-rspec'
     click_item_by html_id: 'classics-tab-css-tailwind'
 
-    assert_command_line_equals 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-git --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --skip-webpack-install --template https://www.railsbytes.com/script/Xo5s9m'
+    assert_command_line_equals 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-git --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --template https://www.railsbytes.com/script/Xo5s9m'
   end
 end

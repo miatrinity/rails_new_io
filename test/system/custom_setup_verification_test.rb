@@ -28,7 +28,7 @@ class CustomSetupVerificationTest < ApplicationSystemTestCase
     click_on 'Verify My Setup'
     click_on_first_link_with_text '< Back to my Setup'
 
-    assert_command_line_equals 'rails new my_app -d postgresql --skip-action-cable --skip-action-mailbox --skip-spring --skip-webpack-install --template https://www.railsbytes.com/script/X8BsGy'
+    assert_command_line_equals 'rails new my_app -d postgresql --skip-action-cable --skip-action-mailbox --skip-spring --template https://www.railsbytes.com/script/z5Os6O'
   end
 
   private

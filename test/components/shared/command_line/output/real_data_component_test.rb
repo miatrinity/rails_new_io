@@ -95,7 +95,7 @@ module Shared
             )
           )
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --template https://www.railsbytes.com/script/VMys5p')
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --template https://www.railsbytes.com/script/V4Ys7o')
         end
       end
     end
