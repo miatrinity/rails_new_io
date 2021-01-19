@@ -16,7 +16,7 @@ css-none@frontend-hotwire@testing-none: 'https://www.railsbytes.com/script/x7msq
 css-none@frontend-hotwire@testing-rspec: 'https://www.railsbytes.com/script/VMyslY'
 css-none@frontend-none@testing-minitest: ''
 css-none@frontend-none@testing-none: ''
-css-none@frontend-none@testing-rspec: 'https://www.railsbytes.com/templates/VwysNL'
+css-none@frontend-none@testing-rspec: 'https://www.railsbytes.com/script/VwysNL'
 css-none@frontend-stimulus-reflex@testing-minitest: 'https://www.railsbytes.com/script/zJosl7'
 css-none@frontend-stimulus-reflex@testing-none: 'https://www.railsbytes.com/script/zJosl7'
 css-none@frontend-stimulus-reflex@testing-rspec: 'https://www.railsbytes.com/script/VqqsAD'
