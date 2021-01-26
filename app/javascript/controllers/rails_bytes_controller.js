@@ -30,7 +30,7 @@ export default class extends Controller {
       verifyMySetupLink.classList.add('hidden') 
     } else {
       verifyMySetupLink.classList.remove('hidden')
-      verifyMySetupLink.setAttribute('href', `/custom_setup_verifications/${railsBytesCombosKey}`)
+      verifyMySetupLink.setAttribute('href', `/manual_app_verifications/${railsBytesCombosKey}`)
     }
     
   }

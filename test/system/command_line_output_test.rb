@@ -35,7 +35,7 @@ class CommandLineOutputTest < ApplicationSystemTestCase
     click_item_by html_id: 'classics-tab'
     click_item_by html_id: 'classics-tab-testing-rspec'
 
-    assert_command_line_equals 'rails new my_app --skip-test --template https://www.railsbytes.com/templates/VwysNL'
+    assert_command_line_equals 'rails new my_app --skip-test --template https://www.railsbytes.com/script/VwysNL'
   end
 
   test 'Choosing the Stimulus Reflex railsbyte is reflected in the command line output' do
