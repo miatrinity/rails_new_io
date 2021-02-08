@@ -14,16 +14,16 @@ module Shared
           data_action:,
           data_target:
         )
-          @menu_card_id                  = menu_card_id
-          @title                         = title
-          @subtitle                      = subtitle
-          @items                         = items
-          @menu_card_in_all_states       = menu_card_in_all_states
+          @menu_card_id = menu_card_id
+          @title = title
+          @subtitle = subtitle
+          @items = items
+          @menu_card_in_all_states = menu_card_in_all_states
           @menu_card_in_a_specific_state = menu_card_in_a_specific_state
-          @card_state_translation        = card_state_translation
-          @data_controller               = data_controller
-          @data_action                   = data_action
-          @data_target                   = data_target
+          @card_state_translation = card_state_translation
+          @data_controller = data_controller
+          @data_action = data_action
+          @data_target = data_target
 
           update_items
         end
@@ -65,7 +65,7 @@ module Shared
         end
 
         def html_id_for(item_name)
-          "#{@menu_card_id}-#{item_name}".tr(' ','-').downcase.dasherize
+          "#{@menu_card_id}-#{item_name}".tr(" ", "-").downcase.dasherize
         end
 
         def active_rails_byte?(item_name)

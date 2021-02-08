@@ -1,4 +1,4 @@
-require 'view_component/test_case'
+require "view_component/test_case"
 
 module ManualAppVerifications
   class RealDataComponentTest < ViewComponent::TestCase
@@ -7,12 +7,12 @@ module ManualAppVerifications
 
       render_inline(ManualAppVerifications::Component.new(rails_bytes: rails_bytes))
 
-      assert_text '> rails g controller verify index'
-      assert_text 'Hello, Bootstrap!'
-      assert_text 'Click me to increment the number:'
-      assert_text 'To verify Bootstrap:'
-      assert_text 'To verify Stimulus Reflex:'
-      assert_text 'To verify RSpec:'
+      assert_text "> rails g controller verify index"
+      assert_text "Hello, Bootstrap!"
+      assert_text "Click me to increment the number:"
+      assert_text "To verify Bootstrap:"
+      assert_text "To verify Stimulus Reflex:"
+      assert_text "To verify RSpec:"
     end
 
     def test_if_verifying_testing_rails_bytes_only_do_not_display_generate_controller_instructions
@@ -20,7 +20,7 @@ module ManualAppVerifications
 
       render_inline(ManualAppVerifications::Component.new(rails_bytes: rails_bytes))
 
-      refute_text '> rails g controller verify index'
+      refute_text "> rails g controller verify index"
     end
 
     def test_rails_byte_selection_is_formatted_correctly
@@ -28,12 +28,12 @@ module ManualAppVerifications
 
       render_inline(ManualAppVerifications::Component.new(rails_bytes: rails_bytes))
 
-      assert_selector('.font-semibold', text: 'Css:')
-      assert_selector('.font-semibold', text: 'Tailwind')
-      assert_selector('.font-semibold', text: 'Frontend:')
-      assert_selector('.font-semibold', text: 'Stimulus')
-      assert_selector('.font-extralight', text: 'Testing:')
-      assert_selector('.font-extralight', text: 'Minitest')
+      assert_selector(".font-semibold", text: "Css:")
+      assert_selector(".font-semibold", text: "Tailwind")
+      assert_selector(".font-semibold", text: "Frontend:")
+      assert_selector(".font-semibold", text: "Stimulus")
+      assert_selector(".font-extralight", text: "Testing:")
+      assert_selector(".font-extralight", text: "Minitest")
     end
   end
 end

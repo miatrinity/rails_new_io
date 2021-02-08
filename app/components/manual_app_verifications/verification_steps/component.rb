@@ -7,7 +7,7 @@ module ManualAppVerifications
 
       def visit_verification_page_code
         if hide_verification_page_code?
-          ''
+          ""
         else
           <<-CODE
           <li>
@@ -28,7 +28,7 @@ module ManualAppVerifications
       private
 
       def hide_verification_page_code?
-        @rails_bytes.include?('css-none') && @rails_bytes.include?('frontend-none')
+        @rails_bytes.include?("css-none") && @rails_bytes.include?("frontend-none")
       end
     end
   end

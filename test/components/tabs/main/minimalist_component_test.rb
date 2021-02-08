@@ -1,4 +1,4 @@
-require 'view_component/test_case'
+require "view_component/test_case"
 
 module Tabs
   module Main
@@ -9,7 +9,7 @@ module Tabs
       def setup
         @state_translation = Rails.configuration.state_translation
         @base_states = Rails.configuration.base_states
-        @all_menu_cards_in_all_states = Rails.configuration.all_menu_cards_in_all_states      
+        @all_menu_cards_in_all_states = Rails.configuration.all_menu_cards_in_all_states
       end
 
       def test_menu_cards_setup_in_minimalist_base_state

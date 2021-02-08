@@ -3,6 +3,6 @@
 # nodoc
 class ManualAppVerificationsController < ApplicationController
   def show
-    @rails_bytes = params[:id].split('@')
+    @rails_bytes = params[:id].split("@")
   end
 end

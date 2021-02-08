@@ -9,7 +9,7 @@ module RailsNewIo
     end
 
     def assert_hidden(element_id)
-      assert page.find(:xpath, "//*[@id='#{element_id}' and contains(@class,'hidden')]", :visible => false)
+      assert page.find(:xpath, "//*[@id='#{element_id}' and contains(@class,'hidden')]", visible: false)
     end
 
     def assert_visible(element_id)
@@ -19,13 +19,15 @@ module RailsNewIo
     def assert_active_rails_byte(element_id)
       assert_selector(
         :xpath,
-        "//li[descendant::input[@id='#{element_id}'] and @data-active-rails-byte='true']")
+        "//li[descendant::input[@id='#{element_id}'] and @data-active-rails-byte='true']"
+      )
     end
 
     def refute_active_rails_byte(element_id)
       assert_selector(
         :xpath,
-        "//li[descendant::input[@id='#{element_id}'] and @data-active-rails-byte='false']")
+        "//li[descendant::input[@id='#{element_id}'] and @data-active-rails-byte='false']"
+      )
     end
   end
 end

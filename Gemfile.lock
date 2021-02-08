@@ -59,6 +59,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
+    ast (2.4.2)
     awesome_print (1.8.0)
     bindex (0.8.1)
     bootsnap (1.5.1)
@@ -110,6 +111,11 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    parallel (1.20.1)
+    parser (3.0.0.0)
+      ast (~> 2.4.1)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
     pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -151,11 +157,27 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
+    rainbow (3.0.0)
     rake (13.0.1)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.8.2)
+    rexml (3.2.4)
+    rubocop (1.8.1)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.2.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.4.1)
+      parser (>= 2.7.1.5)
+    rubocop-performance (1.9.2)
+      rubocop (>= 0.90.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.10.1)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -182,14 +204,21 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    standard (0.12.0)
+      rubocop (= 1.8.1)
+      rubocop-performance (= 1.9.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    tty-color (0.6.0)
+    tty-command (0.10.0)
+      pastel (~> 0.8)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
     tzinfo (1.2.8)
       thread_safe (~> 0.1)
+    unicode-display_width (2.0.0)
     view_component (2.22.1)
       activesupport (>= 5.0.0, < 7.0)
     web-console (4.1.0)
@@ -231,6 +260,8 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  standard
+  tty-command
   turbolinks (~> 5)
   tzinfo-data
   view_component (~> 2.20)
@@ -242,4 +273,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.1.4
+   2.2.5

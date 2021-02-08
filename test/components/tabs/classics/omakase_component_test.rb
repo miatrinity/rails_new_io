@@ -1,4 +1,4 @@
-require 'view_component/test_case'
+require "view_component/test_case"
 
 module Tabs
   module Classics

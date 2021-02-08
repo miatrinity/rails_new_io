@@ -3,20 +3,20 @@ module Shared
     module Checkbox
       class Component < ViewComponent::Base
         def initialize(menu_card_id:,
-                       title:,
-                       subtitle:,
-                       items:,
-                       menu_card_in_all_states:,
-                       menu_card_in_a_specific_state:,
-                       card_state_translation:)
+          title:,
+          subtitle:,
+          items:,
+          menu_card_in_all_states:,
+          menu_card_in_a_specific_state:,
+          card_state_translation:)
 
-          @menu_card_id                                    = menu_card_id
-          @title                                           = title
-          @subtitle                                        = subtitle
-          @items                                           = items
-          @menu_card_in_all_states                         = menu_card_in_all_states
-          @menu_card_in_a_specific_state                   = menu_card_in_a_specific_state
-          @card_state_translation                          = card_state_translation
+          @menu_card_id = menu_card_id
+          @title = title
+          @subtitle = subtitle
+          @items = items
+          @menu_card_in_all_states = menu_card_in_all_states
+          @menu_card_in_a_specific_state = menu_card_in_a_specific_state
+          @card_state_translation = card_state_translation
 
           update_items
         end
@@ -58,7 +58,7 @@ module Shared
         end
 
         def display_locked_by_rails_bytes_for(item_name)
-          locked?(item_name) ? '' : 'hidden'
+          locked?(item_name) ? "" : "hidden"
         end
 
         def locked?(item_name)
@@ -66,7 +66,7 @@ module Shared
         end
 
         def checked_attribute_for(display_state)
-          display_state[:checked] ? 'checked' : ''
+          display_state[:checked] ? "checked" : ""
         end
       end
     end

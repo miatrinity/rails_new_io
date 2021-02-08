@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_122848) do
+ActiveRecord::Schema.define(version: 2021_02_05_093918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,4 +23,17 @@ ActiveRecord::Schema.define(version: 2021_01_26_122848) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "verification_runs", force: :cascade do |t|
+    t.string "status"
+    t.integer "duration"
+    t.datetime "finished_at"
+    t.text "output_message"
+    t.text "error_message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "app_recipe_id", null: false
+    t.index ["app_recipe_id"], name: "index_verification_runs_on_app_recipe_id"
+  end
+
+  add_foreign_key "verification_runs", "app_recipes"
 end

@@ -1,6 +1,6 @@
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails/all'
+require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -22,7 +22,7 @@ module RailsNewIo
             menu_card_data.each do |item_name, _|
               menu_card_in_all_states = {}
               all_initial_states.each do |initial_state|
-                menu_card_in_all_states[initial_state] = @base_states[initial_state][tab_id][config_id][menu_card_id][item_name] 
+                menu_card_in_all_states[initial_state] = @base_states[initial_state][tab_id][config_id][menu_card_id][item_name]
               end
               menu_cards_in_all_states_blueprint[tab_id][config_id][menu_card_id][item_name] = menu_card_in_all_states
             end

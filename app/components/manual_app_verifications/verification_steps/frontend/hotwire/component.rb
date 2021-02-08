@@ -3,7 +3,8 @@ module ManualAppVerifications
     module Frontend
       module Hotwire
         class Component < ViewComponent::Base
-          def initialize; end
+          def initialize
+          end
         end
       end
     end

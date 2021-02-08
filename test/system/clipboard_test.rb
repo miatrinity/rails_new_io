@@ -1,4 +1,4 @@
-require 'application_system_test_case'
+require "application_system_test_case"
 
 class ClipboardTest < ApplicationSystemTestCase
   test '"Copy to Clipboard" button works correctly' do
@@ -12,6 +12,6 @@ class ClipboardTest < ApplicationSystemTestCase
 
     input_field_value = find(:xpath, "//input[@name='app-name']").value
 
-    assert_equal input_field_value, 'rails new my_app'
+    assert_equal input_field_value, "rails new my_app"
   end
 end

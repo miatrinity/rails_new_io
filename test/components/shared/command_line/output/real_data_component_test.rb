@@ -1,4 +1,4 @@
-require 'view_component/test_case'
+require "view_component/test_case"
 
 module Shared
   module CommandLine
@@ -22,7 +22,7 @@ module Shared
             )
           )
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app')
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: "rails new my_app")
         end
 
         def test_early_base_setup_command_line_output
@@ -36,7 +36,7 @@ module Shared
             )
           )
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn')
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: "rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-spring --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn")
         end
 
         def test_minimalist_base_setup_command_line_output
@@ -50,7 +50,7 @@ module Shared
             )
           )
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-bundle --skip-gemfile --skip-git --skip-javascript --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --skip-turbolinks --skip-webpack-install --skip-yarn')
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: "rails new my_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-bundle --skip-gemfile --skip-git --skip-javascript --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --skip-turbolinks --skip-webpack-install --skip-yarn")
         end
 
         def test_api_mode_base_setup_command_line_output
@@ -64,7 +64,7 @@ module Shared
             )
           )
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --api')
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: "rails new my_app --api")
         end
 
         def test_css_bootstrap_frontend_none_testing_minitest_command_line_output
@@ -72,18 +72,18 @@ module Shared
 
           @base_states_clone[:omakase_state][:classics_tab][:rails_bytes_config] = {
             testing: {
-              Minitest: { checked: true, locked: nil},
-              RSpec: { checked: false, locked: nil},
+              Minitest: {checked: true, locked: nil},
+              RSpec: {checked: false, locked: nil}
             },
             css: {
-              none: { checked: false, locked: nil},
-              Tailwind: { checked: false, locked: nil},
-              Bootstrap: { checked: true, locked: nil}
+              none: {checked: false, locked: nil},
+              Tailwind: {checked: false, locked: nil},
+              Bootstrap: {checked: true, locked: nil}
             },
             frontend: {
-              none: { checked: true, locked: nil},
-              Stimulus: { checked: false, locked: nil},
-              "Stimulus Reflex": { checked: false, locked: nil}
+              none: {checked: true, locked: nil},
+              Stimulus: {checked: false, locked: nil},
+              "Stimulus Reflex": {checked: false, locked: nil}
             }
           }
 
@@ -95,7 +95,7 @@ module Shared
             )
           )
 
-          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: 'rails new my_app --template https://www.railsbytes.com/script/V4Ys7o')
+          assert_selector(:xpath, "//p[@id='rails-new-output-text']", text: "rails new my_app --template https://www.railsbytes.com/script/V4Ys7o")
         end
       end
     end
