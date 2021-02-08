@@ -28,10 +28,10 @@ class Admin::VerificationRunsController < ApplicationController
     CMD
 
     # cmd = TTY::Command.new
-    # out, err = cmd.run(command)
+    out, err = cmd.run(command)
 
-    out = "Foo"
-    err = "BARKO"
+    # out = "Foo"
+    # err = "BARKO"
 
     @verification_run = VerificationRun.create(
       status: "SUCCESS",

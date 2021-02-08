@@ -1,6 +1,6 @@
 require "test_helper"
 
-class AppVerificationRunsControllerTest < ActionDispatch::IntegrationTest
+class VerificationRunTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
