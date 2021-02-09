@@ -85,6 +85,7 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    iniparse (1.4.4)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
     json (2.3.1)
@@ -113,6 +114,9 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    overcommit (0.52.0)
+      childprocess (>= 0.6.3, < 4)
+      iniparse (~> 1.4)
     parallel (1.20.1)
     parser (3.0.0.0)
       ast (~> 2.4.1)
@@ -259,6 +263,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   minitest-reporters
+  overcommit
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 5.1)
