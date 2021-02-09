@@ -47,6 +47,8 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
+  # A fully configurable and extendable Git hook manager
+  gem "overcommit"
 end
 
 group :test do
