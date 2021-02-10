@@ -1,13 +1,12 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   status: MyString
-#   duration: 1
-#   finished_at:
-#   app_recipe: one
-
-# two:
-#   status: MyString
-#   duration: 1
-#   finished_at: 
-#   app_recipe: one
+yesterday_run:
+  status: SUCCESS  
+  finished_at: <%= Time.current - 1.day %>
+  app_recipe: stimulus_tailwind  
+  
+successful_run:
+  status: SUCCESS  
+  finished_at: <%= Time.current %>
+  app_recipe: stimulus_tailwind
+  
