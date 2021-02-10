@@ -1,5 +1,5 @@
 <tr>
-  <td class="px-2 py-4 whitespace-nowrap">
+  <td class="px-2 py-4 whitespace-nowrap" data-title="<%= @app_recipe.title %>">
     <div class="flex items-center">
       <div class="ml-4">
         <div class="text-sm font-medium text-gray-900">
@@ -16,12 +16,13 @@
       </div>
     </div>
   </td>
-  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">                    
+  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" data-time-passed="<%= time_passed_since_last_run %>">
     <%= time_passed_since_last_run %>
   </td>
-  <td class="px-6 py-4 whitespace-nowrap">
+  <td class="px-6 py-4 whitespace-nowrap" data-status="<%= status_of_last_run %>">
     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-    <%= status_of_last_run %>
+      <%= status_of_last_run %>
+    </span>
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
     <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>

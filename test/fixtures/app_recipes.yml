@@ -6,3 +6,6 @@ stimulus_tailwind:
 
 hotwire_bootstrap:
   title: "Hotwire + Bootstrap"
+  
+never_ran:
+  title: "I never ran"
