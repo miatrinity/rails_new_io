@@ -5,7 +5,7 @@ class Admin::VerificationRunsController < ApplicationController
   end
 
   def show
-    @verification_run = VerificationRun.find(params[:id])
+    load_verification_run
   end
 
   private
@@ -44,5 +44,9 @@ class Admin::VerificationRunsController < ApplicationController
     @verification_run.save
 
     redirect_to admin_app_recipe_verification_run_path(@app_recipe, @verification_run)
+  end
+
+  def load_verification_run
+    @verification_run ||= verification_run_scope.find(params[:id])
   end
 end
