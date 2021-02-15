@@ -1,11 +1,12 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 stimulus_tailwind:
-  title: "Stimulus + Tailwind" 
-  
+  title: "Stimulus + Tailwind"
+  instructions: "--template https://www.railsbytes.com/script/zyvsbW"   
 
-hotwire_bootstrap:
-  title: "Hotwire + Bootstrap"
+stimulus_reflex_rspec_bootstrap:
+  title: "Stimulus Reflex + RSpec + Bootstrap"
+  instructions: "--skip-test --template https://www.railsbytes.com/script/zyvso6"
   
 never_ran:
   title: "I never ran"
