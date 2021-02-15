@@ -35,8 +35,8 @@ class Admin::VerificationRunsController < ApplicationController
       status: run_result.status,
       duration: (run_result.finish_time - run_result.start_time).to_i,
       finished_at: run_result.finish_time,
-      output_message: run_result.out.gsub("\n", "<br>"),
-      error_message: run_result.err.gsub("\n", "<br>")
+      output_message: run_result.out,
+      error_message: run_result.err
     }
   end
 
