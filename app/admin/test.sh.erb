@@ -1,16 +1,4 @@
-cd /tmp && \
-export PATH='/usr/local/sbin:/Users/miatrinity/.asdf/shims:/Users/miatrinity/.asdf/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' && \
 echo '===============================================' && \
-pwd && \
-export BUNDLE_GEMFILE= && \
-bundle env && \
-echo '===============================================' && \
-bundle config && \
-echo '===============================================' && \
-which rails && \
-rails -v && \
-echo '===============================================' && \
-rm -rf <%= app_name %> && \
-<%= rails_new_command %> && \
-cd <%= app_name %> && \
-spring stop
+echo App Name is: <%= app_name %> && \
+echo Rails New Command is: <%= rails_new_command %> && \
+echo '==============================================='
