@@ -64,4 +64,9 @@ jobs:
         run: bundle exec rails db:prepare
 
       - name: Run Tests
-        run: RAILS_ENV=test bundle exec rails test:system
+        env:
+          RAILS_ENV: test
+          POSTGRES_USER: "postgres"
+          POSTGRES_PASSWORD: "password"
+          POSTGRES_PORT: "5432"
+        run: bundle exec rails db:create db:schema:load test:system
