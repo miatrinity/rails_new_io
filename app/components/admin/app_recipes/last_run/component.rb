@@ -21,6 +21,13 @@ module Admin
             ""
           end
         end
+
+        def last_run_status_color
+          case status_of_last_run
+            when "SUCCESS" then "bg-green-800 text-green-100"
+            when "ERROR" then "bg-red-800 text-red-100"
+          end
+        end
       end
     end
   end

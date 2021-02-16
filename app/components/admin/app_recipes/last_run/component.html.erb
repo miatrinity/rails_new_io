@@ -20,7 +20,7 @@
     <%= time_passed_since_last_run %>
   </td>
   <td class="px-6 py-4 whitespace-nowrap" data-status="<%= status_of_last_run %>">
-    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <%= last_run_status_color %>">
       <%= status_of_last_run %>
     </span>
   </td>
