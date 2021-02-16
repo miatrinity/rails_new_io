@@ -60,9 +60,6 @@ jobs:
       - name: Install Depencencies
         run: gem install bundler
                 
-      - name: Prepare Database
-        run: bundle exec rails db:prepare
-
       - name: Run Tests
         env:
           RAILS_ENV: test
