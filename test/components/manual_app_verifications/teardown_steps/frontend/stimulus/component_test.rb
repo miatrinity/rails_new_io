@@ -1,12 +1,12 @@
 require "view_component/test_case"
 
 module ManualAppVerifications
-  module SetupSteps
-    module Testing
-      module Rspec
+  module TeardownSteps
+    module Frontend
+      module Stimulus
         class ComponentTest < ViewComponent::TestCase
           def test_component
-            body = render_inline(ManualAppVerifications::SetupSteps::Testing::Rspec::Component.new)
+            body = render_inline(ManualAppVerifications::TeardownSteps::Frontend::Stimulus::Component.new)
 
             assert_equal body.text, ""
           end
