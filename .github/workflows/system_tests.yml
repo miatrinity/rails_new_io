@@ -1,21 +1,32 @@
-name: CI
+name: Run tests
 
-on:
-  push:
-    branches: [ main ]
-
-  workflow_dispatch:
+on: [push, pull_request]
 
 jobs:
   test:
+    runs-on: ubuntu-latest
     env:
       SELENIUM_URL: http://0.0.0.0:4444/wd/hub # GitLab: http://selenium__standalone-chrome:4444/wd/hub # BitBucket: http://0.0.0.0:4444/wd/hub      
     services:
+      postgres:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
+        env:
+          POSTGRES_USER: "postgres"
+          POSTGRES_PASSWORD: "password"
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - "5432:5432"    
       selenium:
         image: selenium/standalone-chrome
         ports:
-          - 4444:4444
-    runs-on: ubuntu-latest
+          - 4444:4444    
 
     steps:
       - uses: actions/checkout@v2
