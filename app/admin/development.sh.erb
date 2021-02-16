@@ -12,6 +12,5 @@ rails -v && \
 echo '===============================================' && \
 rm -rf <%= app_name %> && \
 <%= rails_new_command %> && \
-mkdir <%= app_name %> && \
-cd <%= app_name %> # && \
-# spring stop
+cd <%= app_name %> && \
+spring stop
