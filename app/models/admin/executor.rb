@@ -8,12 +8,16 @@ module Admin
 
         start_time = Time.current
 
-        out, err = TTY::Command.new.run(full_command)
+        begin
+          out, err = TTY::Command.new.run(full_command)
+          status = "SUCCESS"
+        rescue TTY::Command::ExitError
+          out = "Failed to generate new rails application :-("
+          err = $!
+          status = "ERROR"
+        end
 
         finish_time = Time.current
-
-        # TODO...errr
-        status = "SUCCESS"
 
         Response.new(out, err, start_time, finish_time, status)
       end
