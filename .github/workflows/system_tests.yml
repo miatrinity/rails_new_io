@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    env:
+      SELENIUM_URL: http://0.0.0.0:4444/wd/hub # GitLab: http://selenium__standalone-chrome:4444/wd/hub # BitBucket: http://0.0.0.0:4444/wd/hub      
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        ports:
+          - 4444:4444
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.63.0
+        with: 
+          ruby-version: 2.7.2
+          bundler-cache: true
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.4
+        with:
+          node-version: '14'
+                    
+      - name: Install Yarn
+        run: yarn install
+        
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-        
+        
+      - name: Install Depencencies
+        run: gem install bundler
+                
+      - name: Prepare Database
+        run: bundle exec rails db:prepare
+
+      - name: Run Tests
+        run: RAILS_ENV=test bundle exec rails test:system
