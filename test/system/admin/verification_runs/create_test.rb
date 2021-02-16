@@ -11,6 +11,7 @@ class AdminVerificationRunCreateTest < ApplicationSystemTestCase
 
     assert_text app_name_output
     assert_text rails_new_command_output
+    assert_text stderr_output
   end
 
   private
@@ -25,5 +26,9 @@ class AdminVerificationRunCreateTest < ApplicationSystemTestCase
 
   def rails_new_command_output
     "Rails New Command is: echo Stimulus_Reflex___RSpec___Bootstrap --skip-test --template https://www.railsbytes.com/script/zyvso6"
+  end
+
+  def stderr_output
+    "This is written to stderr"
   end
 end
