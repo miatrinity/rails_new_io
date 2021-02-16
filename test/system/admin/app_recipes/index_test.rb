@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class AdminAppRecipeIndexTest < ApplicationSystemTestCase
   setup do
-    @app_recipe = app_recipes(:stimulus_tailwind)
+    @app_recipe = app_recipes(:recipe_with_single_run)
     @last_verification_run = @app_recipe.verification_runs.last
   end
 
@@ -11,6 +11,6 @@ class AdminAppRecipeIndexTest < ApplicationSystemTestCase
 
     assert_text @app_recipe.title
     assert_text @last_verification_run.status
-    assert_text "#{time_ago_in_words(@last_verification_run.finished_at)} ago"
+    assert_text "1 day ago"
   end
 end

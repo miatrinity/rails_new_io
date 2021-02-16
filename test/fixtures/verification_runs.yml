@@ -3,7 +3,7 @@
 yesterday_run:
   status: SUCCESS  
   finished_at: <%= Time.current - 1.day %>
-  app_recipe: stimulus_tailwind  
+  app_recipe: recipe_with_single_run
   
 successful_run:
   status: SUCCESS  

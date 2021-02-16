@@ -10,3 +10,6 @@ stimulus_reflex_rspec_bootstrap:
   
 never_ran:
   title: "I never ran"
+
+recipe_with_single_run:
+  title: "I have a single run!"
