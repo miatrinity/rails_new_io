@@ -1,4 +1,4 @@
-name: Run tests
+name: Run tests + lint
 
 on: [push, pull_request]
 
@@ -66,4 +66,17 @@ jobs:
           POSTGRES_USER: "postgres"
           POSTGRES_PASSWORD: "password"
           POSTGRES_PORT: "5432"
-        run: bundle exec rails db:create db:schema:load test:system
+        run: bundle exec rails db:create db:schema:load test:all
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - uses: ruby/setup-ruby@v1.63.0
+      with:
+        ruby-version: 2.7.2
+        bundler-cache: true
+
+    - name: Lint Ruby code with standardrb
+      run: bundle exec standardrb
