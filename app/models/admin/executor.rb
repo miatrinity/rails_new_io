@@ -21,8 +21,11 @@ module Admin
       private
 
       def rails_new_command
-        # "rails new #{app_name} #{@app_recipe.instructions}"
-        "echo #{app_name} #{@app_recipe.instructions}"
+        if Rails.env.test?
+          "echo #{app_name} #{@app_recipe.instructions}"
+        else
+          "rails new #{app_name} #{@app_recipe.instructions}"
+        end
       end
 
       def app_name
