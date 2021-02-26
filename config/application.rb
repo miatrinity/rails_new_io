@@ -48,6 +48,9 @@ module RailsNewIo
     config.all_menu_cards_in_all_states = AllMenuCardsInAllStatesGenerator.new(base_states: config.base_states).generate
 
     config.rails_new_command_template = File.open("#{Rails.root}/app/admin/#{Rails.env}.sh.erb").read
+    config.push_repo_command_template = File.open("#{Rails.root}/app/admin/#{Rails.env}_push_repo.sh.erb").read
+    config.setup_ci_files_command_template = File.open("#{Rails.root}/app/admin/#{Rails.env}_setup_ci_files.sh.erb").read
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

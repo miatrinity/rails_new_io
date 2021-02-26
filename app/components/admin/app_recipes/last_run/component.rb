@@ -28,6 +28,14 @@ module Admin
             when "ERROR" then "bg-red-800 text-red-100"
           end
         end
+
+        def repo_name
+          "miatrinity/#{@app_recipe.app_name}"
+        end
+
+        def repo_url
+          "https://github.com/#{repo_name}"
+        end
       end
     end
   end

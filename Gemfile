@@ -31,6 +31,8 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "view_component", "~> 2.20", require: "view_component/engine"
 
 gem "tty-command"
+# A Ruby client for the official GitHub API.
+gem "github_api"
 
 group :development, :test do
   gem "puma", "~> 5.1"
