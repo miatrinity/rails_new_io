@@ -28,7 +28,7 @@ gem "jbuilder", "~> 2.7"
 gem "bootsnap", ">= 1.4.2", require: false
 
 # framework for building view components that are reusable, testable & encapsulated, in Ruby on Rails.
-gem "view_component", "~> 2.20", require: "view_component/engine"
+gem "view_component", "~> 2.30", require: "view_component/engine"
 
 gem "tty-command"
 # A Ruby client for the official GitHub API.
