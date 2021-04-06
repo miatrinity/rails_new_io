@@ -17,7 +17,7 @@ class AdminVerificationRunCreateTest < ApplicationSystemTestCase
   private
 
   def run_app_recipe
-    find(:xpath, "//td[@data-title='#{@app_recipe.title}']/following-sibling::td[descendant::input[@value='Run']]").click
+    find(:xpath, "//td[@data-title='#{@app_recipe.name}']/following-sibling::td[descendant::input[@value='Run']]").click
   end
 
   def app_name_output

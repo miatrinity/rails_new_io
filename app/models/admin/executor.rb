@@ -11,58 +11,62 @@ module Admin
         start_time = Time.current
 
         begin
-          rails_new_out, rails_new_err = TTY::Command.new.run(full_command(Rails.configuration.rails_new_command_template))
+          @app_recipe.verify!
 
-          setup_ci_files_out, setup_ci_files_err = TTY::Command.new.run(full_command(Rails.configuration.setup_ci_files_command_template))
+          # rails_new_out, rails_new_err = TTY::Command.new.run(full_command(Rails.configuration.rails_new_command_template))
 
-          github = Github.new oauth_token: Rails.application.credentials.github[:personal_access_token]
+          # setup_ci_files_out, setup_ci_files_err = TTY::Command.new.run(full_command(Rails.configuration.setup_ci_files_command_template))
 
-          begin
-            github.repos.delete user: "miatrinity", repo: app_name
-          rescue Github::Error::NotFound
-            puts "The repository miatrinity/#{app_name} doesn't exist"
-          end
+          # github = Github.new oauth_token: Rails.application.credentials.github[:personal_access_token]
 
-          github.repos.create name: app_name
+          # begin
+          #   github.repos.delete user: "miatrinity", repo: app_name
+          # rescue Github::Error::NotFound
+          #   puts "The repository miatrinity/#{app_name} doesn't exist"
+          # end
 
-          push_repo_out, push_repo_err = TTY::Command.new.run(full_command(Rails.configuration.push_repo_command_template))
+          # github.repos.create name: app_name
 
-          out = <<-OUT
-          =========================
-          Rails New Command Output:
-          =========================
-          #{rails_new_out}
-          
-          ========================
-          CI Files Command Output:
-          ========================
-          #{setup_ci_files_out}
+          # push_repo_out, push_repo_err = TTY::Command.new.run(full_command(Rails.configuration.push_repo_command_template))
 
-          =========================
-          Push Repo Command Output:
-          =========================
-          #{push_repo_out}
-          
-          OUT
+          # out = <<-OUT
+          # =========================
+          # Rails New Command Output:
+          # =========================
+          # #{rails_new_out}
 
-          err = <<-ERR
-          =========================
-          Rails New Command Errors:
-          =========================
-          #{rails_new_err}
-          
-          ========================
-          CI Files Command Errors:
-          ========================
-          #{setup_ci_files_err}
+          # ========================
+          # CI Files Command Output:
+          # ========================
+          # #{setup_ci_files_out}
 
-          =========================
-          Push Repo Command Errors:
-          =========================
-          #{push_repo_err}
-          
-          ERR
+          # =========================
+          # Push Repo Command Output:
+          # =========================
+          # #{push_repo_out}
 
+          # OUT
+
+          # err = <<-ERR
+          # =========================
+          # Rails New Command Errors:
+          # =========================
+          # #{rails_new_err}
+
+          # ========================
+          # CI Files Command Errors:
+          # ========================
+          # #{setup_ci_files_err}
+
+          # =========================
+          # Push Repo Command Errors:
+          # =========================
+          # #{push_repo_err}
+
+          # ERR
+
+          out = "Worked like now!"
+          err = "No Errors yeah!"
           status = "SUCCESS"
         rescue
           out = "Failed to generate new rails application :-("

@@ -9,7 +9,7 @@ module Admin
 
           assert_selector("td[data-title]", text: "I never ran")
           assert_selector("td[data-time-passed]", text: "No Runs - Yet!")
-          assert_selector("td[data-status]", text: "")
+          assert_selector("td[data-progression]", text: "")
         end
       end
     end

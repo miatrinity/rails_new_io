@@ -35,6 +35,8 @@ gem "tty-command"
 gem "github_api"
 # Flexible authentication solution for Rails with Warden
 gem "devise", "~> 4.7", ">= 4.7.3"
+# AASM - State machines for Ruby classes (plain Ruby, ActiveRecord)
+gem "aasm", "~> 5.1", ">= 5.1.1"
 
 group :development, :test do
   gem "puma", "~> 5.1"

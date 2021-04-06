@@ -1,9 +1,9 @@
 <tr>
-  <td class="px-2 py-4 whitespace-nowrap" data-title="<%= @app_recipe.title %>">
+  <td class="px-2 py-4 whitespace-nowrap" data-title="<%= @app_recipe.name %>">
     <div class="flex items-center">
       <div class="ml-4">
         <div class="text-sm font-medium text-gray-900">
-          <%= @app_recipe.title %>
+          <%= @app_recipe.name %>
         </div>
         <a href="<%= repo_url %>" class="relative group flex items-center space-x-2.5">
           <svg class="flex-shrink-0 w-5 h-5 text-gray-400 group-hover:text-gray-500" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -16,12 +16,12 @@
       </div>
     </div>
   </td>
-  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" data-time-passed="<%= time_passed_since_last_run %>">
-    <%= time_passed_since_last_run %>
+  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" data-time-passed="<%= time_passed_since_last_finished_run %>">
+    <%= time_passed_since_last_finished_run %>
   </td>
-  <td class="px-6 py-4 whitespace-nowrap" data-status="<%= status_of_last_run %>">
-    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <%= last_run_status_color %>">
-      <%= status_of_last_run %>
+  <td class="px-6 py-4 whitespace-nowrap" data-progression="<%= progression_of_last_run %>">
+    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full <%= last_run_progression_color %>">
+      <%= progression_of_last_run %>
     </span>
   </td>
   <%# <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
