@@ -44,17 +44,14 @@ module Admin
     end
 
     def schedule_creating_new_rails_app
-      puts "Wahoo" * 100
       CreateNewRailsAppJob.perform_now(id)
     end
 
     def schedule_setting_up_ci_files
-      puts "Yuhuu" * 100
       SetUpCiFilesJob.perform_now(id)
     end
 
     def schedule_pushing_repo
-      puts "Bruhu hu" * 100
       PushRepoJob.perform_now(id)
     end
 
