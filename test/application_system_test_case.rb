@@ -1,6 +1,6 @@
 require "test_helper"
 
-Capybara.server = :puma, { Silent: true }
+Capybara.server = :puma, {Silent: true}
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   include Devise::Test::IntegrationHelpers

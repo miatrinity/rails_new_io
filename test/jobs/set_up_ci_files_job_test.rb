@@ -25,5 +25,5 @@ class SetUpCiFilesJobTest < ActiveJob::TestCase
 
   def app_folder_is_present
     File.exist?("/tmp/test_app/app")
-  end  
+  end
 end

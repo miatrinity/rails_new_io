@@ -1,4 +1,4 @@
-Rails.application.configure do  
+Rails.application.configure do
   config.hosts << "b02e015d45cf.ngrok.io"
   # Settings specified here will take precedence over those in config/application.rb.
 

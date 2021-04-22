@@ -10,9 +10,9 @@ end
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
-require 'mocha/minitest'
+require "mocha/minitest"
 require "minitest/reporters"
-require 'minitest/autorun'
+require "minitest/autorun"
 
 Dir[Rails.root.join("test", "support", "**", "*.rb")].sort.each { |f| require f }
 
