@@ -37,6 +37,11 @@ gem "github_api"
 gem "devise", "~> 4.7", ">= 4.7.3"
 # AASM - State machines for Ruby classes (plain Ruby, ActiveRecord)
 gem "aasm", "~> 5.1", ">= 5.1.1"
+# The Networking and Cryptography (NaCl) library provides a high-level toolkit for building cryptographic systems and protocols
+gem 'rbnacl', '~> 7.1', '>= 7.1.1'
+# Mocking and stubbing library with JMock/SchMock syntax, which allows mocking and stubbing of methods on real (non-mock) classes.
+gem 'mocha', '~> 1.2', '>= 1.2.1'
+
 
 group :development, :test do
   gem "puma", "~> 5.1"

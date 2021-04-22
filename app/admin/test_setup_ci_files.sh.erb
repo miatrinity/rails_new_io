@@ -1,4 +1,8 @@
-echo "====================================================================="
-echo "This would clone the repo git@github.com:miatrinity/<%= app_name %>_ci_setup.git"
-echo "And copy all it's files to the new app in /tmp/<%= app_name %>/"
-echo "====================================================================="
+rm -rf /tmp/test_app_ci_setup && \
+cd /tmp && \
+# git clone git@github.com:miatrinity/test_app_ci_setup.git && \
+# Simulate the above commented out line
+mkdir -p /tmp/test_app_ci_setup/app
+mkdir -p /tmp/test_app_ci_setup/.github
+cp -R /tmp/test_app_ci_setup/* /tmp/test_app/ && \
+cp -R /tmp/test_app_ci_setup/.github /tmp/test_app/

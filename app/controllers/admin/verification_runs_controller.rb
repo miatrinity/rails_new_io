@@ -17,20 +17,15 @@ class Admin::VerificationRunsController < ApplicationController
   end
 
   def update
-    github_status = params[:github_status]
-
-    puts "github repo: #{params[:id]} | GH status: #{github_status}"
-
     verification_run = AppRecipe.find_by(app_name: params[:id]).most_recently_started
 
-    # neutral, success, skipped, cancelled, timed_out, action_required, failure
     if params[:github_status] == "success"
       verification_run.finish_with_success!
     else
       verification_run.finish_with_failure!
     end
 
-    render plain: "github repo: #{params[:id]} | GH status: #{github_status}"
+    head :no_content
   end
 
   private
@@ -55,13 +50,12 @@ class Admin::VerificationRunsController < ApplicationController
   end
 
   def app_recipe_scope
-    AppRecipe
+    current_user.app_recipes
   end
 
   def save_verification_run
     @verification_run.save
 
-    # redirect_to admin_app_recipe_verification_run_path(@app_recipe, @verification_run)
     redirect_to admin_app_recipes_path(@app_recipe)
   end
 

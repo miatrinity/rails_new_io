@@ -136,6 +136,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    mocha (1.12.0)
     msgpack (1.4.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
@@ -205,6 +206,8 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rbnacl (7.1.1)
+      ffi
     regexp_parser (2.0.3)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -310,11 +313,13 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   minitest-reporters
+  mocha (~> 1.2, >= 1.2.1)
   overcommit
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 5.1)
   rails (~> 6.1, >= 6.1.2.1)
+  rbnacl (~> 7.1, >= 7.1.1)
   sass-rails (>= 6)
   selenium-webdriver
   simplecov

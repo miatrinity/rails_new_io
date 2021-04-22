@@ -1,12 +1,15 @@
 class AutomatedVerificationStep
   def perform(verification_run:)
+    @app_recipe = verification_run.app_recipe
     started_at = Time.current
 
     begin
       stdout, stderr = TTY::Command.new.run command
+      perform_status = :success
     rescue
       stdout = "Failed to generate new rails application :-("
       stderr = $!
+      perform_status = :failure
     end
 
     finished_at = Time.current
@@ -24,20 +27,10 @@ class AutomatedVerificationStep
     puts stderr
     puts "=" * 100
 
-    # if next_verification_step.present?
-    #   AppRecipeVerificationStepJob.perform_now(
-    #     next_verification_step,
-    #     verification_run)
-    # end
-
-    # verification_run.update(
-    #   status: status,
-    #   finished_at: finished_at,
-    #   duration: finished_at - verification_run.created_at
-    # )
+    perform_status
   end
 
-  def full_command
+  def full_command(command_template)
     ERB.new(command_template).result(binding)
   end
 end

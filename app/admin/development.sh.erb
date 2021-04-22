@@ -10,9 +10,9 @@ echo '===============================================' && \
 which rails && \
 rails -v && \
 echo '===============================================' && \
-rm -rf <%= app_name %> && \
+rm -rf <%= @app_recipe.app_name %> && \
 <%= rails_new_command %> && \
-cd <%= app_name %> && \
+cd <%= @app_recipe.app_name %> && \
 # Need this for binary files on the CI
 bundle lock --add-platform x86_64-linux && \
 bundle update && \

@@ -1,5 +1,14 @@
+cd /tmp && \
+export PATH='/usr/local/sbin:/Users/miatrinity/.asdf/shims:/Users/miatrinity/.asdf/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' && \
 echo '===============================================' && \
-echo App Name is: <%= app_name %> && \
-echo Rails New Command is: <%= rails_new_command %> && \
->&2 echo "This is written to stderr"
-echo '==============================================='
+pwd && \
+export BUNDLE_GEMFILE= && \
+bundle env && \
+echo '===============================================' && \
+bundle config && \
+echo '===============================================' && \
+which rails && \
+rails -v && \
+echo '===============================================' && \
+rm -rf test_app && \
+rails new test_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-bundle --skip-gemfile --skip-git --skip-javascript --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --skip-turbolinks --skip-webpack-install --skip-yarn
