@@ -15,7 +15,7 @@ class CreateNewRailsAppJobTest < ActiveJob::TestCase
   private
 
   def directory_was_created_recently
-    Time.now - File.stat("/tmp/test_app").birthtime < 10
+    Time.now - File.stat("/tmp/test_app").ctime < 10
   end
 
   def app_folder_is_present
