@@ -1,6 +1,9 @@
 require "test_helper"
 
+Capybara.server = :puma, {Silent: true}
+
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+  include Devise::Test::IntegrationHelpers
   include RailsNewIo::SystemTestHelpers
   include RailsNewIo::CustomAsserts
 

@@ -19,7 +19,7 @@ PreCommit:
   RuboCop:
     enabled: true
     required: true
-    command: ['bundle', 'exec', 'standardrb'] # Invoke within Bundler context
+    command: ['bundle', 'exec', 'standardrb', '--fix'] # Invoke within Bundler context
 
 #PreCommit:
 #  RuboCop:

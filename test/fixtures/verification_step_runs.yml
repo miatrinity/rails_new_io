@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stdout: MyText
+  stderr: MyText
+  finished_at: 2021-03-12 09:33:20
+  verification_run: one
+
+two:
+  stdout: MyText
+  stderr: MyText
+  finished_at: 2021-03-12 09:33:20
+  verification_run: two

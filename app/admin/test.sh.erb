@@ -1,5 +1,4 @@
-echo '===============================================' && \
-echo App Name is: <%= app_name %> && \
-echo Rails New Command is: <%= rails_new_command %> && \
->&2 echo "This is written to stderr"
-echo '==============================================='
+cd /tmp && \
+pwd && \
+rm -rf test_app && \
+rails new test_app --skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-bundle --skip-gemfile --skip-git --skip-javascript --skip-keeps --skip-listen --skip-puma --skip-spring --skip-sprockets --skip-system-test --skip-test --skip-turbolinks --skip-webpack-install --skip-yarn

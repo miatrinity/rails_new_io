@@ -1,6 +1,6 @@
-cd /tmp/<%= app_name %> && \
+cd /tmp/<%= @app_recipe.app_name %> && \
 git add .
 git commit -a -m "Initial commit"
-git remote add origin git@github.com:miatrinity/<%= app_name %>.git && \
+git remote add origin git@github.com:miatrinity/<%= @app_recipe.app_name %>.git && \
 git branch -M main && \
 git push -u origin main

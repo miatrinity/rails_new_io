@@ -8,8 +8,8 @@ module Admin
           render_inline(Admin::AppRecipes::LastRun::Component.new(app_recipe: app_recipes(:never_ran)))
 
           assert_selector("td[data-title]", text: "I never ran")
-          assert_selector("td[data-time-passed]", text: "No Runs - Yet!")
-          assert_selector("td[data-status]", text: "")
+          assert_selector("td[data-time-passed]", text: "No Finished Runs - Yet")
+          assert_selector("td[data-progression]", text: "")
         end
       end
     end
