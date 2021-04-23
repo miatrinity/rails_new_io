@@ -35,7 +35,7 @@ jobs:
         uses: ruby/setup-ruby@v1.70.0
         with:
           bundler: "Gemfile.lock"          
-          # bundler-cache: true
+          bundler-cache: true
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
@@ -59,9 +59,6 @@ jobs:
         
       - name: Install Depencencies
         run: gem install bundler
-
-      - name: Install Depencencies
-        run: bundle install
                 
       - name: Run Tests
         env:
@@ -78,10 +75,8 @@ jobs:
     
     - uses: ruby/setup-ruby@v1.70.0
       with:
-        bundler: "Gemfile.lock"          
-
-    - name: Install Depencencies
-      run: bundle install
+        ruby-version: 2.7.2
+        bundler-cache: true
 
     - name: Lint Ruby code with standardrb
       run: bundle exec standardrb
