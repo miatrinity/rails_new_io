@@ -33,9 +33,9 @@ jobs:
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.70.0
-        with:
-          bundler: "Gemfile.lock"          
-          bundler-cache: true
+        # with:
+        #   bundler: "Gemfile.lock"          
+        #   bundler-cache: true
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
@@ -74,9 +74,9 @@ jobs:
     - uses: actions/checkout@v2
     
     - uses: ruby/setup-ruby@v1.70.0
-      with:
-        bundler: "Gemfile.lock"          
-        bundler-cache: true
+#      with:
+#        bundler: "Gemfile.lock"          
+#        bundler-cache: true
 
     - name: Lint Ruby code with standardrb
       run: bundle exec standardrb
