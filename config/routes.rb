@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :app_recipes, only: :index do
       resources :verification_runs, only: %w[create show]
     end
+    resources :verification_runs, only: %w[update]
   end
 
   get "/:id", to: "pages#show", as: "page"

@@ -2,33 +2,37 @@ require "application_system_test_case"
 
 class AdminVerificationRunCreateTest < ApplicationSystemTestCase
   setup do
+    admin = users(:mia)
+    admin.confirm
+    sign_in admin
+
     @app_recipe = app_recipes(:stimulus_reflex_rspec_bootstrap)
   end
 
   test "Running AppRecipe creates VerificationRun" do
-    visit admin_app_recipes_path
-    run_app_recipe
+    mock = Minitest::Mock.new
+    def mock.perform
+      true
+    end
 
-    assert_text app_name_output
-    assert_text rails_new_command_output
-    assert_text stderr_output
+    # mock.expect :perform, true
+
+    RecreateRepository.stub :new, mock do
+      visit admin_app_recipes_path
+      run_app_recipe
+    end
+
+    assert app_recipe_status, "running_ci"
+    # mock.verify
   end
 
   private
 
   def run_app_recipe
-    find(:xpath, "//td[@data-title='#{@app_recipe.title}']/following-sibling::td[descendant::input[@value='Run']]").click
+    find(:xpath, "//td[@data-title='#{@app_recipe.name}']/following-sibling::td[descendant::input[@value='Run']]").click
   end
 
-  def app_name_output
-    "App Name is: Stimulus_Reflex___RSpec___Bootstrap"
-  end
-
-  def rails_new_command_output
-    "Rails New Command is: echo Stimulus_Reflex___RSpec___Bootstrap --skip-test --template https://www.railsbytes.com/script/zyvso6"
-  end
-
-  def stderr_output
-    "This is written to stderr"
+  def app_recipe_status
+    find(:xpath, "//td[@data-title='#{@app_recipe.name}']/following-sibling::td[@data-progression]").text
   end
 end

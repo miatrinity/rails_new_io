@@ -4,14 +4,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.7.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 6.1", ">= 6.1.2.1"
+gem "rails", "~> 6.1", ">= 6.1.3.1"
 # Use postgresql as the database for Active Record
 gem "pg", ">= 0.18", "< 2.0"
 
 # Use SCSS for stylesheets
 gem "sass-rails", ">= 6"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem "webpacker", "~> 4.0"
+gem "webpacker", "~> 5.2"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -35,6 +35,12 @@ gem "tty-command"
 gem "github_api"
 # Flexible authentication solution for Rails with Warden
 gem "devise", "~> 4.7", ">= 4.7.3"
+# AASM - State machines for Ruby classes (plain Ruby, ActiveRecord)
+gem "aasm", "~> 5.1", ">= 5.1.1"
+# The Networking and Cryptography (NaCl) library provides a high-level toolkit for building cryptographic systems and protocols
+gem "rbnacl", "~> 7.1", ">= 7.1.1"
+# Mocking and stubbing library with JMock/SchMock syntax, which allows mocking and stubbing of methods on real (non-mock) classes.
+gem "mocha", "~> 1.2", ">= 1.2.1"
 
 group :development, :test do
   gem "puma", "~> 5.1"
