@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+starting_run:
+  state: "starting"
+  finished_at: <%= Time.current %>
+  app_recipe: stimulus_tailwind
+  
+creating_new_rails_app_run:
+  state: "creating_new_rails_app"
+  finished_at: <%= Time.current %>
+  app_recipe: stimulus_tailwind
+
+set_up_ci_files_run:
+  state: "set_up_ci_files"
+  finished_at: <%= Time.current %>
+  app_recipe: stimulus_tailwind
+
+yesterday_run:
+  state: "SUCCESS"
+  finished_at: <%= Time.current - 1.day %>
+  app_recipe: recipe_with_single_run
+  
+successful_run:
+  state: "finished_with_success"
+  finished_at: <%= Time.current %>
+  app_recipe: stimulus_tailwind
+  

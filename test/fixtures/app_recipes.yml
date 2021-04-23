@@ -1,15 +1,23 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 stimulus_tailwind:
-  title: "Stimulus + Tailwind"
+  name: "Stimulus + Tailwind"
+  app_name: Stimulus___Tailwind
   instructions: "--template https://www.railsbytes.com/script/zyvsbW"   
+  user: mia
 
 stimulus_reflex_rspec_bootstrap:
-  title: "Stimulus Reflex + RSpec + Bootstrap"
+  name: "Stimulus Reflex + RSpec + Bootstrap"
+  app_name: Stimulus_Reflex___RSpec___Bootstrap
   instructions: "--skip-test --template https://www.railsbytes.com/script/zyvso6"
+  user: mia
   
-never_ran:
-  title: "I never ran"
-
+never_ran:  
+  name: "I never ran"
+  app_name: I_never_ran
+  user: mia
+    
 recipe_with_single_run:
-  title: "I have a single run!"
+  name: "I have a single run!"
+  app_name: I_have_a_single_run
+  user: mia
