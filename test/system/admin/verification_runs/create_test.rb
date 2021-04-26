@@ -20,7 +20,7 @@ class AdminVerificationRunCreateTest < ApplicationSystemTestCase
       run_app_recipe
     end
 
-    assert app_recipe_status, "running_ci"    
+    assert app_recipe_status, "running_ci"
   end
 
   private
