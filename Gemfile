@@ -12,9 +12,12 @@ gem "pg", ">= 0.18", "< 2.0"
 gem "sass-rails", ">= 6"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem "webpacker", "~> 5.2"
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.7"
 # Use Redis adapter to run Action Cable in production
+
 gem "redis", "~> 4.0"
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -32,8 +35,6 @@ gem "devise", "~> 4.7", ">= 4.7.3"
 gem "aasm", "~> 5.1", ">= 5.1.1"
 # The Networking and Cryptography (NaCl) library provides a high-level toolkit for building cryptographic systems and protocols
 gem "rbnacl", "~> 7.1", ">= 7.1.1"
-# Hotwire is designed to ease the pain of creating Google Wire protocol compatible data source in Ruby.
-gem "hotwire-rails", "~> 0.1.3"
 
 group :development, :test do
   gem "puma", "~> 5.1"
