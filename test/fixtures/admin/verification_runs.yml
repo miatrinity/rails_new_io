@@ -15,6 +15,11 @@ set_up_ci_files_run:
   finished_at: <%= Time.current %>
   app_recipe: stimulus_tailwind
 
+pushing_repo_run:
+  state: "pushing_repo"
+  finished_at: <%= Time.current %>
+  app_recipe: stimulus_tailwind
+
 yesterday_run:
   state: "SUCCESS"
   finished_at: <%= Time.current - 1.day %>

@@ -15,15 +15,12 @@ class AdminVerificationRunCreateTest < ApplicationSystemTestCase
       true
     end
 
-    # mock.expect :perform, true
-
     RecreateRepository.stub :new, mock do
       visit admin_app_recipes_path
       run_app_recipe
     end
 
-    assert app_recipe_status, "running_ci"
-    # mock.verify
+    assert app_recipe_status, "running_ci"    
   end
 
   private
