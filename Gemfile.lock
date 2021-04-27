@@ -279,7 +279,7 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
-    view_component (2.30.0)
+    view_component (2.31.0)
       activesupport (>= 5.0.0, < 7.0)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -335,7 +335,7 @@ DEPENDENCIES
   tty-command
   turbolinks (~> 5)
   tzinfo-data
-  view_component (~> 2.20)
+  view_component (~> 2.31)
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 5.2)
