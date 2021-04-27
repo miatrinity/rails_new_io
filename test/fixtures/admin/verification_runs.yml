@@ -20,6 +20,11 @@ pushing_repo_run:
   finished_at: <%= Time.current %>
   app_recipe: stimulus_tailwind
 
+running_ci_run:
+  state: "running_ci"
+  finished_at: <%= Time.current %>
+  app_recipe: testing_github_pingback
+  
 yesterday_run:
   state: "SUCCESS"
   finished_at: <%= Time.current - 1.day %>

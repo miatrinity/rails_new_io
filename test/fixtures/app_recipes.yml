@@ -21,3 +21,9 @@ recipe_with_single_run:
   name: "I have a single run!"
   app_name: I_have_a_single_run
   user: mia
+  
+testing_github_pingback:
+  name: "Testing Github Pingback"
+  app_name: Testing_Github_Pingback
+  user: mia
+  
