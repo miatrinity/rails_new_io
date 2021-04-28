@@ -6,21 +6,24 @@ class AdminVerificationRunCreateTest < ApplicationSystemTestCase
     admin.confirm
     sign_in admin
 
-    @app_recipe = app_recipes(:stimulus_reflex_rspec_bootstrap)
+    @app_recipe = app_recipes(:test_app)
   end
 
   test "Running AppRecipe creates VerificationRun" do
-    mock = Minitest::Mock.new
-    def mock.perform
-      true
-    end
+    visit admin_app_recipes_path
+    run_app_recipe
 
-    RecreateRepository.stub :new, mock do
-      visit admin_app_recipes_path
-      run_app_recipe
-    end
+    # 1.upto(30) do
+    #   if app_recipe_status == "running_ci"
+    #     puts "app_recipe_status is running_ci!"
+    #     break 
+    #   else
+    #     puts "waiting on jobs to complete, app_recipe_status is #{app_recipe_status}"
+    #   end
+    #   sleep 1
+    # end
 
-    assert app_recipe_status, "running_ci"
+    assert_equal "running_ci", app_recipe_status
   end
 
   private

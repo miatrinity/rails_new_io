@@ -14,16 +14,11 @@ class SetUpCiFilesJobTest < ActiveJob::TestCase
     SetUpCiFilesJob.perform_now(verification_run.id)
 
     assert dot_github_folder_is_present, ".github folder is missing"
-    assert app_folder_is_present, "app folder is missing!"
   end
 
   private
 
   def dot_github_folder_is_present
     File.exist?("/tmp/test_app/.github")
-  end
-
-  def app_folder_is_present
-    File.exist?("/tmp/test_app/app")
   end
 end

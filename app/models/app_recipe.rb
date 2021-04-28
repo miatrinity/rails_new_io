@@ -5,7 +5,7 @@ class AppRecipe < ApplicationRecord
   belongs_to :user
   has_many :verification_runs, dependent: :destroy, class_name: "Admin::VerificationRun"
 
-  before_validation :set_app_name, on: :create
+  before_validation :set_app_name, on: [:create, :update]
 
   validates_uniqueness_of :app_name, scope: :user_id
 

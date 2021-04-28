@@ -1,5 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+test_app:
+  name: "test app"
+  app_name: test_app
+  instructions: "--skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-puma --skip-sprockets --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn"   
+  user: mia
+  
 stimulus_tailwind:
   name: "Stimulus + Tailwind"
   app_name: Stimulus___Tailwind
