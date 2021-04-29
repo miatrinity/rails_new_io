@@ -13,10 +13,11 @@ class AdminVerificationRunCreateTest < ApplicationSystemTestCase
     visit admin_app_recipes_path
     run_app_recipe
 
+    # Saved for later - once we switch to perform_later
     # 1.upto(30) do
     #   if app_recipe_status == "running_ci"
     #     puts "app_recipe_status is running_ci!"
-    #     break 
+    #     break
     #   else
     #     puts "waiting on jobs to complete, app_recipe_status is #{app_recipe_status}"
     #   end
