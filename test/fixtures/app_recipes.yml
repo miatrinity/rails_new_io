@@ -2,7 +2,7 @@
 
 test_app:
   name: "test app"
-  app_name: test_app
+  app_name: test_app  
   instructions: "--skip-action-cable --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-bootsnap --skip-javascript --skip-keeps --skip-listen --skip-puma --skip-sprockets --skip-system-test --skip-turbolinks --skip-webpack-install --skip-yarn"   
   user: mia
   
@@ -20,7 +20,7 @@ stimulus_reflex_rspec_bootstrap:
   
 never_ran:  
   name: "I never ran"
-  app_name: I_never_ran
+  app_name: I_never_ran  
   user: mia
     
 recipe_with_single_run:
@@ -29,7 +29,16 @@ recipe_with_single_run:
   user: mia
   
 testing_github_pingback:
-  name: "Testing Github Pingback"
+  name: "Testing Github Pingback"  
   app_name: Testing_Github_Pingback
   user: mia
   
+recipe_with_successful_run:
+  name: "Successful run"
+  app_name: "Successful_run"
+  user: mia
+  
+recipe_with_failed_run:
+  name: "Failed run"
+  app_name: "Failed_run"
+  user: mia

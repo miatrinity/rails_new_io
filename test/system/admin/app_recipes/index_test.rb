@@ -6,7 +6,7 @@ class AdminAppRecipeIndexTest < ApplicationSystemTestCase
     admin.confirm
     sign_in admin
 
-    @app_recipe = app_recipes(:recipe_with_single_run)
+    @app_recipe = app_recipes(:recipe_with_successful_run)
     @last_verification_run = @app_recipe.verification_runs.last
   end
 
@@ -14,7 +14,7 @@ class AdminAppRecipeIndexTest < ApplicationSystemTestCase
     visit admin_app_recipes_path
 
     assert_text @app_recipe.name
-    assert_text @last_verification_run.state
-    assert_text "1 day ago"
+    assert_text "SUCCESS"
+    assert_text "less than a minute ago"
   end
 end

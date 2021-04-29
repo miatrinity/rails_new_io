@@ -26,12 +26,17 @@ running_ci_run:
   app_recipe: testing_github_pingback
   
 yesterday_run:
-  state: "SUCCESS"
+  state: "finished_with_success"
   finished_at: <%= Time.current - 1.day %>
   app_recipe: recipe_with_single_run
   
 successful_run:
   state: "finished_with_success"
-  finished_at: <%= Time.current %>
-  app_recipe: stimulus_tailwind
+  finished_at: <%= Time.current - 1.day %>
+  app_recipe: recipe_with_successful_run
+  
+failed_run:  
+  state: "finished_with_failure"
+  finished_at: <%= Time.current - 1.day %>
+  app_recipe: recipe_with_failed_run
   

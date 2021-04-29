@@ -12,9 +12,9 @@ class Admin::VerificationRunsController < ApplicationController
     @verification_run.create_new_rails_app!
   end
 
-  def show
-    load_verification_run
-  end
+  # def show
+  #   load_verification_run
+  # end
 
   def update
     verification_run = AppRecipe.find_by(app_name: params[:id]).most_recently_started
@@ -59,7 +59,7 @@ class Admin::VerificationRunsController < ApplicationController
     redirect_to admin_app_recipes_path(@app_recipe)
   end
 
-  def load_verification_run
-    @verification_run ||= verification_run_scope.find(params[:id])
-  end
+  # def load_verification_run
+  #   @verification_run ||= verification_run_scope.find(params[:id])
+  # end
 end
