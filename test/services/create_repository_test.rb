@@ -9,8 +9,8 @@ class AppRecipeTest < ActiveSupport::TestCase
     # A: we don't. it's just a way to tell that we got into the
     # Github::Error::NotFound rescue branch
 
-    assert_nothing_raised do 
-      result = RecreateRepository.new(repo_name: 'non-existent-repo',
+    assert_nothing_raised do
+      result = RecreateRepository.new(repo_name: "non-existent-repo",
                                       api_token: nil).perform
 
       assert_equal :repo_not_found, result

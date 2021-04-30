@@ -13,4 +13,3 @@ class CreateRailsAppVerificationStep < AutomatedVerificationStep
     end
   end
 end
-

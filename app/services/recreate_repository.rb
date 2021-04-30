@@ -21,7 +21,7 @@ class RecreateRepository
 
   def delete_repo
     github_client.repos.delete user: "miatrinity", repo: @repo_name
-  end  
+  end
 
   def create_repo
     github_client.repos.create name: @repo_name
