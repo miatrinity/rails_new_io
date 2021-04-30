@@ -1,4 +1,6 @@
 class AutomatedVerificationStep
+  attr_reader :app_recipe
+
   def perform(verification_run:)
     @app_recipe = verification_run.app_recipe
     started_at = Time.current

@@ -6,10 +6,6 @@ class CreateRailsAppVerificationStep < AutomatedVerificationStep
   protected
 
   def rails_new_command
-    if Rails.env.test?
-      "echo #{@app_recipe.app_name} #{@app_recipe.instructions}"
-    else
-      "rails new #{@app_recipe.app_name} #{@app_recipe.instructions}"
-    end
+    "rails new #{app_recipe.app_name} #{app_recipe.instructions}"
   end
 end
