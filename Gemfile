@@ -30,7 +30,7 @@ gem "tty-command"
 # A Ruby client for the official GitHub API.
 gem "github_api"
 # Flexible authentication solution for Rails with Warden
-gem "devise", "~> 4.7", ">= 4.7.3"
+gem "devise", "~> 4.8"
 # AASM - State machines for Ruby classes (plain Ruby, ActiveRecord)
 gem "aasm", "~> 5.1", ">= 5.1.1"
 # The Networking and Cryptography (NaCl) library provides a high-level toolkit for building cryptographic systems and protocols
