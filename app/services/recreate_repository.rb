@@ -8,19 +8,20 @@ class RecreateRepository
     delete_repo
     create_repo
     create_rails_new_io_token_repo_secret
+  rescue Github::Error::NotFound
+    puts "The repository miatrinity/#{@repo_name} doesn't exist"
+    :repo_not_found
   end
 
   private
 
-  def delete_repo
-    github_client.repos.delete user: "miatrinity", repo: @repo_name
-  rescue Github::Error::NotFound
-    puts "The repository miatrinity/#{@repo_name} doesn't exist"
-  end
-
   def github_client
     @_github_client ||= Github.new oauth_token: Rails.application.credentials.github[:personal_access_token]
   end
+
+  def delete_repo
+    github_client.repos.delete user: "miatrinity", repo: @repo_name
+  end  
 
   def create_repo
     github_client.repos.create name: @repo_name

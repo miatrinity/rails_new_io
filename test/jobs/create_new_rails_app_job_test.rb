@@ -1,7 +1,7 @@
 require "test_helper"
 
 class CreateNewRailsAppJobTest < ActiveJob::TestCase
-  test "that a new Rails app is created" do
+  test "that a new Rails app is created successfully" do
     verification_run = admin_verification_runs(:creating_new_rails_app_run)
 
     Admin::VerificationRun.any_instance.stubs(:set_up_ci_files!).returns(:halt)

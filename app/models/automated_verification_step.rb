@@ -7,7 +7,7 @@ class AutomatedVerificationStep
       stdout, stderr = TTY::Command.new.run command
       perform_status = :success
     rescue
-      stdout = "Failed to generate new rails application :-("
+      stdout = "Could not run command in #{self.class} :-("
       stderr = $!
       perform_status = :failure
     end

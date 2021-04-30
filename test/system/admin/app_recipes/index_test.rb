@@ -15,6 +15,6 @@ class AdminAppRecipeIndexTest < ApplicationSystemTestCase
 
     assert_text @app_recipe.name
     assert_text "SUCCESS"
-    assert_text "less than a minute ago"
+    assert_text "1 day ago"
   end
 end
