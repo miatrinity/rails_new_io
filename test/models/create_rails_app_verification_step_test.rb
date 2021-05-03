@@ -16,6 +16,6 @@ class CreateRailsAppVerificationStepTest < ActiveSupport::TestCase
   end
 
   def teardown
-    Rails.application.config.rails_new_command_template = File.open("#{Rails.root}/app/admin/test.sh.erb").read    
+    Rails.application.config.rails_new_command_template = File.open("#{Rails.root}/app/admin/test.sh.erb").read
   end
 end
