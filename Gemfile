@@ -32,7 +32,7 @@ gem "github_api"
 # Flexible authentication solution for Rails with Warden
 gem "devise", "~> 4.7", ">= 4.7.3"
 # AASM - State machines for Ruby classes (plain Ruby, ActiveRecord)
-gem "aasm", "~> 5.1", ">= 5.1.1"
+gem "aasm", "~> 5.2"
 # The Networking and Cryptography (NaCl) library provides a high-level toolkit for building cryptographic systems and protocols
 gem "rbnacl", "~> 7.1", ">= 7.1.1"
 
