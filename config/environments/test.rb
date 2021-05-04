@@ -8,9 +8,9 @@ Rails.application.configure do
 
   config.cache_classes = false
   config.action_view.cache_template_loading = true
-  
+
   config.action_controller.perform_caching = true
-  config.cache_store = :redis_cache_store, { driver: :hiredis, url: "redis://localhost:6379/0" }
+  config.cache_store = :redis_cache_store, {driver: :hiredis, url: "redis://localhost:6379/0"}
 
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
