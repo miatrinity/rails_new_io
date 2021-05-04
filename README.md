@@ -27,7 +27,7 @@ New Rails app generation has never been so easy - no headaches, just relax and t
 Sometimes generating a new Rails app can really be a pain in the ass.  No more! 🧙🏻 Check out a quick demo for a quick example of how railsnew.io works.
 
 <p align="center">
-  <img src="./doc/stimulus-demo.gif" alt="Generating Stimulus-enabled Rails app with railsnew.io">
+  <img src="./doc/stimulus_demo.gif" alt="Generating Stimulus-enabled Rails app with railsnew.io">
 </p>
 
 1) ⚾️  Choose your base
