@@ -1,5 +1,9 @@
 # README
 
+<p align="center">
+  <img src="./doc/logo-wide.jpg" alt="Wide Logo">
+</p>
+
 ## Contributing
 
 ### Setting up a new Menu Card
