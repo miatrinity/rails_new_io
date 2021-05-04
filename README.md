@@ -4,7 +4,39 @@
   <img src="./doc/logo-wide.jpg" alt="Wide Logo">
 </p>
 
-## Contributing
+<p align="center">
+A friendly place for creating new Rails apps - YOUR way!
+</p>
+  
+<p align="center">  
+A customizable Rails app template generator with (or without!) all the bells and whistles.
+</p>
+  
+<p align="center">    
+Built with ❤️ by Trinity Takei and Mia Sinek
+</p>
+
+##  💭 Philosophy
+
+We believe programming should spark joy. Even (especially!) the beginnings. We made railsnew.io to bring back the joy to rails app creation - whenever you want to play around with a new idea or jumps start your new project you should be able to start off with a smile instead of a grin on your face and frustration. Our aim was to get you to the fun part in just a matter of couple of clicks.
+
+New Rails app generation has never been so easy - no headaches, just relax and take a cup of ☕ before your next Rails journey! 🎉 railsnew.io will take the heavy lifting for you so you can focus the essence rather than the noise. Think about it as your personal Rails prep chef! 🧑‍🍳
+
+##  How it works
+
+Sometimes generating a new Rails app can really be a pain in the ass.  No more! 🧙🏻 Check out a quick demo for a quick example of how railsnew.io works.
+
+<p align="center">
+  <img src="./doc/stimulus-demo.gif" alt="Generating Stimulus-enabled Rails app with railsnew.io">
+</p>
+
+1) ⚾️  Choose your base
+2) 🏏  Add extras (or not)
+3) ☕️  Lean back and enjoy!
+
+That's it really.
+
+## 🧩  Contributing
 
 ### Setting up a new Menu Card
 
@@ -48,10 +80,19 @@
    <%= render Tabs::Main::MenuCards::Checkbox::WhateverMyComponentDoes::Component.new(initial_state: @initial_state, state_translation: @state_translation) %>
    ```
    
-4. If you created a new menu card, update the system test named 'Changing an item on every menu card is reflected in the command line output' (not specifying the file name on purpose, as it is subject to change at the time of writing). 
-   
+4. If you created a new menu card, update the system test named 'Changing an item on every menu card is reflected in the command line output' (not specifying the file name on purpose, as it is subject to change at the time of writing).
+5.
+## 🤝 Support
+Creating takes a lot of time. We love the process and believe to give back to the community. We believe that programming should bring joy. RailsNew.io aims at just that: removing the dull stuff so that you can focus on the fun part. If find this project worthwhile, this is how you can help: Reach out. Make suggestions. Report bugs. Initiate conversations about how to improve. Invite us for a  coffee ☕️ if your around - we are always open for a good chat!
 
-   
+## 📬️ Mailing List
+Want to stay up to date?  Subscribe to our mailing list (link it!).
+We send fun emails.
+And peeks behind the scenes.
+No spam 🤞, really low traffic.
+See you on the other side ;)
+ 
+## 📃 Licence
 
-   
-   
+is released under the MIT License [https://tldrlegal.com/license/mit-license]
+
