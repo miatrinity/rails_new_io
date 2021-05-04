@@ -8,7 +8,7 @@ class RecreateRepository
     delete_repo
     create_repo
     create_rails_new_io_token_repo_secret
-  rescue Github::Error::NotFound
+  rescue
     puts "The repository miatrinity/#{@repo_name} doesn't exist"
     :repo_not_found
   end
