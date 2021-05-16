@@ -54,6 +54,12 @@ group :development do
   gem "web-console", ">= 3.3.0"
   # A fully configurable and extendable Git hook manager
   gem "overcommit"
+
+  gem 'mutant-minitest', '~> 0.10.31'
+
+  source 'https://oss:cUsw1fO1EK35ZewlWybDC9F9wG9DKzaQ@gem.mutant.dev' do
+    gem 'mutant-license'
+  end
 end
 
 group :test do
