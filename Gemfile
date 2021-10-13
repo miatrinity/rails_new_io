@@ -38,7 +38,7 @@ gem "aasm", "~> 5.2", ">= 5.2.0"
 gem "rbnacl", "~> 7.1", ">= 7.1.1"
 
 group :development, :test do
-  gem "puma", "~> 5.1"
+  gem "puma", "~> 5.5"
   gem "awesome_print"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
