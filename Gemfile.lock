@@ -1,6 +1,10 @@
 GEM
-  remote: https://rubygems.org/
   remote: https://oss:cUsw1fO1EK35ZewlWybDC9F9wG9DKzaQ@gem.mutant.dev/
+  specs:
+    mutant-license (0.1.1.2.1839360472112769816023349048501540551457.0)
+
+GEM
+  remote: https://rubygems.org/
   specs:
     aasm (5.2.0)
       concurrent-ruby (~> 1.0)
@@ -137,7 +141,7 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.0.3)
-    mini_portile2 (2.5.1)
+    mini_portile2 (2.8.0)
     minitest (5.14.4)
     minitest-reporters (1.4.3)
       ansi
@@ -154,13 +158,12 @@ GEM
       parser (~> 3.0.0)
       regexp_parser (~> 2.0, >= 2.0.3)
       unparser (~> 0.6.0)
-    mutant-license (0.1.1.2.1839360472112769816023349048501540551457.0)
     mutant-minitest (0.10.31)
       minitest (~> 5.11)
       mutant (= 0.10.31)
     nio4r (2.5.7)
-    nokogiri (1.11.3)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.13.6)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     oauth2 (1.4.7)
       faraday (>= 0.8, < 2.0)
@@ -186,7 +189,7 @@ GEM
     public_suffix (4.0.6)
     puma (5.2.2)
       nio4r (~> 2.0)
-    racc (1.5.2)
+    racc (1.6.0)
     rack (2.2.3)
     rack-proxy (0.6.5)
       rack
