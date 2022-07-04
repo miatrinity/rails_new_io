@@ -1,6 +1,10 @@
 GEM
-  remote: https://rubygems.org/
   remote: https://oss:cUsw1fO1EK35ZewlWybDC9F9wG9DKzaQ@gem.mutant.dev/
+  specs:
+    mutant-license (0.1.1.2.1839360472112769816023349048501540551457.0)
+
+GEM
+  remote: https://rubygems.org/
   specs:
     aasm (5.2.0)
       concurrent-ruby (~> 1.0)
@@ -154,7 +158,6 @@ GEM
       parser (~> 3.0.0)
       regexp_parser (~> 2.0, >= 2.0.3)
       unparser (~> 0.6.0)
-    mutant-license (0.1.1.2.1839360472112769816023349048501540551457.0)
     mutant-minitest (0.10.31)
       minitest (~> 5.11)
       mutant (= 0.10.31)
@@ -225,7 +228,7 @@ GEM
       ffi (~> 1.0)
     rbnacl (7.1.1)
       ffi
-    redis (4.2.5)
+    redis (4.7.1)
     regexp_parser (2.1.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -353,7 +356,7 @@ DEPENDENCIES
   puma (~> 5.1)
   rails (~> 6.1, >= 6.1.3.1)
   rbnacl (~> 7.1, >= 7.1.1)
-  redis (~> 4.0)
+  redis (~> 4.7)
   sass-rails (>= 6)
   selenium-webdriver
   simplecov
