@@ -55,7 +55,7 @@ group :development do
   # A fully configurable and extendable Git hook manager
   gem "overcommit"
 
-  gem 'mutant-minitest', '~> 0.10.31'
+  gem 'mutant-minitest', '~> 0.11.16'
 
   source 'https://oss:cUsw1fO1EK35ZewlWybDC9F9wG9DKzaQ@gem.mutant.dev' do
     gem 'mutant-license'
